@@ -1,0 +1,354 @@
+{
+  "meta": {
+    "platform": "xhs",
+    "kind": "search/notes",
+    "url_path": "/api/sns/web/v2/search/notes",
+    "captured_on": "2026-11-03",
+    "source": "recorded",
+    "case": "last_page",
+    "note": "「钛酒精炉」最新、一天内，4 条，has_more 为假",
+    "verdict": null
+  },
+  "capture": {
+    "platform": "xhs",
+    "kind": "search/notes",
+    "url_path": "/api/sns/web/v2/search/notes",
+    "query": {},
+    "status": 200,
+    "headers": {
+      "content-type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "code": 0,
+      "success": true,
+      "msg": "成功",
+      "data": {
+        "items": [
+          {
+            "id": "6ae9a487000000000602c4be",
+            "model_type": "note",
+            "note_card": {
+              "display_title": "文文文文文文文文文文文文",
+              "user": {
+                "nick_name": "用户A",
+                "avatar": "https://example.invalid/e1c9bb241792",
+                "user_id": "2d39c1c07a4779b7fad1bf6f",
+                "nickname": "用户A",
+                "xsec_token": "REDACTED-106bcae9e534"
+              },
+              "interact_info": {
+                "liked": false,
+                "liked_count": "4",
+                "collected": false,
+                "collected_count": "6",
+                "comment_count": "6",
+                "shared_count": "0"
+              },
+              "cover": {
+                "height": 1791,
+                "width": 2388,
+                "url_default": "https://example.invalid/780c4a31280a",
+                "url_pre": "https://example.invalid/8f9107013784"
+              },
+              "image_list": [
+                {
+                  "height": 1791,
+                  "width": 2388,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/780c4a31280a"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/8f9107013784"
+                    }
+                  ]
+                }
+              ],
+              "corner_tag_info": [
+                {
+                  "type": "publish_time",
+                  "text": "58分钟前"
+                }
+              ],
+              "type": "video"
+            },
+            "xsec_token": "REDACTED-f0a1c40af943"
+          },
+          {
+            "id": "6ae9f564000000000e03538a",
+            "model_type": "note",
+            "note_card": {
+              "interact_info": {
+                "liked": false,
+                "liked_count": "0",
+                "collected": false,
+                "collected_count": "0",
+                "comment_count": "0",
+                "shared_count": "0"
+              },
+              "cover": {
+                "url_default": "https://example.invalid/37de983b3b4f",
+                "url_pre": "https://example.invalid/4469a412a83f",
+                "height": 1440,
+                "width": 1440
+              },
+              "image_list": [
+                {
+                  "width": 1440,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/37de983b3b4f"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/4469a412a83f"
+                    }
+                  ],
+                  "height": 1440
+                },
+                {
+                  "height": 1440,
+                  "width": 1440,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/92e52859d6a9"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/9dccb69d1835"
+                    }
+                  ]
+                },
+                {
+                  "width": 1440,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/e618c67c5afe"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/34de7cf72670"
+                    }
+                  ],
+                  "height": 1440
+                },
+                {
+                  "height": 1440,
+                  "width": 1440,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/14df259db7e8"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/8917f900da7a"
+                    }
+                  ]
+                },
+                {
+                  "height": 1440,
+                  "width": 1440,
+                  "info_list": [
+                    {
+                      "url": "https://example.invalid/fc7e44005902",
+                      "image_scene": "WB_DFT"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/9dffe9589cfa"
+                    }
+                  ]
+                },
+                {
+                  "height": 750,
+                  "width": 750,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/c1fd892a681c"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/07912f443653"
+                    }
+                  ]
+                },
+                {
+                  "height": 726,
+                  "width": 726,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/9da1242f5d75"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/564157beee36"
+                    }
+                  ]
+                },
+                {
+                  "height": 718,
+                  "width": 719,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/59862e139ded"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/77430787cf3f"
+                    }
+                  ]
+                }
+              ],
+              "corner_tag_info": [
+                {
+                  "type": "publish_time",
+                  "text": "昨天 22:53"
+                }
+              ],
+              "type": "normal",
+              "display_title": "文文文文文文文文文文文文文文文文文文文文",
+              "user": {
+                "user_id": "8e74d5986d41127103d15cef",
+                "nickname": "用户B",
+                "xsec_token": "REDACTED-3696906bd579",
+                "nick_name": "用户B",
+                "avatar": "https://example.invalid/ad4d7df51706"
+              }
+            },
+            "xsec_token": "REDACTED-69ae51deaa20"
+          },
+          {
+            "id": "6ad6e7fc00000000270164ca",
+            "model_type": "note",
+            "note_card": {
+              "display_title": "文文文文文文文文文文文文文文文文文文文",
+              "user": {
+                "nick_name": "用户C",
+                "avatar": "https://example.invalid/f58b60c31486",
+                "user_id": "be7514f58438a4c342c08d7d",
+                "nickname": "用户C",
+                "xsec_token": "REDACTED-72830ddf17f5"
+              },
+              "interact_info": {
+                "liked_count": "1",
+                "collected": false,
+                "collected_count": "0",
+                "comment_count": "6",
+                "shared_count": "0",
+                "liked": false
+              },
+              "cover": {
+                "height": 1440,
+                "width": 1080,
+                "url_default": "https://example.invalid/1f1bd850965c",
+                "url_pre": "https://example.invalid/bb1c77205a71"
+              },
+              "image_list": [
+                {
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/1f1bd850965c"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/bb1c77205a71"
+                    }
+                  ],
+                  "height": 1440,
+                  "width": 1080
+                },
+                {
+                  "height": 1440,
+                  "width": 1080,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/2adbcbc24500"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/ff6d6f523230"
+                    }
+                  ]
+                }
+              ],
+              "corner_tag_info": [
+                {
+                  "type": "publish_time",
+                  "text": "昨天 19:03"
+                }
+              ],
+              "type": "normal"
+            },
+            "xsec_token": "REDACTED-1af878a67972"
+          },
+          {
+            "id": "6ae9885300000000030161bc",
+            "model_type": "note",
+            "note_card": {
+              "interact_info": {
+                "liked": false,
+                "liked_count": "39",
+                "collected": false,
+                "collected_count": "22",
+                "comment_count": "19",
+                "shared_count": "11"
+              },
+              "cover": {
+                "height": 1441,
+                "width": 1080,
+                "url_default": "https://example.invalid/3795e37b91a7",
+                "url_pre": "https://example.invalid/806b6a6e8918"
+              },
+              "image_list": [
+                {
+                  "height": 1441,
+                  "width": 1080,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/3795e37b91a7"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/806b6a6e8918"
+                    }
+                  ]
+                }
+              ],
+              "corner_tag_info": [
+                {
+                  "type": "publish_time",
+                  "text": "昨天 20:42"
+                }
+              ],
+              "type": "video",
+              "display_title": "文文文文文文文文文文",
+              "user": {
+                "nickname": "用户D",
+                "xsec_token": "REDACTED-0e71bfea0009",
+                "nick_name": "用户D",
+                "avatar": "https://example.invalid/b1f198664bd2",
+                "user_id": "60695d5d367765f4664ceb13"
+              }
+            },
+            "xsec_token": "REDACTED-1c95588c36cf"
+          }
+        ],
+        "request_dqa_instant": false,
+        "has_more": false
+      }
+    },
+    "captured_at": 1793760585000
+  }
+}

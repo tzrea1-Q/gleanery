@@ -1,0 +1,294 @@
+[
+  {
+    "name": "单个与多个",
+    "text": "前 [[c:123]] 和 [[ c : 2, m: 456 ]] 后",
+    "markers": [
+      {
+        "start": 2,
+        "end": 11,
+        "refs": [
+          {
+            "kind": "content",
+            "id": 123
+          }
+        ],
+        "too_many": false
+      },
+      {
+        "start": 14,
+        "end": 33,
+        "refs": [
+          {
+            "kind": "content",
+            "id": 2
+          },
+          {
+            "kind": "comment",
+            "id": 456
+          }
+        ],
+        "too_many": false
+      }
+    ],
+    "refs": [
+      {
+        "kind": "content",
+        "id": 123
+      },
+      {
+        "kind": "content",
+        "id": 2
+      },
+      {
+        "kind": "comment",
+        "id": 456
+      }
+    ],
+    "malformed": []
+  },
+  {
+    "name": "去重和相邻",
+    "text": "[[c:01,c:1,m:1]][[m:1]][[c:2]]",
+    "markers": [
+      {
+        "start": 0,
+        "end": 16,
+        "refs": [
+          {
+            "kind": "content",
+            "id": 1
+          },
+          {
+            "kind": "comment",
+            "id": 1
+          }
+        ],
+        "too_many": false
+      },
+      {
+        "start": 16,
+        "end": 23,
+        "refs": [
+          {
+            "kind": "comment",
+            "id": 1
+          }
+        ],
+        "too_many": false
+      },
+      {
+        "start": 23,
+        "end": 30,
+        "refs": [
+          {
+            "kind": "content",
+            "id": 2
+          }
+        ],
+        "too_many": false
+      }
+    ],
+    "refs": [
+      {
+        "kind": "content",
+        "id": 1
+      },
+      {
+        "kind": "comment",
+        "id": 1
+      },
+      {
+        "kind": "content",
+        "id": 2
+      }
+    ],
+    "malformed": []
+  },
+  {
+    "name": "超过十个",
+    "text": "[[c:0,c:1,c:2,c:3,c:4,c:5,c:6,c:7,c:8,c:9,c:10]]",
+    "markers": [
+      {
+        "start": 0,
+        "end": 48,
+        "refs": [
+          {
+            "kind": "content",
+            "id": 0
+          },
+          {
+            "kind": "content",
+            "id": 1
+          },
+          {
+            "kind": "content",
+            "id": 2
+          },
+          {
+            "kind": "content",
+            "id": 3
+          },
+          {
+            "kind": "content",
+            "id": 4
+          },
+          {
+            "kind": "content",
+            "id": 5
+          },
+          {
+            "kind": "content",
+            "id": 6
+          },
+          {
+            "kind": "content",
+            "id": 7
+          },
+          {
+            "kind": "content",
+            "id": 8
+          },
+          {
+            "kind": "content",
+            "id": 9
+          },
+          {
+            "kind": "content",
+            "id": 10
+          }
+        ],
+        "too_many": true
+      }
+    ],
+    "refs": [
+      {
+        "kind": "content",
+        "id": 0
+      },
+      {
+        "kind": "content",
+        "id": 1
+      },
+      {
+        "kind": "content",
+        "id": 2
+      },
+      {
+        "kind": "content",
+        "id": 3
+      },
+      {
+        "kind": "content",
+        "id": 4
+      },
+      {
+        "kind": "content",
+        "id": 5
+      },
+      {
+        "kind": "content",
+        "id": 6
+      },
+      {
+        "kind": "content",
+        "id": 7
+      },
+      {
+        "kind": "content",
+        "id": 8
+      },
+      {
+        "kind": "content",
+        "id": 9
+      },
+      {
+        "kind": "content",
+        "id": 10
+      }
+    ],
+    "malformed": []
+  },
+  {
+    "name": "重复仍计入上限",
+    "text": "[[c:1,c:1,c:1,c:1,c:1,c:1,c:1,c:1,c:1,c:1,c:1]]",
+    "markers": [
+      {
+        "start": 0,
+        "end": 47,
+        "refs": [
+          {
+            "kind": "content",
+            "id": 1
+          }
+        ],
+        "too_many": true
+      }
+    ],
+    "refs": [
+      {
+        "kind": "content",
+        "id": 1
+      }
+    ],
+    "malformed": []
+  },
+  {
+    "name": "近似与无关",
+    "text": "[[C:12]] [[c 12]] [[12]] [[c:12,]] [[M:3]] [[hello]] [[cat]]",
+    "markers": [],
+    "refs": [],
+    "malformed": [
+      "[[C:12]]",
+      "[[c 12]]",
+      "[[12]]",
+      "[[c:12,]]",
+      "[[M:3]]"
+    ]
+  },
+  {
+    "name": "代码与字符位置",
+    "text": "😀 `[[m:3]]`\n```\n[[c:4]]\n```",
+    "markers": [
+      {
+        "start": 3,
+        "end": 10,
+        "refs": [
+          {
+            "kind": "comment",
+            "id": 3
+          }
+        ],
+        "too_many": false
+      },
+      {
+        "start": 16,
+        "end": 23,
+        "refs": [
+          {
+            "kind": "content",
+            "id": 4
+          }
+        ],
+        "too_many": false
+      }
+    ],
+    "refs": [
+      {
+        "kind": "comment",
+        "id": 3
+      },
+      {
+        "kind": "content",
+        "id": 4
+      }
+    ],
+    "malformed": []
+  },
+  {
+    "name": "无引用",
+    "text": "普通文本 [[other]]",
+    "markers": [],
+    "refs": [],
+    "malformed": []
+  }
+]

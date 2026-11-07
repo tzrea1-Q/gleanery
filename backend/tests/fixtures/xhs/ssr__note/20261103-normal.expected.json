@@ -1,0 +1,71 @@
+{
+  "search": null,
+  "content": {
+    "platform": "xhs",
+    "platform_id": "6a316843000000000f01ecb3",
+    "url": "https://www.xiaohongshu.com/explore/6a316843000000000f01ecb3",
+    "kind": "image_text",
+    "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+    "body": "文文\n文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文\n文文文文文文文文文\n文\n文文\n文\n文文文文文文文文文文文文文文\n文\n文文文\n文文文文文文文文文文文文文文文\n文\n文文文文文\n文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文\n文文文文文文文文\n文文文文文文文文文文\n文\n文文文文文\n文文文文文文\n文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文\n文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文\n文文文文文文文文文文文文文\n文文文文文文文文文文文文文\n文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文\n文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文\n文文文文文文文\n文文文文文文文文文文文文文文文文\n文\n文文文\n文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文\n文\n文文文文文文文文文\n文\n文文文文文文文[话题]文文文文文文文文[话题]文文文文文文文[话题]文文文文文文文文[话题]文文文文文文文[话题]文文文文文文文[话题]文文文文文文文[话题]文文文文文文文文文文[话题]文文文文文[话题]文文文文文[话题]文",
+    "author": {
+      "platform": "xhs",
+      "platform_id": "725d817e227ffc6fa9fcb337",
+      "nickname": "用户A",
+      "avatar_url": "https://example.invalid/ffd5ee84ebbc",
+      "ext": {}
+    },
+    "published_at": 1781622851000,
+    "platform_updated_at": 1781622852000,
+    "counts": {
+      "likes": 462,
+      "favorites": 480,
+      "comments": 32,
+      "shares": 92,
+      "plays": null
+    },
+    "tags": [
+      "用户B",
+      "用户C",
+      "用户D",
+      "用户E",
+      "用户F",
+      "用户G",
+      "用户H",
+      "用户I",
+      "用户J",
+      "用户K"
+    ],
+    "completeness": "detail",
+    "ext": {
+      "counts_raw": {
+        "likes": "462",
+        "favorites": "480",
+        "comments": "32",
+        "shares": "92"
+      },
+      "counts_approx": false,
+      "image_urls": [
+        "https://example.invalid/ec9078ebf913",
+        "https://example.invalid/e15b138e8472",
+        "https://example.invalid/28e1bf99dbcb",
+        "https://example.invalid/20a7133084bf",
+        "https://example.invalid/0ccfc4f68fcf",
+        "https://example.invalid/8910d9661966",
+        "https://example.invalid/e76f5d2a407a",
+        "https://example.invalid/cc15ac3ecd3d"
+      ],
+      "video_url": null,
+      "at_users": [],
+      "ip_location": null,
+      "published_approx": false
+    }
+  },
+  "comments": null,
+  "subtitles": [],
+  "report": {
+    "items": 1,
+    "skipped_missing_core": 0,
+    "missing_fields": {},
+    "nonempty_response": true
+  }
+}

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# 由 `just setup` 经 core.hooksPath 启用。只跑快的检查，目标 30 秒以内。
+set -euo pipefail
+exec just pre-commit

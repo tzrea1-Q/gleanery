@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "platform": "bili",
+    "kind": "x/v2/reply/reply",
+    "url_path": "/x/v2/reply/reply",
+    "captured_on": "2026-11-01",
+    "source": "handwritten",
+    "case": "login_lost",
+    "note": "登录失效：code -101"
+  },
+  "capture": {
+    "platform": "bili",
+    "kind": "x/v2/reply/reply",
+    "url_path": "/x/v2/reply/reply",
+    "query": {
+      "oid": "113469663810227",
+      "type": "1",
+      "root": "247764069089",
+      "ps": "10",
+      "pn": "1",
+      "web_location": "REDACTED-61337ac1e94c",
+      "x-bili-locale-json": "REDACTED-b22482231916",
+      "x-bili-device-req-json": "REDACTED-473a41a9674f"
+    },
+    "status": 200,
+    "headers": {},
+    "body": {
+      "code": -101,
+      "message": "账号未登录",
+      "ttl": 1,
+      "data": null
+    },
+    "captured_at": 1793517148096
+  }
+}

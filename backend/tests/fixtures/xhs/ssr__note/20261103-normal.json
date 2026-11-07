@@ -1,0 +1,276 @@
+{
+  "meta": {
+    "platform": "xhs",
+    "kind": "ssr:note",
+    "url_path": "/explore/6a316843000000000f01ecb3",
+    "captured_on": "2026-11-03",
+    "source": "recorded",
+    "case": "normal",
+    "note": "用存下的 xsec_token 直接打开，评论 32 条",
+    "verdict": null
+  },
+  "capture": {
+    "platform": "xhs",
+    "kind": "ssr:note",
+    "url_path": "/explore/6a316843000000000f01ecb3",
+    "query": {},
+    "status": 200,
+    "headers": {},
+    "body": {
+      "note_id": "6a316843000000000f01ecb3",
+      "note": {
+        "noteId": "6a316843000000000f01ecb3",
+        "type": "normal",
+        "desc": "文文\n文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文\n文文文文文文文文文\n文\n文文\n文\n文文文文文文文文文文文文文文\n文\n文文文\n文文文文文文文文文文文文文文文\n文\n文文文文文\n文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文\n文文文文文文文文\n文文文文文文文文文文\n文\n文文文文文\n文文文文文文\n文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文\n文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文\n文文文文文文文文文文文文文\n文文文文文文文文文文文文文\n文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文\n文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文\n文文文文文文文\n文文文文文文文文文文文文文文文文\n文\n文文文\n文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文\n文\n文文文文文文文文文\n文\n文文文文文文文[话题]文文文文文文文文[话题]文文文文文文文[话题]文文文文文文文文[话题]文文文文文文文[话题]文文文文文文文[话题]文文文文文文文[话题]文文文文文文文文文文[话题]文文文文文[话题]文文文文文[话题]文",
+        "time": 1781622851000,
+        "shareInfo": {
+          "unShare": false
+        },
+        "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "user": {
+          "xsecToken": "REDACTED-0e8bed00af56",
+          "userId": "725d817e227ffc6fa9fcb337",
+          "nickname": "用户A",
+          "avatar": "https://example.invalid/ffd5ee84ebbc"
+        },
+        "interactInfo": {
+          "relation": "none",
+          "niceCount": "",
+          "likedCount": "462",
+          "collected": false,
+          "liked": false,
+          "collectedCount": "480",
+          "commentCount": "32",
+          "shareCount": "92",
+          "followed": false
+        },
+        "imageList": [
+          {
+            "url": "",
+            "infoList": [
+              {
+                "imageScene": "WB_PRV",
+                "url": "https://example.invalid/537ba30db4e9"
+              },
+              {
+                "imageScene": "WB_DFT",
+                "url": "https://example.invalid/ec9078ebf913"
+              }
+            ],
+            "urlPre": "https://example.invalid/537ba30db4e9",
+            "urlDefault": "https://example.invalid/ec9078ebf913",
+            "stream": {},
+            "livePhoto": false,
+            "width": 1920,
+            "traceId": "",
+            "fileId": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+            "height": 2560
+          },
+          {
+            "width": 1612,
+            "url": "",
+            "urlDefault": "https://example.invalid/e15b138e8472",
+            "stream": {},
+            "livePhoto": false,
+            "fileId": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+            "traceId": "",
+            "infoList": [
+              {
+                "imageScene": "WB_PRV",
+                "url": "https://example.invalid/5bf820225a5c"
+              },
+              {
+                "imageScene": "WB_DFT",
+                "url": "https://example.invalid/e15b138e8472"
+              }
+            ],
+            "urlPre": "https://example.invalid/5bf820225a5c",
+            "height": 1616
+          },
+          {
+            "infoList": [
+              {
+                "imageScene": "WB_PRV",
+                "url": "https://example.invalid/263789e8517c"
+              },
+              {
+                "imageScene": "WB_DFT",
+                "url": "https://example.invalid/28e1bf99dbcb"
+              }
+            ],
+            "urlDefault": "https://example.invalid/28e1bf99dbcb",
+            "livePhoto": false,
+            "fileId": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+            "height": 2560,
+            "width": 1920,
+            "url": "",
+            "traceId": "",
+            "urlPre": "https://example.invalid/263789e8517c",
+            "stream": {}
+          },
+          {
+            "fileId": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+            "width": 1920,
+            "traceId": "",
+            "infoList": [
+              {
+                "imageScene": "WB_PRV",
+                "url": "https://example.invalid/95df78140510"
+              },
+              {
+                "imageScene": "WB_DFT",
+                "url": "https://example.invalid/20a7133084bf"
+              }
+            ],
+            "urlDefault": "https://example.invalid/20a7133084bf",
+            "stream": {},
+            "livePhoto": false,
+            "height": 2560,
+            "url": "",
+            "urlPre": "https://example.invalid/95df78140510"
+          },
+          {
+            "width": 1920,
+            "url": "",
+            "infoList": [
+              {
+                "imageScene": "WB_PRV",
+                "url": "https://example.invalid/d2f16030cabf"
+              },
+              {
+                "imageScene": "WB_DFT",
+                "url": "https://example.invalid/0ccfc4f68fcf"
+              }
+            ],
+            "urlPre": "https://example.invalid/d2f16030cabf",
+            "urlDefault": "https://example.invalid/0ccfc4f68fcf",
+            "stream": {},
+            "fileId": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+            "traceId": "",
+            "livePhoto": false,
+            "height": 2560
+          },
+          {
+            "urlPre": "https://example.invalid/9d8ca37e46db",
+            "urlDefault": "https://example.invalid/8910d9661966",
+            "height": 2560,
+            "width": 1920,
+            "infoList": [
+              {
+                "imageScene": "WB_PRV",
+                "url": "https://example.invalid/9d8ca37e46db"
+              },
+              {
+                "imageScene": "WB_DFT",
+                "url": "https://example.invalid/8910d9661966"
+              }
+            ],
+            "stream": {},
+            "livePhoto": false,
+            "fileId": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+            "url": "",
+            "traceId": ""
+          },
+          {
+            "fileId": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+            "height": 2560,
+            "traceId": "",
+            "infoList": [
+              {
+                "imageScene": "WB_PRV",
+                "url": "https://example.invalid/3bfddb97072f"
+              },
+              {
+                "imageScene": "WB_DFT",
+                "url": "https://example.invalid/e76f5d2a407a"
+              }
+            ],
+            "urlPre": "https://example.invalid/3bfddb97072f",
+            "urlDefault": "https://example.invalid/e76f5d2a407a",
+            "width": 1920,
+            "url": "",
+            "stream": {},
+            "livePhoto": false
+          },
+          {
+            "width": 1920,
+            "url": "",
+            "traceId": "",
+            "infoList": [
+              {
+                "imageScene": "WB_PRV",
+                "url": "https://example.invalid/8ec12df23db5"
+              },
+              {
+                "imageScene": "WB_DFT",
+                "url": "https://example.invalid/cc15ac3ecd3d"
+              }
+            ],
+            "fileId": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+            "height": 2560,
+            "urlPre": "https://example.invalid/8ec12df23db5",
+            "urlDefault": "https://example.invalid/cc15ac3ecd3d",
+            "stream": {},
+            "livePhoto": false
+          }
+        ],
+        "tagList": [
+          {
+            "id": "63ea37ac000000000101e89e",
+            "name": "用户B",
+            "type": "topic"
+          },
+          {
+            "type": "topic",
+            "id": "613f7b9f000000000100b10e",
+            "name": "用户C"
+          },
+          {
+            "id": "5cb55122000000000d0003a6",
+            "name": "用户D",
+            "type": "topic"
+          },
+          {
+            "id": "610919b80000000001009c79",
+            "name": "用户E",
+            "type": "topic"
+          },
+          {
+            "id": "6113e2470000000001004f73",
+            "name": "用户F",
+            "type": "topic"
+          },
+          {
+            "id": "5c9c3e00000000000f02b4b8",
+            "name": "用户G",
+            "type": "topic"
+          },
+          {
+            "name": "用户H",
+            "type": "topic",
+            "id": "5c82269f000000000e008e3a"
+          },
+          {
+            "id": "67e6f7310000000004018851",
+            "name": "用户I",
+            "type": "topic"
+          },
+          {
+            "id": "5eb2e2ff0000000001007d9f",
+            "name": "用户J",
+            "type": "topic"
+          },
+          {
+            "name": "用户K",
+            "type": "topic",
+            "id": "595a2c30cd30d855029bee5a"
+          }
+        ],
+        "atUserList": [],
+        "lastUpdateTime": 1781622852000,
+        "xsecToken": "REDACTED-c6d2d9e705aa"
+      }
+    },
+    "captured_at": 1793760450600
+  }
+}

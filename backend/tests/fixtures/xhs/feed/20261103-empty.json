@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "platform": "xhs",
+    "kind": "feed",
+    "url_path": "/api/sns/web/v1/feed",
+    "captured_on": "2026-11-03",
+    "source": "handwritten",
+    "case": "empty",
+    "note": "手写：抓得太频繁时 feed 返回空 items",
+    "verdict": null
+  },
+  "capture": {
+    "platform": "xhs",
+    "kind": "feed",
+    "url_path": "/api/sns/web/v1/feed",
+    "query": {},
+    "status": 200,
+    "headers": {},
+    "body": {
+      "code": 0,
+      "success": true,
+      "msg": "成功",
+      "data": {
+        "cursor_score": "",
+        "items": [],
+        "current_time": 1793760000000
+      }
+    },
+    "captured_at": 1793760000000
+  }
+}

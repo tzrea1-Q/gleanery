@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "platform": "xhs",
+    "kind": "comment/page",
+    "url_path": "/api/sns/web/v2/comment/page",
+    "captured_on": "2026-11-03",
+    "source": "recorded",
+    "case": "empty",
+    "note": "零评论笔记",
+    "verdict": null
+  },
+  "capture": {
+    "platform": "xhs",
+    "kind": "comment/page",
+    "url_path": "/api/sns/web/v2/comment/page",
+    "query": {
+      "note_id": "6ab0b4490000000012024e8a",
+      "image_formats": "REDACTED-6cafdb4f877b",
+      "xsec_token": "REDACTED-5c94b967f4b9"
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "success": true,
+      "msg": "成功",
+      "data": {
+        "has_more": false,
+        "time": 1793760489991,
+        "xsec_token": "REDACTED-3f229a3078a8",
+        "user_id": "bd77710fd4bfff6c2888764d",
+        "comments": []
+      },
+      "code": 0
+    },
+    "captured_at": 1793760489870
+  }
+}

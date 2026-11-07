@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "platform": "xhs",
+    "kind": "comment/sub/page",
+    "url_path": "/api/sns/web/v2/comment/sub/page",
+    "captured_on": "2026-11-03",
+    "source": "handwritten",
+    "case": "empty",
+    "note": "手写，依据回复被删光时的形态，照 last_page 去掉条目",
+    "verdict": null
+  },
+  "capture": {
+    "platform": "xhs",
+    "kind": "comment/sub/page",
+    "url_path": "/api/sns/web/v2/comment/sub/page",
+    "query": {
+      "note_id": "69f0dae10000000023005a98",
+      "root_comment_id": "69f0dc7e000000002701f54a",
+      "num": "10",
+      "cursor": "REDACTED-4d56c823aea4",
+      "image_formats": "REDACTED-6cafdb4f877b",
+      "xsec_token": "REDACTED-fb9c18ccf895"
+    },
+    "status": 200,
+    "headers": {},
+    "body": {
+      "code": 0,
+      "success": true,
+      "msg": "成功",
+      "data": {
+        "comments": [],
+        "cursor": "REDACTED-81d7b7f300aa",
+        "has_more": false
+      }
+    },
+    "captured_at": 1793760000000
+  }
+}

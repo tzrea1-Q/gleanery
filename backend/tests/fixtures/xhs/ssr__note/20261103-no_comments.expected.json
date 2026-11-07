@@ -1,0 +1,63 @@
+{
+  "search": null,
+  "content": {
+    "platform": "xhs",
+    "platform_id": "6ab0b4490000000012024e8a",
+    "url": "https://www.xiaohongshu.com/explore/6ab0b4490000000012024e8a",
+    "kind": "image_text",
+    "title": "文文文文文文文文文文文文文",
+    "body": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文[话题]文文文文文文文文[话题]文文文文文文文文[话题]文文文文文文文文[话题]文文文文文文文文[话题]文",
+    "author": {
+      "platform": "xhs",
+      "platform_id": "bbffc13a6035b85555d71d38",
+      "nickname": "用户F",
+      "avatar_url": "https://example.invalid/9208ca23db64",
+      "ext": {}
+    },
+    "published_at": 1789965386000,
+    "platform_updated_at": 1789965386000,
+    "counts": {
+      "likes": 16,
+      "favorites": 10,
+      "comments": 0,
+      "shares": 3,
+      "plays": null
+    },
+    "tags": [
+      "用户A",
+      "用户B",
+      "用户C",
+      "用户D",
+      "用户E"
+    ],
+    "completeness": "detail",
+    "ext": {
+      "counts_raw": {
+        "likes": "16",
+        "favorites": "10",
+        "comments": "",
+        "shares": "3"
+      },
+      "counts_approx": false,
+      "image_urls": [
+        "https://example.invalid/1a3f69341a8d",
+        "https://example.invalid/ff65a992cfc8",
+        "https://example.invalid/f90d1fbbe701",
+        "https://example.invalid/71fb1983402b",
+        "https://example.invalid/f917c410dcac"
+      ],
+      "video_url": null,
+      "at_users": [],
+      "ip_location": null,
+      "published_approx": false
+    }
+  },
+  "comments": null,
+  "subtitles": [],
+  "report": {
+    "items": 1,
+    "skipped_missing_core": 0,
+    "missing_fields": {},
+    "nonempty_response": true
+  }
+}

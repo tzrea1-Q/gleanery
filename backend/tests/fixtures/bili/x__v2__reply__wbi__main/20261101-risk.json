@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "platform": "bili",
+    "kind": "x/v2/reply/wbi/main",
+    "url_path": "/x/v2/reply/wbi/main",
+    "captured_on": "2026-11-01",
+    "source": "handwritten",
+    "case": "risk",
+    "note": "风控：code -352，data 里带 v_voucher"
+  },
+  "capture": {
+    "platform": "bili",
+    "kind": "x/v2/reply/wbi/main",
+    "url_path": "/x/v2/reply/wbi/main",
+    "query": {
+      "oid": "113469663810227",
+      "type": "1",
+      "mode": "REDACTED-1a95a79caed8",
+      "pagination_str": "REDACTED-5e6a657318ae",
+      "plat": "REDACTED-faff78cc998a",
+      "web_location": "REDACTED-bbbcd142a7e6",
+      "x-bili-locale-json": "REDACTED-b22482231916"
+    },
+    "status": 200,
+    "headers": {},
+    "body": {
+      "code": -352,
+      "message": "-352",
+      "ttl": 1,
+      "data": {
+        "v_voucher": "voucher_REDACTED-000000000000"
+      }
+    },
+    "captured_at": 1793517145245
+  }
+}

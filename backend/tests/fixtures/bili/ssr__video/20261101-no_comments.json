@@ -1,0 +1,157 @@
+{
+  "meta": {
+    "platform": "bili",
+    "kind": "ssr:video",
+    "url_path": "/video/BV1rqxp6iEhQ/",
+    "captured_on": "2026-11-01",
+    "source": "recorded",
+    "case": "no_comments",
+    "note": ""
+  },
+  "capture": {
+    "platform": "bili",
+    "kind": "ssr:video",
+    "url_path": "/video/BV1rqxp6iEhQ/",
+    "query": {},
+    "status": 200,
+    "headers": {},
+    "body": {
+      "bvid": "BV1rqxp6iEhQ",
+      "aid": 117538792934669,
+      "videos": 1,
+      "tid": 250,
+      "tid_v2": 2104,
+      "tname": "",
+      "tname_v2": "",
+      "copyright": 3,
+      "pic": "https://example.invalid/e7101b2dc243",
+      "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+      "pubdate": 1793507400,
+      "ctime": 1793499747,
+      "desc": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+      "desc_v2": [
+        {
+          "raw_text": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+          "type": 1,
+          "biz_id": 0
+        }
+      ],
+      "state": 0,
+      "duration": 644,
+      "rights": {
+        "bp": 0,
+        "elec": 0,
+        "download": 1,
+        "movie": 0,
+        "pay": 0,
+        "hd5": 0,
+        "no_reprint": 0,
+        "autoplay": 1,
+        "ugc_pay": 0,
+        "is_cooperation": 0,
+        "ugc_pay_preview": 0,
+        "no_background": 0,
+        "clean_mode": 0,
+        "is_stein_gate": 0,
+        "is_360": 0,
+        "no_share": 0,
+        "arc_pay": 0,
+        "free_watch": 0
+      },
+      "owner": {
+        "mid": 8180192797839109,
+        "name": "用户A",
+        "face": "https://example.invalid/188e2ec9439d"
+      },
+      "stat": {
+        "aid": 117538792934669,
+        "view": 86,
+        "danmaku": 1,
+        "reply": 0,
+        "favorite": 1,
+        "coin": 0,
+        "share": 0,
+        "now_rank": 0,
+        "his_rank": 0,
+        "like": 1,
+        "dislike": 0,
+        "evaluation": "",
+        "vt": 0
+      },
+      "argue_info": {
+        "argue_msg": "个人观点，仅供参考",
+        "argue_type": 0,
+        "argue_link": ""
+      },
+      "dynamic": "",
+      "cid": 43224794844,
+      "dimension": {
+        "width": 1920,
+        "height": 1080,
+        "rotate": 0
+      },
+      "premiere": null,
+      "teenage_mode": 1,
+      "is_chargeable_season": false,
+      "is_story": false,
+      "is_upower_exclusive": false,
+      "is_upower_play": false,
+      "is_upower_preview": false,
+      "enable_vt": 0,
+      "vt_display": "",
+      "is_upower_exclusive_with_qa": false,
+      "is_hua_sheng": false,
+      "no_cache": false,
+      "pages": [
+        {
+          "cid": 43224794844,
+          "page": 1,
+          "from": "vupload",
+          "part": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+          "duration": 644,
+          "vid": "",
+          "weblink": "",
+          "dimension": {
+            "width": 1920,
+            "height": 1080,
+            "rotate": 0
+          },
+          "first_frame": "https://example.invalid/24dc28242be1",
+          "ctime": 1793499747,
+          "asr_language": "zxx"
+        }
+      ],
+      "subtitle": {
+        "allow_submit": false,
+        "list": []
+      },
+      "is_season_display": false,
+      "user_garb": {
+        "url_image_ani_cut": ""
+      },
+      "honor_reply": {},
+      "like_icon": "",
+      "need_jump_bv": false,
+      "disable_show_up_info": false,
+      "is_story_play": 1,
+      "is_view_self": false,
+      "embedPlayer": {
+        "p": 1,
+        "aid": 117538792934669,
+        "bvid": "BV1rqxp6iEhQ",
+        "cid": 43224794844,
+        "vid": "",
+        "vtype": "vupload",
+        "stats": {
+          "spmId": "REDACTED-IP",
+          "spmIdFrom": "REDACTED-IP",
+          "trackId": ""
+        },
+        "t": 0,
+        "fromDid": null,
+        "featureList": {}
+      }
+    },
+    "captured_at": 1793517299998
+  }
+}

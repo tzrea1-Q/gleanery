@@ -1,0 +1,80 @@
+{
+  "search": null,
+  "content": {
+    "platform": "xhs",
+    "platform_id": "69f0dae10000000023005a98",
+    "url": "https://www.xiaohongshu.com/explore/69f0dae10000000023005a98",
+    "kind": "image_text",
+    "title": "文文文文文文文",
+    "body": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文[偷笑R]文文文[话题]文文文文文文文文[话题]文\n文文文文文[话题]文文文文文文文文[话题]文文文文文文文文文[话题]文文文文文文文[话题]文文文文文文文文文文[话题]文文文文文文文文文[话题]文文文文文文文文文[话题]文文文文文文文文[话题]文",
+    "author": {
+      "platform": "xhs",
+      "platform_id": "6f435615e5596dfe39fe205d",
+      "nickname": "用户A",
+      "avatar_url": "https://example.invalid/ddbcc9f78bf0",
+      "ext": {}
+    },
+    "published_at": 1777392353000,
+    "platform_updated_at": 1777730243000,
+    "counts": {
+      "likes": 165,
+      "favorites": 111,
+      "comments": 152,
+      "shares": 29,
+      "plays": null
+    },
+    "tags": [
+      "用户B",
+      "用户C",
+      "用户D",
+      "用户E",
+      "用户F",
+      "用户G",
+      "用户H",
+      "用户I",
+      "用户J"
+    ],
+    "completeness": "detail",
+    "ext": {
+      "counts_raw": {
+        "likes": "165",
+        "favorites": "111",
+        "comments": "152",
+        "shares": "29"
+      },
+      "counts_approx": false,
+      "image_urls": [
+        "https://example.invalid/31285f49b9e3",
+        "https://example.invalid/ffc8441b8b18",
+        "https://example.invalid/15453a04181c",
+        "https://example.invalid/a674c5235a79",
+        "https://example.invalid/2c625736d328",
+        "https://example.invalid/9f2a9467aef9",
+        "https://example.invalid/6c7c0ee626ae",
+        "https://example.invalid/5a5b01759036",
+        "https://example.invalid/b8ad800d431c",
+        "https://example.invalid/122e6a698078",
+        "https://example.invalid/94cde627e3fa",
+        "https://example.invalid/347a95e487ec",
+        "https://example.invalid/4c0309aad0aa",
+        "https://example.invalid/86fa79504b37",
+        "https://example.invalid/39929fdc8da1",
+        "https://example.invalid/bb54384c6a39",
+        "https://example.invalid/7192f6454e57",
+        "https://example.invalid/65e15c529f47"
+      ],
+      "video_url": null,
+      "at_users": [],
+      "ip_location": null,
+      "published_approx": false
+    }
+  },
+  "comments": null,
+  "subtitles": [],
+  "report": {
+    "items": 1,
+    "skipped_missing_core": 0,
+    "missing_fields": {},
+    "nonempty_response": true
+  }
+}

@@ -1,0 +1,799 @@
+{
+  "meta": {
+    "platform": "xhs",
+    "kind": "feed",
+    "url_path": "/api/sns/web/v1/feed",
+    "captured_on": "2026-11-03",
+    "source": "recorded",
+    "case": "normal",
+    "note": "从搜索结果点卡片打开弹层，图文笔记",
+    "verdict": null
+  },
+  "capture": {
+    "platform": "xhs",
+    "kind": "feed",
+    "url_path": "/api/sns/web/v1/feed",
+    "query": {},
+    "status": 200,
+    "headers": {
+      "content-type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "success": true,
+      "msg": "成功",
+      "data": {
+        "current_time": 1793760351489,
+        "cursor_score": "",
+        "items": [
+          {
+            "id": "69f0dae10000000023005a98",
+            "model_type": "note",
+            "note_card": {
+              "type": "normal",
+              "title": "文文文文文文文",
+              "user": {
+                "xsec_token": "REDACTED-d88dbf704745",
+                "user_id": "6f435615e5596dfe39fe205d",
+                "nickname": "用户A",
+                "avatar": "https://example.invalid/ddbcc9f78bf0"
+              },
+              "tag_list": [
+                {
+                  "id": "5c8487ba000000000d03a785",
+                  "name": "用户B",
+                  "type": "topic"
+                },
+                {
+                  "name": "用户C",
+                  "type": "topic",
+                  "id": "6150bf1f0000000001000f2d"
+                },
+                {
+                  "id": "5c9a18c0000000000e0194b7",
+                  "name": "用户D",
+                  "type": "topic"
+                },
+                {
+                  "name": "用户E",
+                  "type": "topic",
+                  "id": "53ff490db4c4d62ea18cbd95"
+                },
+                {
+                  "id": "647099e3000000001e0125e9",
+                  "name": "用户F",
+                  "type": "topic"
+                },
+                {
+                  "type": "topic",
+                  "id": "6113e2470000000001004f73",
+                  "name": "用户G"
+                },
+                {
+                  "id": "6430f7900000000011036cff",
+                  "name": "用户H",
+                  "type": "topic"
+                },
+                {
+                  "id": "63ff48750000000018039078",
+                  "name": "用户I",
+                  "type": "topic"
+                },
+                {
+                  "type": "topic",
+                  "id": "63006f48000000000100234c",
+                  "name": "用户J"
+                }
+              ],
+              "at_user_list": [],
+              "time": 1777392353000,
+              "desc": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文[偷笑R]文文文[话题]文文文文文文文文[话题]文\n文文文文文[话题]文文文文文文文文[话题]文文文文文文文文文[话题]文文文文文文文[话题]文文文文文文文文文文[话题]文文文文文文文文文[话题]文文文文文文文文文[话题]文文文文文文文文[话题]文",
+              "interact_info": {
+                "liked": false,
+                "collected": false,
+                "share_count": "29",
+                "relation": "none",
+                "nice_count": "",
+                "liked_count": "165",
+                "collected_count": "111",
+                "comment_count": "152",
+                "followed": false
+              },
+              "image_list": [
+                {
+                  "width": 2560,
+                  "url": "",
+                  "info_list": [
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/6d106f5cb7f2"
+                    },
+                    {
+                      "url": "https://example.invalid/31285f49b9e3",
+                      "image_scene": "WB_DFT"
+                    }
+                  ],
+                  "url_pre": "https://example.invalid/6d106f5cb7f2",
+                  "trace_id": "",
+                  "url_default": "https://example.invalid/31285f49b9e3",
+                  "stream": {
+                    "EF7": [],
+                    "EF4": [
+                      {
+                        "ssim": 0,
+                        "weight": 62,
+                        "quality_type": "HD",
+                        "master_url": "https://example.invalid/03ff6f631ee6",
+                        "backup_urls": [
+                          "https://example.invalid/25a032df0176",
+                          "https://example.invalid/e6687e19a071"
+                        ],
+                        "hdr_type": 0,
+                        "vmaf": -1,
+                        "psnr": 0
+                      }
+                    ],
+                    "EF6": [],
+                    "EF5": []
+                  },
+                  "live_photo": true,
+                  "file_id": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+                  "height": 1920
+                },
+                {
+                  "stream": {
+                    "EF7": [],
+                    "EF4": [
+                      {
+                        "vmaf": -1,
+                        "psnr": 0,
+                        "ssim": 0,
+                        "weight": 62,
+                        "quality_type": "HD",
+                        "master_url": "https://example.invalid/19a4a380ab15",
+                        "backup_urls": [
+                          "https://example.invalid/293ca1acf4f7",
+                          "https://example.invalid/30b991268c18"
+                        ],
+                        "hdr_type": 0
+                      }
+                    ],
+                    "EF6": [],
+                    "EF5": []
+                  },
+                  "live_photo": true,
+                  "height": 2560,
+                  "url": "",
+                  "url_pre": "https://example.invalid/8e9c3f136ae4",
+                  "url_default": "https://example.invalid/ffc8441b8b18",
+                  "file_id": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+                  "width": 1920,
+                  "trace_id": "",
+                  "info_list": [
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/8e9c3f136ae4"
+                    },
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/ffc8441b8b18"
+                    }
+                  ]
+                },
+                {
+                  "url_default": "https://example.invalid/15453a04181c",
+                  "stream": {},
+                  "file_id": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+                  "width": 2560,
+                  "url": "",
+                  "trace_id": "",
+                  "url_pre": "https://example.invalid/7d69af6108b7",
+                  "live_photo": false,
+                  "height": 1920,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/7d69af6108b7"
+                    },
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/15453a04181c"
+                    }
+                  ]
+                },
+                {
+                  "url_default": "https://example.invalid/a674c5235a79",
+                  "live_photo": true,
+                  "file_id": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+                  "stream": {
+                    "EF4": [
+                      {
+                        "master_url": "https://example.invalid/e01199a40649",
+                        "backup_urls": [
+                          "https://example.invalid/875fc78eb9a1",
+                          "https://example.invalid/3a18740f5a6f"
+                        ],
+                        "hdr_type": 0,
+                        "vmaf": -1,
+                        "psnr": 0,
+                        "ssim": 0,
+                        "weight": 62,
+                        "quality_type": "HD"
+                      }
+                    ],
+                    "EF6": [],
+                    "EF5": [],
+                    "EF7": []
+                  },
+                  "height": 2560,
+                  "width": 1920,
+                  "url": "",
+                  "trace_id": "",
+                  "info_list": [
+                    {
+                      "url": "https://example.invalid/f6df0aa10e89",
+                      "image_scene": "WB_PRV"
+                    },
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/a674c5235a79"
+                    }
+                  ],
+                  "url_pre": "https://example.invalid/f6df0aa10e89"
+                },
+                {
+                  "height": 2560,
+                  "width": 1920,
+                  "url": "",
+                  "trace_id": "",
+                  "stream": {
+                    "EF6": [],
+                    "EF5": [],
+                    "EF7": [],
+                    "EF4": [
+                      {
+                        "ssim": 0,
+                        "weight": 62,
+                        "quality_type": "HD",
+                        "master_url": "https://example.invalid/db6fcad9ea07",
+                        "backup_urls": [
+                          "https://example.invalid/83e375145644",
+                          "https://example.invalid/44a277704693"
+                        ],
+                        "hdr_type": 0,
+                        "vmaf": -1,
+                        "psnr": 0
+                      }
+                    ]
+                  },
+                  "file_id": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+                  "info_list": [
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/efc96b6b686e"
+                    },
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/2c625736d328"
+                    }
+                  ],
+                  "url_pre": "https://example.invalid/efc96b6b686e",
+                  "url_default": "https://example.invalid/2c625736d328",
+                  "live_photo": true
+                },
+                {
+                  "file_id": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+                  "height": 2560,
+                  "width": 1920,
+                  "url": "",
+                  "trace_id": "",
+                  "info_list": [
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/2d7f6860b3dc"
+                    },
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/9f2a9467aef9"
+                    }
+                  ],
+                  "url_pre": "https://example.invalid/2d7f6860b3dc",
+                  "url_default": "https://example.invalid/9f2a9467aef9",
+                  "stream": {
+                    "EF7": [],
+                    "EF4": [
+                      {
+                        "hdr_type": 0,
+                        "vmaf": -1,
+                        "psnr": 0,
+                        "ssim": 0,
+                        "weight": 62,
+                        "quality_type": "HD",
+                        "master_url": "https://example.invalid/52b3599dbf83",
+                        "backup_urls": [
+                          "https://example.invalid/68f0af878534",
+                          "https://example.invalid/2387285de03a"
+                        ]
+                      }
+                    ],
+                    "EF6": [],
+                    "EF5": []
+                  },
+                  "live_photo": true
+                },
+                {
+                  "height": 3024,
+                  "width": 4032,
+                  "url": "",
+                  "info_list": [
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/050be015f7f5"
+                    },
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/6c7c0ee626ae"
+                    }
+                  ],
+                  "url_default": "https://example.invalid/6c7c0ee626ae",
+                  "stream": {
+                    "EF4": [
+                      {
+                        "psnr": 0,
+                        "ssim": 0,
+                        "weight": 62,
+                        "quality_type": "HD",
+                        "master_url": "https://example.invalid/933774d32830",
+                        "backup_urls": [
+                          "https://example.invalid/f5097cb99623",
+                          "https://example.invalid/754ea9f16798"
+                        ],
+                        "hdr_type": 0,
+                        "vmaf": -1
+                      }
+                    ],
+                    "EF6": [],
+                    "EF5": [],
+                    "EF7": []
+                  },
+                  "file_id": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+                  "trace_id": "",
+                  "url_pre": "https://example.invalid/050be015f7f5",
+                  "live_photo": true
+                },
+                {
+                  "trace_id": "",
+                  "stream": {
+                    "EF4": [
+                      {
+                        "backup_urls": [
+                          "https://example.invalid/ace3ef988a40",
+                          "https://example.invalid/c63d0cb2842d"
+                        ],
+                        "hdr_type": 0,
+                        "vmaf": -1,
+                        "psnr": 0,
+                        "ssim": 0,
+                        "weight": 62,
+                        "quality_type": "HD",
+                        "master_url": "https://example.invalid/f8c54c39620a"
+                      }
+                    ],
+                    "EF6": [],
+                    "EF5": [],
+                    "EF7": []
+                  },
+                  "live_photo": true,
+                  "file_id": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+                  "height": 2560,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/18aacc6b63d1"
+                    },
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/5a5b01759036"
+                    }
+                  ],
+                  "url_pre": "https://example.invalid/18aacc6b63d1",
+                  "url_default": "https://example.invalid/5a5b01759036",
+                  "width": 1920,
+                  "url": ""
+                },
+                {
+                  "url_default": "https://example.invalid/b8ad800d431c",
+                  "stream": {
+                    "EF6": [],
+                    "EF5": [],
+                    "EF7": [],
+                    "EF4": [
+                      {
+                        "hdr_type": 0,
+                        "vmaf": -1,
+                        "psnr": 0,
+                        "ssim": 0,
+                        "weight": 62,
+                        "quality_type": "HD",
+                        "master_url": "https://example.invalid/ee5afa086fc6",
+                        "backup_urls": [
+                          "https://example.invalid/b2fb02c3e67e",
+                          "https://example.invalid/70bbb284ff51"
+                        ]
+                      }
+                    ]
+                  },
+                  "live_photo": true,
+                  "file_id": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+                  "height": 4032,
+                  "url": "",
+                  "trace_id": "",
+                  "width": 3024,
+                  "info_list": [
+                    {
+                      "url": "https://example.invalid/f531c946bd62",
+                      "image_scene": "WB_PRV"
+                    },
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/b8ad800d431c"
+                    }
+                  ],
+                  "url_pre": "https://example.invalid/f531c946bd62"
+                },
+                {
+                  "trace_id": "",
+                  "info_list": [
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/ac40ee7bb9b6"
+                    },
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/122e6a698078"
+                    }
+                  ],
+                  "url_default": "https://example.invalid/122e6a698078",
+                  "height": 4032,
+                  "width": 3024,
+                  "url": "",
+                  "url_pre": "https://example.invalid/ac40ee7bb9b6",
+                  "stream": {
+                    "EF5": [],
+                    "EF7": [],
+                    "EF4": [
+                      {
+                        "psnr": 0,
+                        "ssim": 0,
+                        "weight": 62,
+                        "quality_type": "HD",
+                        "master_url": "https://example.invalid/2e1287e20ae9",
+                        "backup_urls": [
+                          "https://example.invalid/af600833d367",
+                          "https://example.invalid/d772695cb403"
+                        ],
+                        "hdr_type": 0,
+                        "vmaf": -1
+                      }
+                    ],
+                    "EF6": []
+                  },
+                  "live_photo": true,
+                  "file_id": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文"
+                },
+                {
+                  "file_id": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+                  "height": 1920,
+                  "url": "",
+                  "url_pre": "https://example.invalid/36c1af772b90",
+                  "width": 2560,
+                  "trace_id": "",
+                  "info_list": [
+                    {
+                      "url": "https://example.invalid/36c1af772b90",
+                      "image_scene": "WB_PRV"
+                    },
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/94cde627e3fa"
+                    }
+                  ],
+                  "url_default": "https://example.invalid/94cde627e3fa",
+                  "stream": {
+                    "EF4": [
+                      {
+                        "ssim": 0,
+                        "weight": 62,
+                        "quality_type": "HD",
+                        "master_url": "https://example.invalid/517a05b01b55",
+                        "backup_urls": [
+                          "https://example.invalid/c1967f40e23d",
+                          "https://example.invalid/746bf349f023"
+                        ],
+                        "hdr_type": 0,
+                        "vmaf": -1,
+                        "psnr": 0
+                      }
+                    ],
+                    "EF6": [],
+                    "EF5": [],
+                    "EF7": []
+                  },
+                  "live_photo": true
+                },
+                {
+                  "file_id": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+                  "width": 4032,
+                  "url": "",
+                  "info_list": [
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/3e8c5c303313"
+                    },
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/347a95e487ec"
+                    }
+                  ],
+                  "url_default": "https://example.invalid/347a95e487ec",
+                  "stream": {
+                    "EF4": [
+                      {
+                        "quality_type": "HD",
+                        "master_url": "https://example.invalid/05bc0d52e7d9",
+                        "backup_urls": [
+                          "https://example.invalid/bf6cec46a2ac",
+                          "https://example.invalid/2473c2d6a6c0"
+                        ],
+                        "hdr_type": 0,
+                        "vmaf": -1,
+                        "psnr": 0,
+                        "ssim": 0,
+                        "weight": 62
+                      }
+                    ],
+                    "EF6": [],
+                    "EF5": [],
+                    "EF7": []
+                  },
+                  "live_photo": true,
+                  "height": 3024,
+                  "trace_id": "",
+                  "url_pre": "https://example.invalid/3e8c5c303313"
+                },
+                {
+                  "file_id": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+                  "height": 3024,
+                  "url": "",
+                  "trace_id": "",
+                  "info_list": [
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/b66b86d48157"
+                    },
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/4c0309aad0aa"
+                    }
+                  ],
+                  "url_default": "https://example.invalid/4c0309aad0aa",
+                  "stream": {
+                    "EF4": [
+                      {
+                        "vmaf": -1,
+                        "psnr": 0,
+                        "ssim": 0,
+                        "weight": 62,
+                        "quality_type": "HD",
+                        "master_url": "https://example.invalid/3924a9147816",
+                        "backup_urls": [
+                          "https://example.invalid/70f8ceb88ad1",
+                          "https://example.invalid/1048beeba64a"
+                        ],
+                        "hdr_type": 0
+                      }
+                    ],
+                    "EF6": [],
+                    "EF5": [],
+                    "EF7": []
+                  },
+                  "live_photo": true,
+                  "width": 4032,
+                  "url_pre": "https://example.invalid/b66b86d48157"
+                },
+                {
+                  "file_id": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+                  "height": 1920,
+                  "width": 1080,
+                  "url": "",
+                  "trace_id": "",
+                  "url_pre": "https://example.invalid/efd1e37cc307",
+                  "url_default": "https://example.invalid/86fa79504b37",
+                  "live_photo": false,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/efd1e37cc307"
+                    },
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/86fa79504b37"
+                    }
+                  ],
+                  "stream": {}
+                },
+                {
+                  "width": 1920,
+                  "trace_id": "",
+                  "info_list": [
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/557143592c47"
+                    },
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/39929fdc8da1"
+                    }
+                  ],
+                  "url_pre": "https://example.invalid/557143592c47",
+                  "url_default": "https://example.invalid/39929fdc8da1",
+                  "url": "",
+                  "stream": {
+                    "EF7": [],
+                    "EF4": [
+                      {
+                        "hdr_type": 0,
+                        "vmaf": -1,
+                        "psnr": 0,
+                        "ssim": 0,
+                        "weight": 62,
+                        "quality_type": "HD",
+                        "master_url": "https://example.invalid/822b9463fb3d",
+                        "backup_urls": [
+                          "https://example.invalid/1951be93c567",
+                          "https://example.invalid/3a833065d1a4"
+                        ]
+                      }
+                    ],
+                    "EF6": [],
+                    "EF5": []
+                  },
+                  "live_photo": true,
+                  "file_id": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+                  "height": 2560
+                },
+                {
+                  "url": "",
+                  "trace_id": "",
+                  "info_list": [
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/93e201ec868d"
+                    },
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/bb54384c6a39"
+                    }
+                  ],
+                  "url_pre": "https://example.invalid/93e201ec868d",
+                  "stream": {
+                    "EF4": [
+                      {
+                        "master_url": "https://example.invalid/517888001dfe",
+                        "backup_urls": [
+                          "https://example.invalid/46584715efb2",
+                          "https://example.invalid/9f632c26e7bf"
+                        ],
+                        "hdr_type": 0,
+                        "vmaf": -1,
+                        "psnr": 0,
+                        "ssim": 0,
+                        "weight": 62,
+                        "quality_type": "HD"
+                      }
+                    ],
+                    "EF6": [],
+                    "EF5": [],
+                    "EF7": []
+                  },
+                  "file_id": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+                  "height": 2560,
+                  "width": 1920,
+                  "url_default": "https://example.invalid/bb54384c6a39",
+                  "live_photo": true
+                },
+                {
+                  "file_id": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+                  "height": 4032,
+                  "url": "",
+                  "info_list": [
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/747a5bcd2324"
+                    },
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/7192f6454e57"
+                    }
+                  ],
+                  "width": 3024,
+                  "trace_id": "",
+                  "url_pre": "https://example.invalid/747a5bcd2324",
+                  "url_default": "https://example.invalid/7192f6454e57",
+                  "stream": {
+                    "EF4": [
+                      {
+                        "master_url": "https://example.invalid/2f62efff0877",
+                        "backup_urls": [
+                          "https://example.invalid/59c5e4878623",
+                          "https://example.invalid/b928f31ea8ea"
+                        ],
+                        "hdr_type": 0,
+                        "vmaf": -1,
+                        "psnr": 0,
+                        "ssim": 0,
+                        "weight": 62,
+                        "quality_type": "HD"
+                      }
+                    ],
+                    "EF6": [],
+                    "EF5": [],
+                    "EF7": []
+                  },
+                  "live_photo": true
+                },
+                {
+                  "stream": {
+                    "EF6": [],
+                    "EF5": [],
+                    "EF7": [],
+                    "EF4": [
+                      {
+                        "psnr": 0,
+                        "ssim": 0,
+                        "weight": 62,
+                        "quality_type": "HD",
+                        "master_url": "https://example.invalid/eaae88ae3f95",
+                        "backup_urls": [
+                          "https://example.invalid/07e9173cddf5",
+                          "https://example.invalid/4706fd445b1d"
+                        ],
+                        "hdr_type": 0,
+                        "vmaf": -1
+                      }
+                    ]
+                  },
+                  "height": 4032,
+                  "width": 3024,
+                  "url_default": "https://example.invalid/65e15c529f47",
+                  "live_photo": true,
+                  "file_id": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+                  "url": "",
+                  "trace_id": "",
+                  "info_list": [
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/d86c4d551766"
+                    },
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/65e15c529f47"
+                    }
+                  ],
+                  "url_pre": "https://example.invalid/d86c4d551766"
+                }
+              ],
+              "last_update_time": 1777730243000,
+              "share_info": {
+                "un_share": false
+              },
+              "note_id": "69f0dae10000000023005a98"
+            },
+            "ignore": false
+          }
+        ]
+      },
+      "code": 0
+    },
+    "captured_at": 1793760351120
+  }
+}

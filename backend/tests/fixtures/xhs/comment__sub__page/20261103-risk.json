@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "platform": "xhs",
+    "kind": "comment/sub/page",
+    "url_path": "/api/sns/web/v2/comment/sub/page",
+    "captured_on": "2026-11-03",
+    "source": "handwritten",
+    "case": "risk",
+    "note": "手写，依据spec §4.6：471 + Verifytype",
+    "verdict": "risk"
+  },
+  "capture": {
+    "platform": "xhs",
+    "kind": "comment/sub/page",
+    "url_path": "/api/sns/web/v2/comment/sub/page",
+    "query": {
+      "note_id": "69f0dae10000000023005a98",
+      "root_comment_id": "69f0dc7e000000002701f54a",
+      "num": "10",
+      "cursor": "REDACTED-4d56c823aea4",
+      "image_formats": "REDACTED-6cafdb4f877b",
+      "xsec_token": "REDACTED-fb9c18ccf895"
+    },
+    "status": 471,
+    "headers": {
+      "verifytype": "102",
+      "verifyuuid": "REDACTED-verifyuuid",
+      "content-type": "application/json"
+    },
+    "body": {
+      "code": 471,
+      "success": false,
+      "msg": "",
+      "data": {}
+    },
+    "captured_at": 1793760000000
+  }
+}

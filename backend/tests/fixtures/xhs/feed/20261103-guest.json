@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "platform": "xhs",
+    "kind": "feed",
+    "url_path": "/api/sns/web/v1/feed",
+    "captured_on": "2026-11-03",
+    "source": "handwritten",
+    "case": "guest",
+    "note": "手写，依据游客实测 -104 形态",
+    "verdict": "risk_and_login"
+  },
+  "capture": {
+    "platform": "xhs",
+    "kind": "feed",
+    "url_path": "/api/sns/web/v1/feed",
+    "query": {},
+    "status": 200,
+    "headers": {},
+    "body": {
+      "code": -104,
+      "success": false,
+      "msg": "您当前登录的账号没有权限访问",
+      "data": {}
+    },
+    "captured_at": 1793760000000
+  }
+}

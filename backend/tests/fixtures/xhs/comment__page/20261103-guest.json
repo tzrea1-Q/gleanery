@@ -1,0 +1,210 @@
+{
+  "meta": {
+    "platform": "xhs",
+    "kind": "comment/page",
+    "url_path": "/api/sns/web/v2/comment/page",
+    "captured_on": "2026-11-03",
+    "source": "recorded",
+    "case": "guest",
+    "note": "游客配置目录直接打开时的第 1 页：游客也能拿到数据，由 ssr:user 判定；--trim 3",
+    "verdict": null
+  },
+  "capture": {
+    "platform": "xhs",
+    "kind": "comment/page",
+    "url_path": "/api/sns/web/v2/comment/page",
+    "query": {
+      "note_id": "6a316843000000000f01ecb3",
+      "image_formats": "REDACTED-6cafdb4f877b",
+      "xsec_token": "REDACTED-c6d2d9e705aa"
+    },
+    "status": 200,
+    "headers": {
+      "content-type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "code": 0,
+      "success": true,
+      "msg": "成功",
+      "data": {
+        "user_id": "fcac4ff7aae200e5b1a70c70",
+        "comments": [
+          {
+            "show_tags": [],
+            "sub_comment_has_more": true,
+            "note_id": "6a316843000000000f01ecb3",
+            "at_users": [],
+            "sub_comment_count": "2",
+            "sub_comment_cursor": "6a32ae64000000002701f9f3",
+            "ip_location": "四川",
+            "invalid": false,
+            "id": "6a328e6f000000002300fe26",
+            "content": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+            "liked": false,
+            "like_count": "4",
+            "user_info": {
+              "ai_agent": false,
+              "xsec_token": "REDACTED-65bbde9d6e3c",
+              "user_id": "df0a5c6962594d8e6058db3e",
+              "nickname": "用户A",
+              "image": "https://example.invalid/8106a54877dc"
+            },
+            "create_time": 1781698159000,
+            "sub_comments": [
+              {
+                "id": "6a32ae64000000002701f9f3",
+                "note_id": "6a316843000000000f01ecb3",
+                "status": 0,
+                "liked": false,
+                "show_tags": [
+                  "is_author"
+                ],
+                "create_time": 1781706341000,
+                "ip_location": "北京",
+                "content": "文文文文文文文文文文文文文文文文文[派对R]",
+                "at_users": [],
+                "like_count": "1",
+                "user_info": {
+                  "user_id": "725d817e227ffc6fa9fcb337",
+                  "nickname": "用户B",
+                  "image": "https://example.invalid/c60d2d79056c",
+                  "ai_agent": false,
+                  "xsec_token": "REDACTED-a2477b7b27c9"
+                },
+                "target_comment": {
+                  "id": "6a328e6f000000002300fe26",
+                  "user_info": {
+                    "ai_agent": false,
+                    "xsec_token": "REDACTED-65bbde9d6e3c",
+                    "user_id": "df0a5c6962594d8e6058db3e",
+                    "nickname": "用户A",
+                    "image": "https://example.invalid/8106a54877dc"
+                  }
+                },
+                "invalid": false
+              }
+            ],
+            "status": 0
+          },
+          {
+            "id": "6ac9a95e000000000803448c",
+            "show_tags": [],
+            "sub_comments": [
+              {
+                "show_tags": [
+                  "is_author"
+                ],
+                "create_time": 1791602753000,
+                "target_comment": {
+                  "id": "6ac9a95e000000000803448c",
+                  "user_info": {
+                    "xsec_token": "REDACTED-210a4fefc71d",
+                    "user_id": "e4df6d560ff5bab1b28521a5",
+                    "nickname": "用户C",
+                    "image": "https://example.invalid/ab5a0f7fe19f",
+                    "ai_agent": false
+                  }
+                },
+                "invalid": false,
+                "id": "6ac9b041000000000801034d",
+                "at_users": [],
+                "liked": false,
+                "user_info": {
+                  "xsec_token": "REDACTED-a2477b7b27c9",
+                  "user_id": "725d817e227ffc6fa9fcb337",
+                  "nickname": "用户B",
+                  "image": "https://example.invalid/c60d2d79056c",
+                  "ai_agent": false
+                },
+                "ip_location": "北京",
+                "note_id": "6a316843000000000f01ecb3",
+                "status": 0,
+                "content": "文文文文文文文文文文文",
+                "like_count": "0"
+              }
+            ],
+            "sub_comment_cursor": "6ac9b041000000000801034d",
+            "sub_comment_has_more": false,
+            "invalid": false,
+            "note_id": "6a316843000000000f01ecb3",
+            "liked": false,
+            "like_count": "0",
+            "user_info": {
+              "ai_agent": false,
+              "xsec_token": "REDACTED-210a4fefc71d",
+              "user_id": "e4df6d560ff5bab1b28521a5",
+              "nickname": "用户C",
+              "image": "https://example.invalid/ab5a0f7fe19f"
+            },
+            "create_time": 1791600991000,
+            "status": 0,
+            "at_users": [],
+            "sub_comment_count": "1",
+            "content": "文文文文文文文文文文文文文",
+            "ip_location": "四川"
+          },
+          {
+            "content": "文文文文文文文文文文文文文文文文",
+            "like_count": "0",
+            "create_time": 1781880066000,
+            "status": 0,
+            "user_info": {
+              "xsec_token": "REDACTED-d2427f667013",
+              "user_id": "b82cc20e4989045e68118a19",
+              "nickname": "用户D",
+              "image": "https://example.invalid/1cbd205d8d36",
+              "ai_agent": false
+            },
+            "show_tags": [],
+            "sub_comment_cursor": "6a583ff6000000002100c5d1",
+            "sub_comment_has_more": true,
+            "invalid": false,
+            "id": "6a355502000000002901a55a",
+            "at_users": [],
+            "sub_comment_count": "3",
+            "note_id": "6a316843000000000f01ecb3",
+            "liked": false,
+            "ip_location": "四川",
+            "sub_comments": [
+              {
+                "liked": false,
+                "like_count": "0",
+                "create_time": 1784168438000,
+                "user_info": {
+                  "user_id": "af31279bce5efdfc1a9060b7",
+                  "nickname": "用户E",
+                  "image": "https://example.invalid/76433fc4378b",
+                  "ai_agent": false,
+                  "xsec_token": "REDACTED-193ef4d23fb2"
+                },
+                "show_tags": [],
+                "ip_location": "北京",
+                "target_comment": {
+                  "id": "6a355502000000002901a55a",
+                  "user_info": {
+                    "user_id": "b82cc20e4989045e68118a19",
+                    "nickname": "用户D",
+                    "image": "https://example.invalid/1cbd205d8d36",
+                    "ai_agent": false,
+                    "xsec_token": "REDACTED-d2427f667013"
+                  }
+                },
+                "invalid": false,
+                "id": "6a583ff6000000002100c5d1",
+                "note_id": "6a316843000000000f01ecb3",
+                "status": 0,
+                "content": "文文文文文文文文文文文文文文文文文文文",
+                "at_users": []
+              }
+            ]
+          }
+        ],
+        "cursor": "REDACTED-39089140484c",
+        "has_more": true,
+        "time": 1793760864395,
+        "xsec_token": "REDACTED-400162acc66e"
+      }
+    },
+    "captured_at": 1793760000000
+  }
+}

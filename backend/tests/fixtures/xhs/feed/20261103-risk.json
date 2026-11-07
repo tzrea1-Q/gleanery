@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "platform": "xhs",
+    "kind": "feed",
+    "url_path": "/api/sns/web/v1/feed",
+    "captured_on": "2026-11-03",
+    "source": "handwritten",
+    "case": "risk",
+    "note": "手写，依据spec §4.6：300011",
+    "verdict": "risk"
+  },
+  "capture": {
+    "platform": "xhs",
+    "kind": "feed",
+    "url_path": "/api/sns/web/v1/feed",
+    "query": {},
+    "status": 200,
+    "headers": {},
+    "body": {
+      "code": 300011,
+      "success": false,
+      "msg": "检测到账号异常，请稍后重试",
+      "data": {}
+    },
+    "captured_at": 1793760000000
+  }
+}

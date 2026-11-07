@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "platform": "xhs",
+    "kind": "search/notes",
+    "url_path": "/api/sns/web/v2/search/notes",
+    "captured_on": "2026-11-03",
+    "source": "handwritten",
+    "case": "guest",
+    "note": "手写，依据2026-11-03 游客实测：搜索页不发 search/notes（弹登录框），要登录的接口回 -104",
+    "verdict": "risk_and_login"
+  },
+  "capture": {
+    "platform": "xhs",
+    "kind": "search/notes",
+    "url_path": "/api/sns/web/v2/search/notes",
+    "query": {},
+    "status": 200,
+    "headers": {},
+    "body": {
+      "code": -104,
+      "success": false,
+      "msg": "您当前登录的账号没有权限访问",
+      "data": {}
+    },
+    "captured_at": 1793760000000
+  }
+}

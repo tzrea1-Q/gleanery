@@ -1,0 +1,72 @@
+{
+  "search": null,
+  "content": null,
+  "comments": null,
+  "subtitles": [
+    {
+      "content_platform_id": "BV1qxmbYvEbY",
+      "part_id": "26728139563",
+      "part_title": "文文文文文文文文文文文文文文文文文",
+      "lang": "ai-zh",
+      "ai_generated": true,
+      "segments": [
+        {
+          "from": 0.12,
+          "to": 1.06,
+          "content": "文文文文"
+        },
+        {
+          "from": 1.06,
+          "to": 2.0,
+          "content": "文文文文"
+        },
+        {
+          "from": 2.0,
+          "to": 2.94,
+          "content": "文文文文"
+        },
+        {
+          "from": 2.94,
+          "to": 3.94,
+          "content": "文文文文"
+        },
+        {
+          "from": 3.94,
+          "to": 4.64,
+          "content": "文文文文"
+        },
+        {
+          "from": 4.64,
+          "to": 5.67,
+          "content": "文文文文"
+        },
+        {
+          "from": 5.67,
+          "to": 6.83,
+          "content": "文文文文文"
+        },
+        {
+          "from": 6.83,
+          "to": 7.87,
+          "content": "文文文文文"
+        },
+        {
+          "from": 7.87,
+          "to": 8.89,
+          "content": "文文文文文"
+        },
+        {
+          "from": 8.89,
+          "to": 10.21,
+          "content": "文文文文文文文文"
+        }
+      ]
+    }
+  ],
+  "report": {
+    "items": 1,
+    "skipped_missing_core": 0,
+    "missing_fields": {},
+    "nonempty_response": false
+  }
+}

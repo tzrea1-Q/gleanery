@@ -1,0 +1,64 @@
+{
+  "search": null,
+  "content": {
+    "platform": "xhs",
+    "platform_id": "6ae9885300000000030161bc",
+    "url": "https://www.xiaohongshu.com/explore/6ae9885300000000030161bc",
+    "kind": "video",
+    "title": "文文文文文文文文文文",
+    "body": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文\n文文文文文文文文文\n文文文文文文文文文文文\n文文文文文\n文文文文文文文文文文文\n文文文文文文文\n文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文\n文文文文文文文\n文文文文文文文文文文文文\n文文文文文文\n文文文文文文文文文\n文文文文文文文文文\n文文文文文文文文文文文文文文文文文文\n文文文文[话题]文文文文文文文[话题]文文文文文文文[话题]文文文文文文文[话题]文文文文文文文[话题]文文文文文[话题]文文文文文文[话题]文文文文文文[话题]文文文文文文文文[话题]文文文文文文文文[话题]文",
+    "author": {
+      "platform": "xhs",
+      "platform_id": "60695d5d367765f4664ceb13",
+      "nickname": "用户K",
+      "avatar_url": "https://example.invalid/6e416f44cb89",
+      "ext": {}
+    },
+    "published_at": 1793689683000,
+    "platform_updated_at": 1793709742000,
+    "counts": {
+      "likes": 39,
+      "favorites": 22,
+      "comments": 19,
+      "shares": 11,
+      "plays": null
+    },
+    "tags": [
+      "用户A",
+      "用户B",
+      "用户C",
+      "用户D",
+      "用户E",
+      "用户F",
+      "用户G",
+      "用户H",
+      "用户I",
+      "用户J"
+    ],
+    "completeness": "detail",
+    "ext": {
+      "counts_raw": {
+        "likes": "39",
+        "favorites": "22",
+        "comments": "19",
+        "shares": "11"
+      },
+      "counts_approx": false,
+      "image_urls": [
+        "https://example.invalid/4de673047360"
+      ],
+      "video_url": "https://example.invalid/fd72b69bffe4",
+      "at_users": [],
+      "ip_location": "湖北",
+      "published_approx": false
+    }
+  },
+  "comments": null,
+  "subtitles": [],
+  "report": {
+    "items": 1,
+    "skipped_missing_core": 0,
+    "missing_fields": {},
+    "nonempty_response": true
+  }
+}

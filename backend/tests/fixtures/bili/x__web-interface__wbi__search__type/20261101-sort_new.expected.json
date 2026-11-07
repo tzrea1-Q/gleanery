@@ -1,0 +1,259 @@
+{
+  "search": {
+    "contents": [
+      {
+        "platform": "bili",
+        "platform_id": "BV1R5xs6FEVw",
+        "url": "https://www.bilibili.com/video/BV1R5xs6FEVw",
+        "kind": "video",
+        "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "body": "https://example.invalid/a82b53469f79",
+        "author": {
+          "platform": "bili",
+          "platform_id": "6921071318927436",
+          "nickname": "用户A",
+          "avatar_url": "https://example.invalid/041d5c0b901b",
+          "ext": {}
+        },
+        "published_at": 1793516554000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 0,
+          "favorites": 0,
+          "comments": 0,
+          "shares": null,
+          "plays": 0
+        },
+        "tags": [
+          "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文"
+        ],
+        "completeness": "summary",
+        "ext": {
+          "aid": 117539883453907,
+          "pic": "https://example.invalid/3068574f2f41",
+          "tname": "单机游戏",
+          "duration": 121,
+          "coins": null,
+          "danmaku": 0,
+          "counts_raw": {
+            "likes": 0,
+            "favorites": 0,
+            "comments": 0,
+            "shares": null,
+            "plays": 0,
+            "coins": null,
+            "danmaku": 0
+          },
+          "counts_approx": false
+        }
+      },
+      {
+        "platform": "bili",
+        "platform_id": "BV1yxn962ERm",
+        "url": "https://www.bilibili.com/video/BV1yxn962ERm",
+        "kind": "video",
+        "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "body": "文",
+        "author": {
+          "platform": "bili",
+          "platform_id": "7928269965824574",
+          "nickname": "用户B",
+          "avatar_url": "https://example.invalid/df54d236d699",
+          "ext": {}
+        },
+        "published_at": 1793516400000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 1,
+          "favorites": 1,
+          "comments": 0,
+          "shares": null,
+          "plays": 6
+        },
+        "tags": [
+          "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文"
+        ],
+        "completeness": "summary",
+        "ext": {
+          "aid": 117505490157839,
+          "pic": "https://example.invalid/175f47b4fafc",
+          "tname": "动画综合",
+          "duration": 33,
+          "coins": null,
+          "danmaku": 0,
+          "counts_raw": {
+            "likes": 1,
+            "favorites": 1,
+            "comments": 0,
+            "shares": null,
+            "plays": 6,
+            "coins": null,
+            "danmaku": 0
+          },
+          "counts_approx": false
+        }
+      },
+      {
+        "platform": "bili",
+        "platform_id": "BV1B3xs6AE7Y",
+        "url": "https://www.bilibili.com/video/BV1B3xs6AE7Y",
+        "kind": "video",
+        "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "body": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "author": {
+          "platform": "bili",
+          "platform_id": "8596810601962142",
+          "nickname": "用户C",
+          "avatar_url": "https://example.invalid/9a4455e72f90",
+          "ext": {}
+        },
+        "published_at": 1793516144000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 1,
+          "favorites": 0,
+          "comments": 0,
+          "shares": null,
+          "plays": 0
+        },
+        "tags": [
+          "文文文文文文文文文文文文文文文文文文文文文文文文文文"
+        ],
+        "completeness": "summary",
+        "ext": {
+          "aid": 117539850034125,
+          "pic": "https://example.invalid/a729b5a4b970",
+          "tname": "美食记录",
+          "duration": 1041,
+          "coins": null,
+          "danmaku": 0,
+          "counts_raw": {
+            "likes": 1,
+            "favorites": 0,
+            "comments": 0,
+            "shares": null,
+            "plays": 0,
+            "coins": null,
+            "danmaku": 0
+          },
+          "counts_approx": false
+        }
+      },
+      {
+        "platform": "bili",
+        "platform_id": "BV1Z3xs6wEEA",
+        "url": "https://www.bilibili.com/video/BV1Z3xs6wEEA",
+        "kind": "video",
+        "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "body": "文",
+        "author": {
+          "platform": "bili",
+          "platform_id": "1365615713318508",
+          "nickname": "用户D",
+          "avatar_url": "https://example.invalid/4de9ea411dbe",
+          "ext": {}
+        },
+        "published_at": 1793516003000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 0,
+          "favorites": 0,
+          "comments": 0,
+          "shares": null,
+          "plays": 3
+        },
+        "tags": [
+          "喝咖啡",
+          "美国人",
+          "美国"
+        ],
+        "completeness": "summary",
+        "ext": {
+          "aid": 117539849902700,
+          "pic": "https://example.invalid/d6f599827511",
+          "tname": "影视剪辑",
+          "duration": 717,
+          "coins": null,
+          "danmaku": 0,
+          "counts_raw": {
+            "likes": 0,
+            "favorites": 0,
+            "comments": 0,
+            "shares": null,
+            "plays": 3,
+            "coins": null,
+            "danmaku": 0
+          },
+          "counts_approx": false
+        }
+      },
+      {
+        "platform": "bili",
+        "platform_id": "BV1j3xs6AEQH",
+        "url": "https://www.bilibili.com/video/BV1j3xs6AEQH",
+        "kind": "video",
+        "title": "文文文文文文文",
+        "body": "文文文文文文文文\n文文文文文文文文\n文文文文文文文\n文文文文文文文文文文文\n文文文文文文文\n文文文文文文文\n文文文文文文文文\n文文文文文文文文文",
+        "author": {
+          "platform": "bili",
+          "platform_id": "7036318",
+          "nickname": "用户E",
+          "avatar_url": "https://example.invalid/2b4d64de70b9",
+          "ext": {}
+        },
+        "published_at": 1793515870000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 1,
+          "favorites": 0,
+          "comments": 0,
+          "shares": null,
+          "plays": 1
+        },
+        "tags": [
+          "手冲咖啡",
+          "下午茶",
+          "咖啡",
+          "深烘",
+          "法兰绒",
+          "Vlog"
+        ],
+        "completeness": "summary",
+        "ext": {
+          "aid": 117539849963082,
+          "pic": "https://example.invalid/e7b60f4c8543",
+          "tname": "日常",
+          "duration": 469,
+          "coins": null,
+          "danmaku": 0,
+          "counts_raw": {
+            "likes": 1,
+            "favorites": 0,
+            "comments": 0,
+            "shares": null,
+            "plays": 1,
+            "coins": null,
+            "danmaku": 0
+          },
+          "counts_approx": false
+        }
+      }
+    ],
+    "has_more": true,
+    "report": {
+      "items": 5,
+      "skipped_missing_core": 0,
+      "missing_fields": {},
+      "nonempty_response": true
+    }
+  },
+  "content": null,
+  "comments": null,
+  "subtitles": [],
+  "report": {
+    "items": 5,
+    "skipped_missing_core": 0,
+    "missing_fields": {},
+    "nonempty_response": true
+  }
+}

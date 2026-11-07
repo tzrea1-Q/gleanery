@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "platform": "bili",
+    "kind": "x/web-interface/wbi/search/type",
+    "url_path": "/x/web-interface/wbi/search/type",
+    "captured_on": "2026-11-01",
+    "source": "handwritten",
+    "case": "risk_412",
+    "note": "风控：HTTP 412，响应体是 HTML 文本"
+  },
+  "capture": {
+    "platform": "bili",
+    "kind": "x/web-interface/wbi/search/type",
+    "url_path": "/x/web-interface/wbi/search/type",
+    "query": {
+      "search_type": "REDACTED-2cec4ad67da2",
+      "ad_resource": "REDACTED-eb5657a615d5",
+      "__refresh__": "REDACTED-b9e45585f869",
+      "page": "2",
+      "page_size": "REDACTED-c787a7de9a14",
+      "pubtime_begin_s": "REDACTED-a758ea3720bf",
+      "pubtime_end_s": "REDACTED-a758ea3720bf",
+      "from_spmid": "REDACTED-d032591e9ffc",
+      "platform": "REDACTED-904a731aeea7",
+      "highlight": "REDACTED-faff78cc998a",
+      "single_column": "REDACTED-a758ea3720bf",
+      "keyword": "REDACTED-8797abef6596",
+      "qv_id": "REDACTED-7b76157efa8f",
+      "source_tag": "REDACTED-1a95a79caed8",
+      "dynamic_offset": "REDACTED-4fc2dcd1a505",
+      "web_roll_page": "REDACTED-faff78cc998a",
+      "web_location": "REDACTED-ec697a4e957e",
+      "x-bili-device-req-json": "REDACTED-194e53dec9d9",
+      "x-bili-locale-json": "REDACTED-b22482231916"
+    },
+    "status": 412,
+    "headers": {},
+    "body": "<html><body>The request was rejected because of the bilibili security control policy.</body></html>",
+    "captured_at": 1793516553258
+  }
+}

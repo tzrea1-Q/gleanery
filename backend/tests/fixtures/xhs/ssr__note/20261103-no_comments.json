@@ -1,0 +1,188 @@
+{
+  "meta": {
+    "platform": "xhs",
+    "kind": "ssr:note",
+    "url_path": "/explore/6ab0b4490000000012024e8a",
+    "captured_on": "2026-11-03",
+    "source": "recorded",
+    "case": "no_comments",
+    "note": "直接打开，零评论笔记",
+    "verdict": null
+  },
+  "capture": {
+    "platform": "xhs",
+    "kind": "ssr:note",
+    "url_path": "/explore/6ab0b4490000000012024e8a",
+    "query": {},
+    "status": 200,
+    "headers": {},
+    "body": {
+      "note_id": "6ab0b4490000000012024e8a",
+      "note": {
+        "imageList": [
+          {
+            "stream": {},
+            "livePhoto": false,
+            "fileId": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+            "height": 1440,
+            "width": 1080,
+            "url": "",
+            "traceId": "",
+            "infoList": [
+              {
+                "imageScene": "WB_PRV",
+                "url": "https://example.invalid/a5b96bbfcf94"
+              },
+              {
+                "url": "https://example.invalid/1a3f69341a8d",
+                "imageScene": "WB_DFT"
+              }
+            ],
+            "urlPre": "https://example.invalid/a5b96bbfcf94",
+            "urlDefault": "https://example.invalid/1a3f69341a8d"
+          },
+          {
+            "url": "",
+            "urlDefault": "https://example.invalid/ff65a992cfc8",
+            "stream": {},
+            "livePhoto": false,
+            "height": 1440,
+            "width": 1080,
+            "traceId": "",
+            "infoList": [
+              {
+                "imageScene": "WB_PRV",
+                "url": "https://example.invalid/345b08dd65b3"
+              },
+              {
+                "imageScene": "WB_DFT",
+                "url": "https://example.invalid/ff65a992cfc8"
+              }
+            ],
+            "urlPre": "https://example.invalid/345b08dd65b3",
+            "fileId": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文"
+          },
+          {
+            "livePhoto": false,
+            "url": "",
+            "infoList": [
+              {
+                "imageScene": "WB_PRV",
+                "url": "https://example.invalid/831d296b6cf9"
+              },
+              {
+                "imageScene": "WB_DFT",
+                "url": "https://example.invalid/f90d1fbbe701"
+              }
+            ],
+            "urlPre": "https://example.invalid/831d296b6cf9",
+            "urlDefault": "https://example.invalid/f90d1fbbe701",
+            "fileId": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+            "height": 1440,
+            "width": 1080,
+            "traceId": "",
+            "stream": {}
+          },
+          {
+            "urlDefault": "https://example.invalid/71fb1983402b",
+            "stream": {},
+            "height": 1440,
+            "url": "",
+            "traceId": "",
+            "livePhoto": false,
+            "fileId": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+            "width": 1080,
+            "infoList": [
+              {
+                "imageScene": "WB_PRV",
+                "url": "https://example.invalid/3703a751a73f"
+              },
+              {
+                "imageScene": "WB_DFT",
+                "url": "https://example.invalid/71fb1983402b"
+              }
+            ],
+            "urlPre": "https://example.invalid/3703a751a73f"
+          },
+          {
+            "fileId": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+            "url": "",
+            "urlDefault": "https://example.invalid/f917c410dcac",
+            "stream": {},
+            "height": 1440,
+            "width": 1080,
+            "traceId": "",
+            "infoList": [
+              {
+                "imageScene": "WB_PRV",
+                "url": "https://example.invalid/d59901c26959"
+              },
+              {
+                "imageScene": "WB_DFT",
+                "url": "https://example.invalid/f917c410dcac"
+              }
+            ],
+            "urlPre": "https://example.invalid/d59901c26959",
+            "livePhoto": false
+          }
+        ],
+        "tagList": [
+          {
+            "id": "5ca8c4ba000000000f007268",
+            "name": "用户A",
+            "type": "topic"
+          },
+          {
+            "id": "6113e2470000000001004f73",
+            "name": "用户B",
+            "type": "topic"
+          },
+          {
+            "id": "612ec3830000000001004b3d",
+            "name": "用户C",
+            "type": "topic"
+          },
+          {
+            "id": "5c2073d100000000080150d0",
+            "name": "用户D",
+            "type": "topic"
+          },
+          {
+            "id": "5c36ea1d000000000f0012d7",
+            "name": "用户E",
+            "type": "topic"
+          }
+        ],
+        "atUserList": [],
+        "lastUpdateTime": 1789965386000,
+        "noteId": "6ab0b4490000000012024e8a",
+        "desc": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文[话题]文文文文文文文文[话题]文文文文文文文文[话题]文文文文文文文文[话题]文文文文文文文文[话题]文",
+        "time": 1789965386000,
+        "shareInfo": {
+          "unShare": false
+        },
+        "type": "normal",
+        "title": "文文文文文文文文文文文文文",
+        "user": {
+          "xsecToken": "REDACTED-976066d5f9e8",
+          "userId": "bbffc13a6035b85555d71d38",
+          "nickname": "用户F",
+          "avatar": "https://example.invalid/9208ca23db64"
+        },
+        "interactInfo": {
+          "likedCount": "16",
+          "collected": false,
+          "collectedCount": "10",
+          "followed": false,
+          "relation": "none",
+          "liked": false,
+          "commentCount": "",
+          "shareCount": "3",
+          "niceCount": ""
+        },
+        "xsecToken": "REDACTED-5c94b967f4b9"
+      }
+    },
+    "captured_at": 1793760488562
+  }
+}

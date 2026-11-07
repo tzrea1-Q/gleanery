@@ -1,0 +1,252 @@
+{
+  "search": {
+    "contents": [
+      {
+        "platform": "bili",
+        "platform_id": "BV1kb4w6LEKq",
+        "url": "https://www.bilibili.com/video/BV1kb4w6LEKq",
+        "kind": "video",
+        "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "body": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "author": {
+          "platform": "bili",
+          "platform_id": "9094265326861479",
+          "nickname": "用户A",
+          "avatar_url": "https://example.invalid/09c4c4f94d09",
+          "ext": {}
+        },
+        "published_at": 1793611130000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 1,
+          "favorites": 0,
+          "comments": 2,
+          "shares": null,
+          "plays": 1
+        },
+        "tags": [
+          "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文"
+        ],
+        "completeness": "summary",
+        "ext": {
+          "aid": 117546091087687,
+          "pic": "https://example.invalid/cf859dd5148a",
+          "tname": "影视剪辑",
+          "duration": 1224,
+          "coins": null,
+          "danmaku": 0,
+          "counts_raw": {
+            "likes": 1,
+            "favorites": 0,
+            "comments": 2,
+            "shares": null,
+            "plays": 1,
+            "coins": null,
+            "danmaku": 0
+          },
+          "counts_approx": false
+        }
+      },
+      {
+        "platform": "bili",
+        "platform_id": "BV17B4w6uE71",
+        "url": "https://www.bilibili.com/video/BV17B4w6uE71",
+        "kind": "video",
+        "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "body": "文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "author": {
+          "platform": "bili",
+          "platform_id": "7007530691",
+          "nickname": "用户B",
+          "avatar_url": "https://example.invalid/b6b02be20ed0",
+          "ext": {}
+        },
+        "published_at": 1793610694000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 1,
+          "favorites": 1,
+          "comments": 0,
+          "shares": null,
+          "plays": 4
+        },
+        "tags": [
+          "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文"
+        ],
+        "completeness": "summary",
+        "ext": {
+          "aid": 117546057467833,
+          "pic": "https://example.invalid/cb7d47a242ac",
+          "tname": "穿搭",
+          "duration": 59,
+          "coins": null,
+          "danmaku": 0,
+          "counts_raw": {
+            "likes": 1,
+            "favorites": 1,
+            "comments": 0,
+            "shares": null,
+            "plays": 4,
+            "coins": null,
+            "danmaku": 0
+          },
+          "counts_approx": false
+        }
+      },
+      {
+        "platform": "bili",
+        "platform_id": "BV1pH4F6GEoP",
+        "url": "https://www.bilibili.com/video/BV1pH4F6GEoP",
+        "kind": "video",
+        "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "body": "文",
+        "author": {
+          "platform": "bili",
+          "platform_id": "9016702059",
+          "nickname": "用户C",
+          "avatar_url": "https://example.invalid/1e9dd69e06dc",
+          "ext": {}
+        },
+        "published_at": 1793603782000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 0,
+          "favorites": 0,
+          "comments": 0,
+          "shares": null,
+          "plays": 11
+        },
+        "tags": [
+          "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文"
+        ],
+        "completeness": "summary",
+        "ext": {
+          "aid": 117545604483865,
+          "pic": "https://example.invalid/8e18754dceb0",
+          "tname": "日常",
+          "duration": 86,
+          "coins": null,
+          "danmaku": 0,
+          "counts_raw": {
+            "likes": 0,
+            "favorites": 0,
+            "comments": 0,
+            "shares": null,
+            "plays": 11,
+            "coins": null,
+            "danmaku": 0
+          },
+          "counts_approx": false
+        }
+      },
+      {
+        "platform": "bili",
+        "platform_id": "BV1a44c6ZEGv",
+        "url": "https://www.bilibili.com/video/BV1a44c6ZEGv",
+        "kind": "video",
+        "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "body": "文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文",
+        "author": {
+          "platform": "bili",
+          "platform_id": "3717266224",
+          "nickname": "用户D",
+          "avatar_url": "https://example.invalid/3e5d741a25c0",
+          "ext": {}
+        },
+        "published_at": 1793592837000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 2,
+          "favorites": 0,
+          "comments": 1,
+          "shares": null,
+          "plays": 4
+        },
+        "tags": [
+          "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文"
+        ],
+        "completeness": "summary",
+        "ext": {
+          "aid": 117544883193581,
+          "pic": "https://example.invalid/999f54ad7d50",
+          "tname": "出行",
+          "duration": 1618,
+          "coins": null,
+          "danmaku": 0,
+          "counts_raw": {
+            "likes": 2,
+            "favorites": 0,
+            "comments": 1,
+            "shares": null,
+            "plays": 4,
+            "coins": null,
+            "danmaku": 0
+          },
+          "counts_approx": false
+        }
+      },
+      {
+        "platform": "bili",
+        "platform_id": "BV17E4c6PEGB",
+        "url": "https://www.bilibili.com/video/BV17E4c6PEGB",
+        "kind": "video",
+        "title": "文文文文文文文文文文文文文文文文文文文文",
+        "body": null,
+        "author": {
+          "platform": "bili",
+          "platform_id": "6164165648504907",
+          "nickname": "用户E",
+          "avatar_url": "https://example.invalid/ee84810043d0",
+          "ext": {}
+        },
+        "published_at": 1793591201000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 9,
+          "favorites": 0,
+          "comments": 2,
+          "shares": null,
+          "plays": 419
+        },
+        "tags": [
+          "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文"
+        ],
+        "completeness": "summary",
+        "ext": {
+          "aid": 117544782468474,
+          "pic": "https://example.invalid/0ad3f1d63e19",
+          "tname": "手工",
+          "duration": 102,
+          "coins": null,
+          "danmaku": 0,
+          "counts_raw": {
+            "likes": 9,
+            "favorites": 0,
+            "comments": 2,
+            "shares": null,
+            "plays": 419,
+            "coins": null,
+            "danmaku": 0
+          },
+          "counts_approx": false
+        }
+      }
+    ],
+    "has_more": true,
+    "report": {
+      "items": 5,
+      "skipped_missing_core": 0,
+      "missing_fields": {},
+      "nonempty_response": true
+    }
+  },
+  "content": null,
+  "comments": null,
+  "subtitles": [],
+  "report": {
+    "items": 5,
+    "skipped_missing_core": 0,
+    "missing_fields": {},
+    "nonempty_response": true
+  }
+}

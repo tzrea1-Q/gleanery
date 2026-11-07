@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "platform": "xhs",
+    "kind": "comment/page",
+    "url_path": "/api/sns/web/v2/comment/page",
+    "captured_on": "2026-11-03",
+    "source": "handwritten",
+    "case": "login_lost",
+    "note": "手写，依据spec §4.6：-100 登录已过期",
+    "verdict": "risk_and_login"
+  },
+  "capture": {
+    "platform": "xhs",
+    "kind": "comment/page",
+    "url_path": "/api/sns/web/v2/comment/page",
+    "query": {
+      "note_id": "6a316843000000000f01ecb3"
+    },
+    "status": 200,
+    "headers": {},
+    "body": {
+      "code": -100,
+      "success": false,
+      "msg": "登录已过期",
+      "data": {}
+    },
+    "captured_at": 1793760000000
+  }
+}

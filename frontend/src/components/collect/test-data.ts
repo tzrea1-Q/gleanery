@@ -1,0 +1,100 @@
+import type { components } from "@/api/schema";
+
+export const plan: components["schemas"]["PlanOut"] = {
+  id: 1,
+  conversation_id: 1,
+  status: "draft",
+  version: 1,
+  body: {
+    title: "咖啡计划",
+    new_dataset_name: "咖啡数据",
+    new_dataset_description: "说明",
+    follow_up: "整理",
+    sections: [
+      {
+        platform: "bili",
+        keywords: ["咖啡"],
+        targets: ["content:1"],
+        quantity: 3,
+        sort: "hot",
+        time_range: { last_days: 7 },
+        depth: {
+          detail: true,
+          comments: 10,
+          sub_comments: false,
+          sub_comments_per_root: 0,
+          subtitles: true,
+        },
+      },
+    ],
+  },
+  issues: [],
+  estimate_seconds: { bili: 120 },
+  task_ids: [],
+  confirmed_at: null,
+  created_at: 1,
+  updated_at: 1,
+};
+export const task: components["schemas"]["TaskOut"] = {
+  id: 1,
+  plan_id: 1,
+  dataset_id: 2,
+  platform: "bili",
+  status: "running",
+  reason: null,
+  wait_reason: null,
+  wait_until: null,
+  queue_position: null,
+  snapshot: {},
+  progress: {
+    phase: "content",
+    discovered: 3,
+    planned: 3,
+    processed: 1,
+    comments: 4,
+    subtitles: 1,
+    quota_counted: 1,
+    skipped_missing_core: 0,
+  },
+  created_at: 1,
+  started_at: 1,
+  finished_at: null,
+};
+export const dataset: components["schemas"]["DatasetOut"] = {
+  id: 2,
+  name: "咖啡数据",
+  description: "",
+  created_in_conversation_id: 1,
+  counts: { bili: 2 },
+  total: 2,
+  created_at: 1,
+  last_appended_at: 1,
+};
+export const content: components["schemas"]["ContentRow"] = {
+  id: 3,
+  platform: "bili",
+  url: "https://example.com/video",
+  open_url: "https://example.com/video",
+  kind: "video",
+  title: "咖啡视频",
+  body_excerpt: null,
+  author_nickname: "作者",
+  published_at: 1,
+  likes: 2,
+  comments: 3,
+  plays: 4,
+  counts_approx: false,
+  completeness: "detail",
+  local_comments: 2,
+  subtitles: 1,
+  added_at: 1,
+};
+export function tool(name: string, state: string, extra: object = {}) {
+  return {
+    type: `tool-${name}`,
+    toolCallId: `call-${name}`,
+    state,
+    input: { plan_id: 1 },
+    ...extra,
+  };
+}

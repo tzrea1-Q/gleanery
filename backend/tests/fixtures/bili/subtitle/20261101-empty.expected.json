@@ -1,0 +1,21 @@
+{
+  "search": null,
+  "content": null,
+  "comments": null,
+  "subtitles": [
+    {
+      "content_platform_id": "BV1qxmbYvEbY",
+      "part_id": "26728139563",
+      "part_title": "文文文文文文文文文文文文文文文文文",
+      "lang": "ai-zh",
+      "ai_generated": true,
+      "segments": []
+    }
+  ],
+  "report": {
+    "items": 1,
+    "skipped_missing_core": 0,
+    "missing_fields": {},
+    "nonempty_response": false
+  }
+}

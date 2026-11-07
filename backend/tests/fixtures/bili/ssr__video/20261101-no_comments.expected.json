@@ -1,0 +1,57 @@
+{
+  "search": null,
+  "content": {
+    "platform": "bili",
+    "platform_id": "BV1rqxp6iEhQ",
+    "url": "https://www.bilibili.com/video/BV1rqxp6iEhQ",
+    "kind": "video",
+    "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+    "body": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+    "author": {
+      "platform": "bili",
+      "platform_id": "8180192797839109",
+      "nickname": "用户A",
+      "avatar_url": "https://example.invalid/188e2ec9439d",
+      "ext": {}
+    },
+    "published_at": 1793507400000,
+    "platform_updated_at": null,
+    "counts": {
+      "likes": 1,
+      "favorites": 1,
+      "comments": 0,
+      "shares": 0,
+      "plays": 86
+    },
+    "tags": [],
+    "completeness": "detail",
+    "ext": {
+      "aid": 117538792934669,
+      "cid": 43224794844,
+      "pic": "https://example.invalid/e7101b2dc243",
+      "tid": 250,
+      "tid_v2": 2104,
+      "duration": 644,
+      "coins": 0,
+      "danmaku": 1,
+      "counts_raw": {
+        "likes": 1,
+        "favorites": 1,
+        "comments": 0,
+        "shares": 0,
+        "plays": 86,
+        "coins": 0,
+        "danmaku": 1
+      },
+      "counts_approx": false
+    }
+  },
+  "comments": null,
+  "subtitles": [],
+  "report": {
+    "items": 1,
+    "skipped_missing_core": 0,
+    "missing_fields": {},
+    "nonempty_response": true
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "platform": "bili",
+    "kind": "subtitle",
+    "url_path": "/bfs/ai_subtitle/prod/1134696638102272672813956331ca4a6ec43bd1656523e6e1755f5adc",
+    "captured_on": "2026-11-01",
+    "source": "recorded",
+    "case": "normal",
+    "note": "bvid、cid、part 三个字段是录制后补的：驱动当时还没带上它们，值取自同一视频的 ssr__video fixture"
+  },
+  "capture": {
+    "platform": "bili",
+    "kind": "subtitle",
+    "url_path": "/bfs/ai_subtitle/prod/1134696638102272672813956331ca4a6ec43bd1656523e6e1755f5adc",
+    "query": {},
+    "status": 200,
+    "headers": {},
+    "body": {
+      "bvid": "BV1qxmbYvEbY",
+      "cid": 26728139563,
+      "part": "文文文文文文文文文文文文文文文文文",
+      "track": {
+        "id": 1621177980644599040,
+        "lan": "ai-zh",
+        "lan_doc": "中文",
+        "is_lock": false,
+        "subtitle_url": "https://example.invalid/db7ae8badc24",
+        "subtitle_url_v2": "https://example.invalid/4ca222fcdfb9",
+        "type": 1,
+        "id_str": "1621177980644599040",
+        "ai_type": 0,
+        "ai_status": 2
+      },
+      "body": {
+        "font_size": 0.4,
+        "font_color": "#FFFFFF",
+        "background_alpha": 0.5,
+        "background_color": "#9C27B0",
+        "Stroke": "none",
+        "type": "AIsubtitle",
+        "lang": "zh",
+        "version": "vREDACTED-IP",
+        "body": [
+          {
+            "from": 0.12,
+            "to": 1.06,
+            "sid": 1,
+            "location": 2,
+            "content": "文文文文",
+            "music": 0.0
+          },
+          {
+            "from": 1.06,
+            "to": 2.0,
+            "sid": 2,
+            "location": 2,
+            "content": "文文文文",
+            "music": 0.0
+          },
+          {
+            "from": 2.0,
+            "to": 2.94,
+            "sid": 3,
+            "location": 2,
+            "content": "文文文文",
+            "music": 0.0
+          },
+          {
+            "from": 2.94,
+            "to": 3.94,
+            "sid": 4,
+            "location": 2,
+            "content": "文文文文",
+            "music": 0.0
+          },
+          {
+            "from": 3.94,
+            "to": 4.64,
+            "sid": 5,
+            "location": 2,
+            "content": "文文文文",
+            "music": 0.0
+          },
+          {
+            "from": 4.64,
+            "to": 5.67,
+            "sid": 6,
+            "location": 2,
+            "content": "文文文文",
+            "music": 0.0
+          },
+          {
+            "from": 5.67,
+            "to": 6.83,
+            "sid": 7,
+            "location": 2,
+            "content": "文文文文文",
+            "music": 0.0
+          },
+          {
+            "from": 6.83,
+            "to": 7.87,
+            "sid": 8,
+            "location": 2,
+            "content": "文文文文文",
+            "music": 0.0
+          },
+          {
+            "from": 7.87,
+            "to": 8.89,
+            "sid": 9,
+            "location": 2,
+            "content": "文文文文文",
+            "music": 0.0
+          },
+          {
+            "from": 8.89,
+            "to": 10.21,
+            "sid": 10,
+            "location": 2,
+            "content": "文文文文文文文文",
+            "music": 0.0
+          }
+        ]
+      }
+    },
+    "captured_at": 1793517136053
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "search": {
+    "contents": [
+      {
+        "platform": "bili",
+        "platform_id": "BV1KYx16BELo",
+        "url": "https://www.bilibili.com/video/BV1KYx16BELo",
+        "kind": "video",
+        "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "body": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "author": {
+          "platform": "bili",
+          "platform_id": "9469982",
+          "nickname": "用户A",
+          "avatar_url": "https://example.invalid/73d30a1ed87b",
+          "ext": {}
+        },
+        "published_at": 1793444749000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 7064,
+          "favorites": 1784,
+          "comments": 1308,
+          "shares": null,
+          "plays": 239963
+        },
+        "tags": [
+          "文文文文文文文",
+          "文文文文",
+          "文文文",
+          "文文文文文"
+        ],
+        "completeness": "summary",
+        "ext": {
+          "aid": 117535068395430,
+          "pic": "https://example.invalid/a1806248a99e",
+          "tname": "数码",
+          "duration": 1302,
+          "coins": null,
+          "danmaku": 476,
+          "counts_raw": {
+            "likes": 7064,
+            "favorites": 1784,
+            "comments": 1308,
+            "shares": null,
+            "plays": 239963,
+            "coins": null,
+            "danmaku": 476
+          },
+          "counts_approx": false
+        }
+      },
+      {
+        "platform": "bili",
+        "platform_id": "BV1heam6TExz",
+        "url": "https://www.bilibili.com/video/BV1heam6TExz",
+        "kind": "video",
+        "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "body": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "author": {
+          "platform": "bili",
+          "platform_id": "28808428",
+          "nickname": "用户B",
+          "avatar_url": "https://example.invalid/b85f4540c081",
+          "ext": {}
+        },
+        "published_at": 1790927217000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 255158,
+          "favorites": 69287,
+          "comments": 34390,
+          "shares": null,
+          "plays": 3007636
+        },
+        "tags": [
+          "文文",
+          "文文文文文文文",
+          "文文文文文文文文",
+          "文文文文文文文文文文文文文文文",
+          "文文文文"
+        ],
+        "completeness": "summary",
+        "ext": {
+          "aid": 117370098027243,
+          "pic": "https://example.invalid/38e09c918a5f",
+          "tname": "数码",
+          "duration": 1019,
+          "coins": null,
+          "danmaku": 20174,
+          "counts_raw": {
+            "likes": 255158,
+            "favorites": 69287,
+            "comments": 34390,
+            "shares": null,
+            "plays": 3007636,
+            "coins": null,
+            "danmaku": 20174
+          },
+          "counts_approx": false
+        }
+      },
+      {
+        "platform": "bili",
+        "platform_id": "BV192xj6KEn7",
+        "url": "https://www.bilibili.com/video/BV192xj6KEn7",
+        "kind": "video",
+        "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "body": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "author": {
+          "platform": "bili",
+          "platform_id": "914020838",
+          "nickname": "用户D",
+          "avatar_url": "https://example.invalid/393d1aa66ae9",
+          "ext": {}
+        },
+        "published_at": 1793165270000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 53,
+          "favorites": 69,
+          "comments": 55,
+          "shares": null,
+          "plays": 6308
+        },
+        "tags": [
+          "文文文文文文文文",
+          "文文",
+          "文文文文文文",
+          "文文文文"
+        ],
+        "completeness": "summary",
+        "ext": {
+          "aid": 117516865181362,
+          "pic": "https://example.invalid/e7cae04dff8f",
+          "tname": "数码",
+          "duration": 1137,
+          "coins": null,
+          "danmaku": 102,
+          "counts_raw": {
+            "likes": 53,
+            "favorites": 69,
+            "comments": 55,
+            "shares": null,
+            "plays": 6308,
+            "coins": null,
+            "danmaku": 102
+          },
+          "counts_approx": false
+        }
+      },
+      {
+        "platform": "bili",
+        "platform_id": "BV1FVpg69Enq",
+        "url": "https://www.bilibili.com/video/BV1FVpg69Enq",
+        "kind": "video",
+        "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "body": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "author": {
+          "platform": "bili",
+          "platform_id": "1452075172",
+          "nickname": "用户E",
+          "avatar_url": "https://example.invalid/e30da7cee773",
+          "ext": {}
+        },
+        "published_at": 1791637001000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 88,
+          "favorites": 58,
+          "comments": 26,
+          "shares": null,
+          "plays": 14670
+        },
+        "tags": [
+          "文文",
+          "文文文",
+          "文文文文文",
+          "文文文文"
+        ],
+        "completeness": "summary",
+        "ext": {
+          "aid": 117416587691783,
+          "pic": "https://example.invalid/276662c0ced7",
+          "tname": "数码",
+          "duration": 376,
+          "coins": null,
+          "danmaku": 3,
+          "counts_raw": {
+            "likes": 88,
+            "favorites": 58,
+            "comments": 26,
+            "shares": null,
+            "plays": 14670,
+            "coins": null,
+            "danmaku": 3
+          },
+          "counts_approx": false
+        }
+      }
+    ],
+    "has_more": true,
+    "report": {
+      "items": 4,
+      "skipped_missing_core": 0,
+      "missing_fields": {},
+      "nonempty_response": true
+    }
+  },
+  "content": null,
+  "comments": null,
+  "subtitles": [],
+  "report": {
+    "items": 4,
+    "skipped_missing_core": 0,
+    "missing_fields": {},
+    "nonempty_response": true
+  }
+}

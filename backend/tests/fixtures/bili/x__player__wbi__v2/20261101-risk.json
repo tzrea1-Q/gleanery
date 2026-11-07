@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "platform": "bili",
+    "kind": "x/player/wbi/v2",
+    "url_path": "/x/player/wbi/v2",
+    "captured_on": "2026-11-01",
+    "source": "handwritten",
+    "case": "risk",
+    "note": "风控：code -352，data 里带 v_voucher"
+  },
+  "capture": {
+    "platform": "bili",
+    "kind": "x/player/wbi/v2",
+    "url_path": "/x/player/wbi/v2",
+    "query": {
+      "aid": "117539464020058",
+      "cid": "43228924498",
+      "isGaiaAvoided": "REDACTED-9d748cb3eac7",
+      "web_location": "REDACTED-e0554ac18bf8",
+      "dm_img_list": "REDACTED-d07479a5c659",
+      "dm_img_str": "REDACTED-92de68b37aef",
+      "dm_cover_img_str": "REDACTED-ba33d9a8c163",
+      "dm_img_inter": "REDACTED-1c5c1638fe62",
+      "x-bili-device-req-json": "REDACTED-a42758b6fab6",
+      "x-bili-locale-json": "REDACTED-b22482231916"
+    },
+    "status": 200,
+    "headers": {},
+    "body": {
+      "code": -352,
+      "message": "-352",
+      "ttl": 1,
+      "data": {
+        "v_voucher": "voucher_REDACTED-000000000000"
+      }
+    },
+    "captured_at": 1793517273870
+  }
+}

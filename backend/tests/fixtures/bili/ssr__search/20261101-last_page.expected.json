@@ -1,0 +1,206 @@
+{
+  "search": {
+    "contents": [
+      {
+        "platform": "bili",
+        "platform_id": "BV1d64y127EC",
+        "url": "https://www.bilibili.com/video/BV1d64y127EC",
+        "kind": "video",
+        "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "body": null,
+        "author": {
+          "platform": "bili",
+          "platform_id": "357371734",
+          "nickname": "用户A",
+          "avatar_url": "https://example.invalid/9092dc648701",
+          "ext": {}
+        },
+        "published_at": 1620815386000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 25706,
+          "favorites": 53945,
+          "comments": 442,
+          "shares": null,
+          "plays": 800273
+        },
+        "tags": [
+          "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文"
+        ],
+        "completeness": "summary",
+        "ext": {
+          "aid": 758075253,
+          "pic": "https://example.invalid/18710004e676",
+          "tname": "美食制作",
+          "duration": 3840,
+          "coins": null,
+          "danmaku": 2208,
+          "counts_raw": {
+            "likes": 25706,
+            "favorites": 53945,
+            "comments": 442,
+            "shares": null,
+            "plays": 800273,
+            "coins": null,
+            "danmaku": 2208
+          },
+          "counts_approx": false
+        }
+      },
+      {
+        "platform": "bili",
+        "platform_id": "BV15HPteTEAd",
+        "url": "https://www.bilibili.com/video/BV15HPteTEAd",
+        "kind": "video",
+        "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "body": null,
+        "author": {
+          "platform": "bili",
+          "platform_id": "594590565",
+          "nickname": "用户B",
+          "avatar_url": "https://example.invalid/b29225fc8560",
+          "ext": {}
+        },
+        "published_at": 1740414603000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 6010,
+          "favorites": 5546,
+          "comments": 245,
+          "shares": null,
+          "plays": 131929
+        },
+        "tags": [
+          "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文"
+        ],
+        "completeness": "summary",
+        "ext": {
+          "aid": 114059768759167,
+          "pic": "https://example.invalid/cabfda197b05",
+          "tname": "美食测评",
+          "duration": 1274,
+          "coins": null,
+          "danmaku": 397,
+          "counts_raw": {
+            "likes": 6010,
+            "favorites": 5546,
+            "comments": 245,
+            "shares": null,
+            "plays": 131929,
+            "coins": null,
+            "danmaku": 397
+          },
+          "counts_approx": false
+        }
+      },
+      {
+        "platform": "bili",
+        "platform_id": "BV1taxi67EyC",
+        "url": "https://www.bilibili.com/video/BV1taxi67EyC",
+        "kind": "video",
+        "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "body": "https://example.invalid/f72a20bdb6bc",
+        "author": {
+          "platform": "bili",
+          "platform_id": "749122209",
+          "nickname": "用户C",
+          "avatar_url": "https://example.invalid/1ae099ce4892",
+          "ext": {}
+        },
+        "published_at": 1793417400000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 31170,
+          "favorites": 9484,
+          "comments": 3633,
+          "shares": null,
+          "plays": 769291
+        },
+        "tags": [
+          "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文"
+        ],
+        "completeness": "summary",
+        "ext": {
+          "aid": 117530253334071,
+          "pic": "https://example.invalid/7a682d8c9db7",
+          "tname": "科学科普",
+          "duration": 817,
+          "coins": null,
+          "danmaku": 4113,
+          "counts_raw": {
+            "likes": 31170,
+            "favorites": 9484,
+            "comments": 3633,
+            "shares": null,
+            "plays": 769291,
+            "coins": null,
+            "danmaku": 4113
+          },
+          "counts_approx": false
+        }
+      },
+      {
+        "platform": "bili",
+        "platform_id": "BV1qxmbYvEbY",
+        "url": "https://www.bilibili.com/video/BV1qxmbYvEbY",
+        "kind": "video",
+        "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "body": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "author": {
+          "platform": "bili",
+          "platform_id": "4898644",
+          "nickname": "用户D",
+          "avatar_url": "https://example.invalid/f9f1126475b3",
+          "ext": {}
+        },
+        "published_at": 1731409868000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 14949,
+          "favorites": 7426,
+          "comments": 985,
+          "shares": null,
+          "plays": 189330
+        },
+        "tags": [
+          "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文"
+        ],
+        "completeness": "summary",
+        "ext": {
+          "aid": 113469663810227,
+          "pic": "https://example.invalid/319deb57a97c",
+          "tname": "美食记录",
+          "duration": 413,
+          "coins": null,
+          "danmaku": 240,
+          "counts_raw": {
+            "likes": 14949,
+            "favorites": 7426,
+            "comments": 985,
+            "shares": null,
+            "plays": 189330,
+            "coins": null,
+            "danmaku": 240
+          },
+          "counts_approx": false
+        }
+      }
+    ],
+    "has_more": false,
+    "report": {
+      "items": 4,
+      "skipped_missing_core": 0,
+      "missing_fields": {},
+      "nonempty_response": true
+    }
+  },
+  "content": null,
+  "comments": null,
+  "subtitles": [],
+  "report": {
+    "items": 4,
+    "skipped_missing_core": 0,
+    "missing_fields": {},
+    "nonempty_response": true
+  }
+}

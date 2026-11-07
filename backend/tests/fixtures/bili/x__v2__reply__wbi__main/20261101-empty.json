@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "platform": "bili",
+    "kind": "x/v2/reply/wbi/main",
+    "url_path": "/x/v2/reply/wbi/main",
+    "captured_on": "2026-11-01",
+    "source": "recorded",
+    "case": "empty",
+    "note": ""
+  },
+  "capture": {
+    "platform": "bili",
+    "kind": "x/v2/reply/wbi/main",
+    "url_path": "/x/v2/reply/wbi/main",
+    "query": {
+      "oid": "117538792934669",
+      "type": "1",
+      "mode": "REDACTED-1a95a79caed8",
+      "pagination_str": "REDACTED-5e6a657318ae",
+      "plat": "REDACTED-faff78cc998a",
+      "web_location": "REDACTED-bbbcd142a7e6",
+      "x-bili-locale-json": "REDACTED-b22482231916"
+    },
+    "status": 200,
+    "headers": {},
+    "body": {
+      "code": 0,
+      "message": "文文",
+      "ttl": 1,
+      "data": {
+        "cursor": {
+          "is_begin": true,
+          "prev": 0,
+          "next": 2,
+          "is_end": true,
+          "pagination_reply": {},
+          "session_id": "REDACTED-81d7b7f300aa",
+          "mode": 3,
+          "mode_text": "",
+          "support_mode": [
+            2,
+            3
+          ],
+          "name": "用户A"
+        },
+        "replies": [],
+        "top": {
+          "admin": null,
+          "upper": null,
+          "vote": null
+        },
+        "top_replies": [],
+        "effects": {
+          "preloading": ""
+        },
+        "assist": 0,
+        "blacklist": 0,
+        "vote": 0,
+        "config": {
+          "showtopic": 1,
+          "show_up_flag": true,
+          "read_only": false
+        },
+        "upper": {
+          "mid": 8180192797839109
+        },
+        "control": {
+          "input_disable": false,
+          "root_input_text": "勇敢滴少年啊快去创造热评~",
+          "child_input_text": "勇敢滴少年啊快去创造热评~",
+          "giveup_input_text": "不发没关系，请继续友善哦~",
+          "screenshot_icon_state": 1,
+          "upload_picture_icon_state": 1,
+          "answer_guide_text": "文文文文文文文文文文文文文文文文文文文文文文文文文文",
+          "answer_guide_icon_url": "https://example.invalid/7d071452adb7",
+          "answer_guide_ios_url": "https://example.invalid/27522e8fa4ef",
+          "answer_guide_android_url": "https://example.invalid/7ac14635f116",
+          "bg_text": "看看下面~来发评论吧",
+          "empty_background_text_plain": "期待你的留言，",
+          "empty_background_text_ground_highlight": "立即评论",
+          "empty_background_uri": "https://example.invalid/f5979077b018",
+          "empty_page": {
+            "image_url": "https://example.invalid/f5979077b018",
+            "texts": [
+              {
+                "raw": "还没有评论哦\n发一条“",
+                "style": {
+                  "font_size": 14,
+                  "text_day_color": "#FF61666D",
+                  "text_night_color": "#FFA2A7AE"
+                }
+              },
+              {
+                "raw": "期待下一个作品！",
+                "style": {
+                  "font_size": 14,
+                  "font_style": 1,
+                  "text_day_color": "#FF18191C",
+                  "text_night_color": "#FFE7E9EB"
+                }
+              },
+              {
+                "raw": "”吧\n",
+                "style": {
+                  "font_size": 14,
+                  "text_day_color": "#FF61666D",
+                  "text_night_color": "#FFA2A7AE"
+                }
+              }
+            ],
+            "left_button": {
+              "title": "文文文文",
+              "action": 1
+            },
+            "right_button": {
+              "title": "文文文文",
+              "action": 2
+            }
+          },
+          "show_type": 1,
+          "show_text": "",
+          "web_selection": false,
+          "disable_jump_emote": false,
+          "enable_charged": false,
+          "enable_cm_biz_helper": false,
+          "preload_resources": null
+        },
+        "note": 1,
+        "callbacks": {}
+      }
+    },
+    "captured_at": 1793517304679
+  }
+}

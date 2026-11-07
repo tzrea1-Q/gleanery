@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "platform": "xhs",
+    "kind": "search/notes",
+    "url_path": "/api/sns/web/v2/search/notes",
+    "captured_on": "2026-11-03",
+    "source": "handwritten",
+    "case": "risk_ip",
+    "note": "手写，依据spec §4.6：300012",
+    "verdict": "risk"
+  },
+  "capture": {
+    "platform": "xhs",
+    "kind": "search/notes",
+    "url_path": "/api/sns/web/v2/search/notes",
+    "query": {},
+    "status": 200,
+    "headers": {},
+    "body": {
+      "code": 300012,
+      "success": false,
+      "msg": "网络连接异常，请检查网络设置或重启试试",
+      "data": {}
+    },
+    "captured_at": 1793760000000
+  }
+}

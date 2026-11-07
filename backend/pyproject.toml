@@ -1,0 +1,64 @@
+[project]
+name = "gleanery"
+version = "0.1.0"
+description = "本地优先、单用户的社媒信息采集与整理应用"
+authors = [{ name = "tzrea1-Q" }]
+license = "Apache-2.0"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "pydantic-ai-slim[anthropic,openai,ui]~=2.64.0",
+    "fastapi~=0.162.0",
+    "uvicorn[standard]~=0.54.0",
+    "sqlalchemy[asyncio]~=2.1.6",
+    "aiosqlite~=0.22.1",
+    "alembic~=1.20.1",
+    "platformdirs~=4.14.2",
+    "keyring~=25.7.0",
+    "httpx~=0.28.1",
+    "httpx2~=2.16.0",
+    "playwright~=1.64.0",
+    "xlsxwriter~=3.2",
+]
+
+[project.scripts]
+gleanery = "gleanery.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest~=9.2.0",
+    "pytest-asyncio~=1.4.1",
+    "pytest-alembic~=0.13.2",
+    "pyright~=1.1.414",
+    "ruff~=0.17.3",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-root = ""
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "ASYNC", "SIM", "RUF"]
+ignore = ["RUF001", "RUF002", "RUF003", "E501"]  # 中文全角标点；行宽交给 ruff format，中文注释不强折行
+
+[tool.pyright]
+pythonVersion = "3.13"
+include = ["gleanery", "tests"]
+typeCheckingMode = "standard"
+venvPath = "."
+venv = ".venv"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+markers = [
+    "slow: 不进 pre-commit 的慢测试",
+]
+addopts = "-ra --strict-markers"

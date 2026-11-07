@@ -1,0 +1,514 @@
+{
+  "meta": {
+    "platform": "xhs",
+    "kind": "search/notes",
+    "url_path": "/api/sns/web/v2/search/notes",
+    "captured_on": "2026-11-03",
+    "source": "recorded",
+    "case": "sort_new_week",
+    "note": "「露营装备」筛选最新、一周内后的第 1 页，发布时间为\"N分钟前\"\"昨天 HH:MM\"；--trim 6",
+    "verdict": null
+  },
+  "capture": {
+    "platform": "xhs",
+    "kind": "search/notes",
+    "url_path": "/api/sns/web/v2/search/notes",
+    "query": {},
+    "status": 200,
+    "headers": {
+      "content-type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "code": 0,
+      "success": true,
+      "msg": "成功",
+      "data": {
+        "has_more": true,
+        "items": [
+          {
+            "xsec_token": "REDACTED-68d887a1f386",
+            "id": "6aea971b000000001a01586d",
+            "model_type": "note",
+            "note_card": {
+              "user": {
+                "nick_name": "用户A",
+                "avatar": "https://example.invalid/d4939dd6409f",
+                "user_id": "526aeee61627fc70d63afd19",
+                "nickname": "用户A",
+                "xsec_token": "REDACTED-bfe6e893bc6e"
+              },
+              "interact_info": {
+                "comment_count": "0",
+                "shared_count": "0",
+                "liked": false,
+                "liked_count": "0",
+                "collected": false,
+                "collected_count": "0"
+              },
+              "cover": {
+                "height": 3200,
+                "width": 1440,
+                "url_default": "https://example.invalid/841a771d87b7",
+                "url_pre": "https://example.invalid/e502450999e4"
+              },
+              "image_list": [
+                {
+                  "height": 3200,
+                  "width": 1440,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/841a771d87b7"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/e502450999e4"
+                    }
+                  ]
+                },
+                {
+                  "width": 1440,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/5b2c8ae11eb1"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/67e2b3d3cc16"
+                    }
+                  ],
+                  "height": 3200
+                }
+              ],
+              "corner_tag_info": [
+                {
+                  "type": "publish_time",
+                  "text": "25分钟前"
+                }
+              ],
+              "type": "normal",
+              "display_title": "文文文文文文文文文文文文文文文"
+            }
+          },
+          {
+            "id": "6aea95440000000016010850",
+            "model_type": "note",
+            "note_card": {
+              "image_list": [
+                {
+                  "height": 2048,
+                  "width": 1536,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/0f3662ff4ac4"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/5ed0ff73995e"
+                    }
+                  ]
+                }
+              ],
+              "corner_tag_info": [
+                {
+                  "text": "33分钟前",
+                  "type": "publish_time"
+                }
+              ],
+              "type": "normal",
+              "display_title": "文文文文文文文文文文文文文文文文文文文文",
+              "user": {
+                "avatar": "https://example.invalid/72f04ee1098b",
+                "user_id": "11da25f473c27b4ab395189a",
+                "nickname": "用户B",
+                "xsec_token": "REDACTED-0ddbdbbde970",
+                "nick_name": "用户B"
+              },
+              "interact_info": {
+                "shared_count": "0",
+                "liked": false,
+                "liked_count": "0",
+                "collected": false,
+                "collected_count": "0",
+                "comment_count": "0"
+              },
+              "cover": {
+                "width": 1536,
+                "url_default": "https://example.invalid/0f3662ff4ac4",
+                "url_pre": "https://example.invalid/5ed0ff73995e",
+                "height": 2048
+              }
+            },
+            "xsec_token": "REDACTED-c0fdbda8675a"
+          },
+          {
+            "id": "6ae9f954000000000700129d",
+            "model_type": "note",
+            "note_card": {
+              "type": "normal",
+              "display_title": "文文文文文文文文文文文文文文文文",
+              "user": {
+                "nick_name": "用户C",
+                "avatar": "https://example.invalid/cac0ac0214a7",
+                "user_id": "192e8b382f0d8fd68722705e",
+                "nickname": "用户C",
+                "xsec_token": "REDACTED-402a9972075a"
+              },
+              "interact_info": {
+                "liked": false,
+                "liked_count": "1",
+                "collected": false,
+                "collected_count": "0",
+                "comment_count": "4",
+                "shared_count": "0"
+              },
+              "cover": {
+                "height": 1600,
+                "width": 1280,
+                "url_default": "https://example.invalid/910bb986336b",
+                "url_pre": "https://example.invalid/2bf8481d7e9d"
+              },
+              "image_list": [
+                {
+                  "height": 1600,
+                  "width": 1280,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/910bb986336b"
+                    },
+                    {
+                      "url": "https://example.invalid/2bf8481d7e9d",
+                      "image_scene": "WB_PRV"
+                    }
+                  ]
+                },
+                {
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/5397f15d17ab"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/9b04d3171bee"
+                    }
+                  ],
+                  "height": 1708,
+                  "width": 1280
+                },
+                {
+                  "height": 1708,
+                  "width": 1280,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/d28e8d375046"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/75052bca96bb"
+                    }
+                  ]
+                },
+                {
+                  "height": 1708,
+                  "width": 1280,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/979ab4d0012c"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/b2a9d3d64890"
+                    }
+                  ]
+                },
+                {
+                  "width": 1280,
+                  "info_list": [
+                    {
+                      "url": "https://example.invalid/69ef4ecca7a7",
+                      "image_scene": "WB_DFT"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/5dd7da752489"
+                    }
+                  ],
+                  "height": 2088
+                },
+                {
+                  "height": 2348,
+                  "width": 1280,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/82a06481001e"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/09587aea3ec3"
+                    }
+                  ]
+                }
+              ],
+              "corner_tag_info": [
+                {
+                  "type": "publish_time",
+                  "text": "57分钟前"
+                }
+              ]
+            },
+            "xsec_token": "REDACTED-3abf50201f32"
+          },
+          {
+            "id": "6aea8f6b000000001402b555",
+            "model_type": "note",
+            "note_card": {
+              "display_title": "文文文文文文文文文文文文文文文文",
+              "user": {
+                "xsec_token": "REDACTED-760ae5f74d1d",
+                "nick_name": "用户D",
+                "avatar": "https://example.invalid/c9b8dceff568",
+                "user_id": "692f03fce2810d931abd6edc",
+                "nickname": "用户D"
+              },
+              "interact_info": {
+                "liked": false,
+                "liked_count": "0",
+                "collected": false,
+                "collected_count": "0",
+                "comment_count": "0",
+                "shared_count": "0"
+              },
+              "cover": {
+                "height": 1200,
+                "width": 896,
+                "url_default": "https://example.invalid/32b9ab481e29",
+                "url_pre": "https://example.invalid/96f70c1b18b4"
+              },
+              "image_list": [
+                {
+                  "height": 1200,
+                  "width": 896,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/32b9ab481e29"
+                    },
+                    {
+                      "url": "https://example.invalid/96f70c1b18b4",
+                      "image_scene": "WB_PRV"
+                    }
+                  ]
+                },
+                {
+                  "height": 1200,
+                  "width": 896,
+                  "info_list": [
+                    {
+                      "url": "https://example.invalid/f35e920d87d2",
+                      "image_scene": "WB_DFT"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/b5fb31ae5b65"
+                    }
+                  ]
+                },
+                {
+                  "info_list": [
+                    {
+                      "url": "https://example.invalid/fc79c6bdc8d6",
+                      "image_scene": "WB_DFT"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/5578162f037f"
+                    }
+                  ],
+                  "height": 1200,
+                  "width": 896
+                }
+              ],
+              "corner_tag_info": [
+                {
+                  "type": "publish_time",
+                  "text": "58分钟前"
+                }
+              ],
+              "type": "normal"
+            },
+            "xsec_token": "REDACTED-6d9d818381b4"
+          },
+          {
+            "id": "6aea86430000000015004916",
+            "model_type": "note",
+            "note_card": {
+              "display_title": "文文文文文文文文文文文文文",
+              "user": {
+                "nick_name": "用户E",
+                "avatar": "https://example.invalid/3134fd7cd87d",
+                "user_id": "827e8bd7a8fd735b000ae1c8",
+                "nickname": "用户E",
+                "xsec_token": "REDACTED-b5ca494f13bb"
+              },
+              "interact_info": {
+                "liked": false,
+                "liked_count": "1",
+                "collected": false,
+                "collected_count": "0",
+                "comment_count": "0",
+                "shared_count": "0"
+              },
+              "cover": {
+                "height": 950,
+                "width": 1534,
+                "url_default": "https://example.invalid/0b9c7692ba01",
+                "url_pre": "https://example.invalid/0da92dd6d173"
+              },
+              "image_list": [
+                {
+                  "height": 950,
+                  "width": 1534,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/0b9c7692ba01"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/0da92dd6d173"
+                    }
+                  ]
+                },
+                {
+                  "height": 964,
+                  "width": 1516,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/1cc0f6d33d49"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/30f57f5f345b"
+                    }
+                  ]
+                }
+              ],
+              "corner_tag_info": [
+                {
+                  "type": "publish_time",
+                  "text": "1小时前"
+                }
+              ],
+              "type": "normal"
+            },
+            "xsec_token": "REDACTED-4d077fba3573"
+          },
+          {
+            "model_type": "note",
+            "note_card": {
+              "cover": {
+                "height": 1280,
+                "width": 1708,
+                "url_default": "https://example.invalid/f91ea9a89bef",
+                "url_pre": "https://example.invalid/31a7cbf9c740"
+              },
+              "image_list": [
+                {
+                  "height": 1280,
+                  "width": 1708,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/f91ea9a89bef"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/31a7cbf9c740"
+                    }
+                  ]
+                },
+                {
+                  "height": 1280,
+                  "width": 1708,
+                  "info_list": [
+                    {
+                      "url": "https://example.invalid/5a867f846d57",
+                      "image_scene": "WB_DFT"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/48bc6faf5b79"
+                    }
+                  ]
+                },
+                {
+                  "width": 1708,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/28276859838a"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/f0527ec22e9b"
+                    }
+                  ],
+                  "height": 1280
+                },
+                {
+                  "height": 2164,
+                  "width": 1280,
+                  "info_list": [
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/f25bc4076f66"
+                    },
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/4dc205a4766a"
+                    }
+                  ]
+                }
+              ],
+              "corner_tag_info": [
+                {
+                  "type": "publish_time",
+                  "text": "2小时前"
+                }
+              ],
+              "type": "normal",
+              "display_title": "文文文文文文文文文文文文文文文文文",
+              "user": {
+                "avatar": "https://example.invalid/bf076e48e088",
+                "user_id": "52ef0cb2eaa13af127c1b8f8",
+                "nickname": "用户F",
+                "xsec_token": "REDACTED-6171752ae118",
+                "nick_name": "用户F"
+              },
+              "interact_info": {
+                "comment_count": "0",
+                "shared_count": "0",
+                "liked": false,
+                "liked_count": "0",
+                "collected": false,
+                "collected_count": "0"
+              }
+            },
+            "xsec_token": "REDACTED-b416798b0777",
+            "id": "6aea745e000000000602c445"
+          }
+        ],
+        "request_dqa_instant": true
+      }
+    },
+    "captured_at": 1793760531817
+  }
+}

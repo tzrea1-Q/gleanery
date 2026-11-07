@@ -1,0 +1,748 @@
+{
+  "meta": {
+    "platform": "bili",
+    "kind": "ssr:video",
+    "url_path": "/video/BV1qxmbYvEbY/",
+    "captured_on": "2026-11-01",
+    "source": "recorded",
+    "case": "normal",
+    "note": ""
+  },
+  "capture": {
+    "platform": "bili",
+    "kind": "ssr:video",
+    "url_path": "/video/BV1qxmbYvEbY/",
+    "query": {},
+    "status": 200,
+    "headers": {},
+    "body": {
+      "bvid": "BV1qxmbYvEbY",
+      "aid": 113469663810227,
+      "videos": 1,
+      "tid": 215,
+      "tid_v2": 2153,
+      "tname": "",
+      "tname_v2": "",
+      "copyright": 1,
+      "pic": "https://example.invalid/d44d1d05ad8c",
+      "title": "文文文文文文文文文文文文文文文文文",
+      "pubdate": 1731409868,
+      "ctime": 1731409844,
+      "desc": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+      "desc_v2": [
+        {
+          "raw_text": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+          "type": 1,
+          "biz_id": 0
+        }
+      ],
+      "state": 0,
+      "duration": 413,
+      "mission_id": 4024253,
+      "rights": {
+        "bp": 0,
+        "elec": 0,
+        "download": 1,
+        "movie": 0,
+        "pay": 0,
+        "hd5": 1,
+        "no_reprint": 1,
+        "autoplay": 1,
+        "ugc_pay": 0,
+        "is_cooperation": 0,
+        "ugc_pay_preview": 0,
+        "no_background": 0,
+        "clean_mode": 0,
+        "is_stein_gate": 0,
+        "is_360": 0,
+        "no_share": 0,
+        "arc_pay": 0,
+        "free_watch": 0
+      },
+      "owner": {
+        "mid": 4898644,
+        "name": "用户A",
+        "face": "https://example.invalid/f9f1126475b3"
+      },
+      "stat": {
+        "aid": 113469663810227,
+        "view": 189333,
+        "danmaku": 240,
+        "reply": 985,
+        "favorite": 7427,
+        "coin": 7232,
+        "share": 1154,
+        "now_rank": 0,
+        "his_rank": 0,
+        "like": 14949,
+        "dislike": 0,
+        "evaluation": "",
+        "vt": 0
+      },
+      "argue_info": {
+        "argue_msg": "",
+        "argue_type": 0,
+        "argue_link": ""
+      },
+      "dynamic": "",
+      "cid": 26728139563,
+      "dimension": {
+        "width": 1440,
+        "height": 2560,
+        "rotate": 0
+      },
+      "season_id": 5048370,
+      "premiere": null,
+      "teenage_mode": 0,
+      "is_chargeable_season": false,
+      "is_story": true,
+      "is_upower_exclusive": false,
+      "is_upower_play": false,
+      "is_upower_preview": false,
+      "enable_vt": 0,
+      "vt_display": "",
+      "is_upower_exclusive_with_qa": false,
+      "is_hua_sheng": false,
+      "no_cache": false,
+      "pages": [
+        {
+          "cid": 26728139563,
+          "page": 1,
+          "from": "vupload",
+          "part": "文文文文文文文文文文文文文文文文文",
+          "duration": 413,
+          "vid": "",
+          "weblink": "",
+          "dimension": {
+            "width": 1440,
+            "height": 2560,
+            "rotate": 0
+          },
+          "first_frame": "https://example.invalid/4f3e90a4465b",
+          "ctime": 1731409844
+        }
+      ],
+      "subtitle": {
+        "allow_submit": false,
+        "list": [
+          {
+            "id": 1621177980644599000,
+            "lan": "ai-zh",
+            "lan_doc": "中文",
+            "is_lock": false,
+            "subtitle_url": "",
+            "type": 1,
+            "id_str": "1621177980644599040",
+            "ai_type": 0,
+            "ai_status": 2,
+            "subtitle_height": null,
+            "author": {
+              "mid": 3,
+              "name": "",
+              "sex": "",
+              "face": "",
+              "sign": "",
+              "rank": 0,
+              "birthday": 0,
+              "is_fake_account": 0,
+              "is_deleted": 0,
+              "in_reg_audit": 0,
+              "is_senior_member": 0,
+              "name_render": null,
+              "handle": ""
+            }
+          }
+        ]
+      },
+      "ugc_season": {
+        "id": 5048370,
+        "title": "文文文文",
+        "cover": "https://example.invalid/e4076de3b6e6",
+        "mid": 4898644,
+        "intro": "器具实操和理论知识",
+        "sign_state": 0,
+        "attribute": 140,
+        "stat": {
+          "season_id": 5048370,
+          "view": 624381,
+          "danmaku": 736,
+          "reply": 3326,
+          "fav": 17749,
+          "coin": 13580,
+          "share": 3251,
+          "now_rank": 0,
+          "his_rank": 0,
+          "like": 30888,
+          "vt": 0,
+          "vv": 0
+        },
+        "ep_count": 60,
+        "season_type": 1,
+        "is_pay_season": false,
+        "enable_vt": 0,
+        "sections": [
+          {
+            "season_id": 5048370,
+            "id": 5620876,
+            "title": "文文",
+            "type": 1,
+            "episodes": [
+              {
+                "season_id": 5048370,
+                "section_id": 5620876,
+                "id": 115341773,
+                "aid": 909274603,
+                "cid": 1076977273,
+                "title": "[古早视频]文文文文文文文文文文文文文文文文",
+                "attribute": 0,
+                "arc": {
+                  "aid": 909274603,
+                  "videos": 0,
+                  "type_id": 0,
+                  "type_name": "",
+                  "copyright": 0,
+                  "pic": "https://example.invalid/c40c2d99ec52",
+                  "title": "[古早视频]文文文文文文文文文文文文文文文文",
+                  "pubdate": 1680189038,
+                  "ctime": 1680189038,
+                  "desc": "",
+                  "state": 0,
+                  "duration": 75,
+                  "rights": {
+                    "bp": 0,
+                    "elec": 0,
+                    "download": 0,
+                    "movie": 0,
+                    "pay": 0,
+                    "hd5": 0,
+                    "no_reprint": 0,
+                    "autoplay": 0,
+                    "ugc_pay": 0,
+                    "is_cooperation": 0,
+                    "ugc_pay_preview": 0,
+                    "arc_pay": 0,
+                    "free_watch": 0
+                  },
+                  "author": {
+                    "mid": 4898644,
+                    "name": "用户A",
+                    "face": "https://example.invalid/f9f1126475b3"
+                  },
+                  "stat": {
+                    "aid": 909274603,
+                    "view": 1358,
+                    "danmaku": 0,
+                    "reply": 0,
+                    "fav": 2,
+                    "coin": 5,
+                    "share": 3,
+                    "now_rank": 0,
+                    "his_rank": 0,
+                    "like": 19,
+                    "dislike": 0,
+                    "evaluation": "",
+                    "argue_msg": "",
+                    "vt": 0,
+                    "vv": 1358
+                  },
+                  "dynamic": "",
+                  "dimension": {
+                    "width": 0,
+                    "height": 0,
+                    "rotate": 0
+                  },
+                  "desc_v2": null,
+                  "is_chargeable_season": false,
+                  "is_blooper": false,
+                  "enable_vt": 0,
+                  "vt_display": "",
+                  "type_id_v2": 0,
+                  "type_name_v2": "",
+                  "is_lesson_video": 0
+                },
+                "page": {
+                  "cid": 1076977273,
+                  "page": 1,
+                  "from": "vupload",
+                  "part": "文文文文文文文文文文文文文文文文",
+                  "duration": 75,
+                  "vid": "",
+                  "weblink": "",
+                  "dimension": {
+                    "width": 1920,
+                    "height": 1080,
+                    "rotate": 0
+                  }
+                },
+                "bvid": "BV17M4y1U7BQ",
+                "pages": [
+                  {
+                    "cid": 1076977273,
+                    "page": 1,
+                    "from": "vupload",
+                    "part": "文文文文文文文文文文文文文文文文",
+                    "duration": 75,
+                    "vid": "",
+                    "weblink": "",
+                    "dimension": {
+                      "width": 1920,
+                      "height": 1080,
+                      "rotate": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "season_id": 5048370,
+                "section_id": 5620876,
+                "id": 115341771,
+                "aid": 909556855,
+                "cid": 1082006726,
+                "title": "[古早视频]文文文文文文文文文文文文文",
+                "attribute": 0,
+                "arc": {
+                  "aid": 909556855,
+                  "videos": 0,
+                  "type_id": 0,
+                  "type_name": "",
+                  "copyright": 0,
+                  "pic": "https://example.invalid/a2c01c8a92bc",
+                  "title": "[古早视频]文文文文文文文文文文文文文",
+                  "pubdate": 1680535520,
+                  "ctime": 1680535520,
+                  "desc": "",
+                  "state": 0,
+                  "duration": 72,
+                  "rights": {
+                    "bp": 0,
+                    "elec": 0,
+                    "download": 0,
+                    "movie": 0,
+                    "pay": 0,
+                    "hd5": 0,
+                    "no_reprint": 0,
+                    "autoplay": 0,
+                    "ugc_pay": 0,
+                    "is_cooperation": 0,
+                    "ugc_pay_preview": 0,
+                    "arc_pay": 0,
+                    "free_watch": 0
+                  },
+                  "author": {
+                    "mid": 4898644,
+                    "name": "用户A",
+                    "face": "https://example.invalid/f9f1126475b3"
+                  },
+                  "stat": {
+                    "aid": 909556855,
+                    "view": 1323,
+                    "danmaku": 0,
+                    "reply": 2,
+                    "fav": 2,
+                    "coin": 4,
+                    "share": 4,
+                    "now_rank": 0,
+                    "his_rank": 0,
+                    "like": 24,
+                    "dislike": 0,
+                    "evaluation": "",
+                    "argue_msg": "",
+                    "vt": 0,
+                    "vv": 1323
+                  },
+                  "dynamic": "",
+                  "dimension": {
+                    "width": 0,
+                    "height": 0,
+                    "rotate": 0
+                  },
+                  "desc_v2": null,
+                  "is_chargeable_season": false,
+                  "is_blooper": false,
+                  "enable_vt": 0,
+                  "vt_display": "",
+                  "type_id_v2": 0,
+                  "type_name_v2": "",
+                  "is_lesson_video": 0
+                },
+                "page": {
+                  "cid": 1082006726,
+                  "page": 1,
+                  "from": "vupload",
+                  "part": "文文文文文文文文文文文文文",
+                  "duration": 72,
+                  "vid": "",
+                  "weblink": "",
+                  "dimension": {
+                    "width": 1920,
+                    "height": 1080,
+                    "rotate": 0
+                  }
+                },
+                "bvid": "BV1VM4y1m78d",
+                "pages": [
+                  {
+                    "cid": 1082006726,
+                    "page": 1,
+                    "from": "vupload",
+                    "part": "文文文文文文文文文文文文文",
+                    "duration": 72,
+                    "vid": "",
+                    "weblink": "",
+                    "dimension": {
+                      "width": 1920,
+                      "height": 1080,
+                      "rotate": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "season_id": 5048370,
+                "section_id": 5620876,
+                "id": 115341770,
+                "aid": 527057517,
+                "cid": 1084235137,
+                "title": "[古早视频]文文文文文文文文文文文文文",
+                "attribute": 0,
+                "arc": {
+                  "aid": 527057517,
+                  "videos": 0,
+                  "type_id": 0,
+                  "type_name": "",
+                  "copyright": 0,
+                  "pic": "https://example.invalid/506eb6c3a15f",
+                  "title": "[古早视频]文文文文文文文文文文文文文",
+                  "pubdate": 1680696432,
+                  "ctime": 1680696432,
+                  "desc": "",
+                  "state": 0,
+                  "duration": 24,
+                  "rights": {
+                    "bp": 0,
+                    "elec": 0,
+                    "download": 0,
+                    "movie": 0,
+                    "pay": 0,
+                    "hd5": 0,
+                    "no_reprint": 0,
+                    "autoplay": 0,
+                    "ugc_pay": 0,
+                    "is_cooperation": 0,
+                    "ugc_pay_preview": 0,
+                    "arc_pay": 0,
+                    "free_watch": 0
+                  },
+                  "author": {
+                    "mid": 4898644,
+                    "name": "用户A",
+                    "face": "https://example.invalid/f9f1126475b3"
+                  },
+                  "stat": {
+                    "aid": 527057517,
+                    "view": 973,
+                    "danmaku": 0,
+                    "reply": 4,
+                    "fav": 2,
+                    "coin": 4,
+                    "share": 0,
+                    "now_rank": 0,
+                    "his_rank": 0,
+                    "like": 16,
+                    "dislike": 0,
+                    "evaluation": "",
+                    "argue_msg": "",
+                    "vt": 0,
+                    "vv": 973
+                  },
+                  "dynamic": "",
+                  "dimension": {
+                    "width": 0,
+                    "height": 0,
+                    "rotate": 0
+                  },
+                  "desc_v2": null,
+                  "is_chargeable_season": false,
+                  "is_blooper": false,
+                  "enable_vt": 0,
+                  "vt_display": "",
+                  "type_id_v2": 0,
+                  "type_name_v2": "",
+                  "is_lesson_video": 0
+                },
+                "page": {
+                  "cid": 1084235137,
+                  "page": 1,
+                  "from": "vupload",
+                  "part": "文文文文文文文文文文文文文",
+                  "duration": 24,
+                  "vid": "",
+                  "weblink": "",
+                  "dimension": {
+                    "width": 1920,
+                    "height": 1080,
+                    "rotate": 0
+                  }
+                },
+                "bvid": "BV1VM411T7DS",
+                "pages": [
+                  {
+                    "cid": 1084235137,
+                    "page": 1,
+                    "from": "vupload",
+                    "part": "文文文文文文文文文文文文文",
+                    "duration": 24,
+                    "vid": "",
+                    "weblink": "",
+                    "dimension": {
+                      "width": 1920,
+                      "height": 1080,
+                      "rotate": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "season_id": 5048370,
+                "section_id": 5620876,
+                "id": 115341772,
+                "aid": 269506367,
+                "cid": 1082001356,
+                "title": "[古早视频]文文文文文文文文",
+                "attribute": 0,
+                "arc": {
+                  "aid": 269506367,
+                  "videos": 0,
+                  "type_id": 0,
+                  "type_name": "",
+                  "copyright": 0,
+                  "pic": "https://example.invalid/a39adc2bf083",
+                  "title": "[古早视频]文文文文文文文文",
+                  "pubdate": 1680535288,
+                  "ctime": 1680535288,
+                  "desc": "",
+                  "state": 0,
+                  "duration": 108,
+                  "rights": {
+                    "bp": 0,
+                    "elec": 0,
+                    "download": 0,
+                    "movie": 0,
+                    "pay": 0,
+                    "hd5": 0,
+                    "no_reprint": 0,
+                    "autoplay": 0,
+                    "ugc_pay": 0,
+                    "is_cooperation": 0,
+                    "ugc_pay_preview": 0,
+                    "arc_pay": 0,
+                    "free_watch": 0
+                  },
+                  "author": {
+                    "mid": 4898644,
+                    "name": "用户A",
+                    "face": "https://example.invalid/f9f1126475b3"
+                  },
+                  "stat": {
+                    "aid": 269506367,
+                    "view": 1136,
+                    "danmaku": 2,
+                    "reply": 0,
+                    "fav": 8,
+                    "coin": 5,
+                    "share": 3,
+                    "now_rank": 0,
+                    "his_rank": 0,
+                    "like": 24,
+                    "dislike": 0,
+                    "evaluation": "",
+                    "argue_msg": "",
+                    "vt": 0,
+                    "vv": 1136
+                  },
+                  "dynamic": "",
+                  "dimension": {
+                    "width": 0,
+                    "height": 0,
+                    "rotate": 0
+                  },
+                  "desc_v2": null,
+                  "is_chargeable_season": false,
+                  "is_blooper": false,
+                  "enable_vt": 0,
+                  "vt_display": "",
+                  "type_id_v2": 0,
+                  "type_name_v2": "",
+                  "is_lesson_video": 0
+                },
+                "page": {
+                  "cid": 1082001356,
+                  "page": 1,
+                  "from": "vupload",
+                  "part": "文文文文文文文文",
+                  "duration": 108,
+                  "vid": "",
+                  "weblink": "",
+                  "dimension": {
+                    "width": 1920,
+                    "height": 1080,
+                    "rotate": 0
+                  }
+                },
+                "bvid": "BV1oc411p7jM",
+                "pages": [
+                  {
+                    "cid": 1082001356,
+                    "page": 1,
+                    "from": "vupload",
+                    "part": "文文文文文文文文",
+                    "duration": 108,
+                    "vid": "",
+                    "weblink": "",
+                    "dimension": {
+                      "width": 1920,
+                      "height": 1080,
+                      "rotate": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "season_id": 5048370,
+                "section_id": 5620876,
+                "id": 115341769,
+                "aid": 824537264,
+                "cid": 1084241944,
+                "title": "[古早视频]文文文文文文文文文文文文文文文文文文文文",
+                "attribute": 0,
+                "arc": {
+                  "aid": 824537264,
+                  "videos": 0,
+                  "type_id": 0,
+                  "type_name": "",
+                  "copyright": 0,
+                  "pic": "https://example.invalid/1f3d3260139c",
+                  "title": "[古早视频]文文文文文文文文文文文文文文文文文文文文",
+                  "pubdate": 1680696537,
+                  "ctime": 1680696537,
+                  "desc": "",
+                  "state": 0,
+                  "duration": 51,
+                  "rights": {
+                    "bp": 0,
+                    "elec": 0,
+                    "download": 0,
+                    "movie": 0,
+                    "pay": 0,
+                    "hd5": 0,
+                    "no_reprint": 0,
+                    "autoplay": 0,
+                    "ugc_pay": 0,
+                    "is_cooperation": 0,
+                    "ugc_pay_preview": 0,
+                    "arc_pay": 0,
+                    "free_watch": 0
+                  },
+                  "author": {
+                    "mid": 4898644,
+                    "name": "用户A",
+                    "face": "https://example.invalid/f9f1126475b3"
+                  },
+                  "stat": {
+                    "aid": 824537264,
+                    "view": 1074,
+                    "danmaku": 0,
+                    "reply": 2,
+                    "fav": 5,
+                    "coin": 9,
+                    "share": 2,
+                    "now_rank": 0,
+                    "his_rank": 0,
+                    "like": 18,
+                    "dislike": 0,
+                    "evaluation": "",
+                    "argue_msg": "",
+                    "vt": 0,
+                    "vv": 1074
+                  },
+                  "dynamic": "",
+                  "dimension": {
+                    "width": 0,
+                    "height": 0,
+                    "rotate": 0
+                  },
+                  "desc_v2": null,
+                  "is_chargeable_season": false,
+                  "is_blooper": false,
+                  "enable_vt": 0,
+                  "vt_display": "",
+                  "type_id_v2": 0,
+                  "type_name_v2": "",
+                  "is_lesson_video": 0
+                },
+                "page": {
+                  "cid": 1084241944,
+                  "page": 1,
+                  "from": "vupload",
+                  "part": "文文文文文文文文文文文文文文文文文文文文",
+                  "duration": 51,
+                  "vid": "",
+                  "weblink": "",
+                  "dimension": {
+                    "width": 1920,
+                    "height": 1080,
+                    "rotate": 0
+                  }
+                },
+                "bvid": "BV1Lg4y1g7XD",
+                "pages": [
+                  {
+                    "cid": 1084241944,
+                    "page": 1,
+                    "from": "vupload",
+                    "part": "文文文文文文文文文文文文文文文文文文文文",
+                    "duration": 51,
+                    "vid": "",
+                    "weblink": "",
+                    "dimension": {
+                      "width": 1920,
+                      "height": 1080,
+                      "rotate": 0
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "is_season_display": true,
+      "user_garb": {
+        "url_image_ani_cut": ""
+      },
+      "honor_reply": {},
+      "like_icon": "",
+      "need_jump_bv": false,
+      "disable_show_up_info": false,
+      "is_story_play": 1,
+      "is_view_self": false,
+      "embedPlayer": {
+        "p": 1,
+        "aid": 113469663810227,
+        "bvid": "BV1qxmbYvEbY",
+        "cid": 26728139563,
+        "vid": "",
+        "vtype": "vupload",
+        "stats": {
+          "spmId": "REDACTED-IP",
+          "spmIdFrom": "REDACTED-IP",
+          "trackId": ""
+        },
+        "t": 0,
+        "fromDid": null,
+        "featureList": {}
+      }
+    },
+    "captured_at": 1793517135055
+  }
+}

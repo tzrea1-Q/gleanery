@@ -1,0 +1,340 @@
+{
+  "meta": {
+    "platform": "xhs",
+    "kind": "feed",
+    "url_path": "/api/sns/web/v1/feed",
+    "captured_on": "2026-11-03",
+    "source": "recorded",
+    "case": "video",
+    "note": "从搜索结果点卡片打开弹层，视频笔记",
+    "verdict": null
+  },
+  "capture": {
+    "platform": "xhs",
+    "kind": "feed",
+    "url_path": "/api/sns/web/v1/feed",
+    "query": {},
+    "status": 200,
+    "headers": {
+      "content-type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "code": 0,
+      "success": true,
+      "msg": "成功",
+      "data": {
+        "cursor_score": "",
+        "items": [
+          {
+            "id": "6ae9885300000000030161bc",
+            "model_type": "note",
+            "note_card": {
+              "interact_info": {
+                "nice_count": "",
+                "liked": false,
+                "liked_count": "39",
+                "collected": false,
+                "share_count": "11",
+                "collected_count": "22",
+                "comment_count": "19",
+                "followed": false,
+                "relation": "none"
+              },
+              "image_list": [
+                {
+                  "info_list": [
+                    {
+                      "image_scene": "WB_PRV",
+                      "url": "https://example.invalid/6ab9b8c89a92"
+                    },
+                    {
+                      "image_scene": "WB_DFT",
+                      "url": "https://example.invalid/4de673047360"
+                    }
+                  ],
+                  "url_pre": "https://example.invalid/6ab9b8c89a92",
+                  "width": 1080,
+                  "url": "",
+                  "url_default": "https://example.invalid/4de673047360",
+                  "stream": {},
+                  "live_photo": false,
+                  "file_id": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+                  "height": 1441,
+                  "trace_id": ""
+                }
+              ],
+              "video": {
+                "media": {
+                  "stream": {
+                    "EF6": [],
+                    "EF5": [
+                      {
+                        "avg_bitrate": 869452,
+                        "audio_codec": "aac",
+                        "audio_duration": 88721,
+                        "rotate": 0,
+                        "backup_urls": [
+                          "https://example.invalid/76d180a4dee4",
+                          "https://example.invalid/322b1591548e"
+                        ],
+                        "default_stream": 0,
+                        "volume": 0,
+                        "fps": 25,
+                        "psnr": 42.209999084472656,
+                        "quality_type": "HD",
+                        "video_duration": 88680,
+                        "stream_type": 520,
+                        "format": "mp4",
+                        "height": 1280,
+                        "video_codec": "EF5",
+                        "video_bitrate": 768515,
+                        "audio_bitrate": 96026,
+                        "audio_channels": 2,
+                        "width": 720,
+                        "size": 9642443,
+                        "master_url": "https://example.invalid/ae1c235a38ed",
+                        "hdr_type": 0,
+                        "vmaf": -1,
+                        "ssim": 0,
+                        "weight": 62,
+                        "stream_desc": "WEB_520",
+                        "duration": 88722
+                      },
+                      {
+                        "width": 1080,
+                        "video_bitrate": 945513,
+                        "audio_bitrate": 96026,
+                        "audio_channels": 2,
+                        "rotate": 0,
+                        "hdr_type": 0,
+                        "volume": 0,
+                        "fps": 25,
+                        "master_url": "https://example.invalid/e618255aa2c0",
+                        "ssim": 0,
+                        "weight": 62,
+                        "stream_desc": "WEB_521",
+                        "format": "mp4",
+                        "height": 1920,
+                        "duration": 88722,
+                        "size": 11604470,
+                        "avg_bitrate": 1046366,
+                        "video_codec": "EF5",
+                        "video_duration": 88680,
+                        "audio_codec": "aac",
+                        "audio_duration": 88721,
+                        "backup_urls": [
+                          "https://example.invalid/35555de8a4dc",
+                          "https://example.invalid/1d0a9c27176c"
+                        ],
+                        "vmaf": -1,
+                        "psnr": 42.387001037597656,
+                        "quality_type": "HD",
+                        "stream_type": 521,
+                        "default_stream": 0
+                      },
+                      {
+                        "height": 2560,
+                        "size": 18648142,
+                        "avg_bitrate": 1681489,
+                        "fps": 25,
+                        "hdr_type": 0,
+                        "stream_type": 522,
+                        "default_stream": 0,
+                        "width": 1440,
+                        "audio_duration": 88721,
+                        "audio_channels": 2,
+                        "weight": 70,
+                        "duration": 88722,
+                        "volume": 0,
+                        "video_bitrate": 1548912,
+                        "rotate": 0,
+                        "backup_urls": [
+                          "https://example.invalid/fa0f64190d05",
+                          "https://example.invalid/6bbc6672a741"
+                        ],
+                        "vmaf": -1,
+                        "psnr": 45.082000732421875,
+                        "ssim": 0,
+                        "stream_desc": "WEB_522",
+                        "format": "mp4",
+                        "video_codec": "EF5",
+                        "video_duration": 88680,
+                        "audio_codec": "aac",
+                        "audio_bitrate": 128035,
+                        "master_url": "https://example.invalid/c4d262521d60",
+                        "quality_type": "HD"
+                      },
+                      {
+                        "audio_bitrate": 128035,
+                        "stream_desc": "WEB_523",
+                        "fps": 25,
+                        "video_codec": "EF5",
+                        "video_duration": 88680,
+                        "audio_duration": 88721,
+                        "master_url": "https://example.invalid/932a58a33d51",
+                        "vmaf": -1,
+                        "weight": 80,
+                        "duration": 88722,
+                        "size": 33363868,
+                        "rotate": 0,
+                        "backup_urls": [
+                          "https://example.invalid/fc5aef5d69ad",
+                          "https://example.invalid/e94d83dcafc4"
+                        ],
+                        "psnr": 46.138999938964844,
+                        "quality_type": "HD",
+                        "stream_type": 523,
+                        "audio_codec": "aac",
+                        "audio_channels": 2,
+                        "hdr_type": 0,
+                        "ssim": 0,
+                        "video_bitrate": 2876447,
+                        "default_stream": 0,
+                        "format": "mp4",
+                        "width": 2160,
+                        "height": 3840,
+                        "volume": 0,
+                        "avg_bitrate": 3008396
+                      }
+                    ],
+                    "EF7": [],
+                    "EF4": [
+                      {
+                        "audio_codec": "aac",
+                        "rotate": 0,
+                        "hdr_type": 0,
+                        "stream_type": 258,
+                        "height": 1280,
+                        "audio_channels": 2,
+                        "backup_urls": [
+                          "https://example.invalid/806209b5fed4",
+                          "https://example.invalid/c013ff560d1b"
+                        ],
+                        "vmaf": -1,
+                        "psnr": 0,
+                        "ssim": 0,
+                        "format": "mp4",
+                        "size": 17183279,
+                        "video_duration": 88680,
+                        "master_url": "https://example.invalid/fd72b69bffe4",
+                        "default_stream": 0,
+                        "volume": 0,
+                        "fps": 25,
+                        "video_codec": "EF4",
+                        "audio_bitrate": 56029,
+                        "audio_duration": 88721,
+                        "weight": 59,
+                        "quality_type": "HD",
+                        "stream_desc": "hd_258",
+                        "width": 720,
+                        "duration": 88722,
+                        "avg_bitrate": 1549404,
+                        "video_bitrate": 1488797
+                      }
+                    ]
+                  },
+                  "video_id": 138179506615549355,
+                  "video": {
+                    "hdr_type": 0,
+                    "drm_type": 0,
+                    "stream_types": [
+                      258,
+                      520,
+                      521,
+                      522,
+                      523
+                    ],
+                    "biz_name": 110,
+                    "biz_id": "282294698382287292",
+                    "duration": 89,
+                    "md5": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文"
+                  }
+                },
+                "image": {
+                  "first_frame_fileid": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+                  "thumbnail_fileid": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文"
+                },
+                "capa": {
+                  "duration": 88
+                },
+                "media_v2": "https://example.invalid/1aaa56f1245b"
+              },
+              "tag_list": [
+                {
+                  "id": "61c2a140000000000100a934",
+                  "name": "用户A",
+                  "type": "topic"
+                },
+                {
+                  "id": "634e349c000000000100462e",
+                  "name": "用户B",
+                  "type": "topic"
+                },
+                {
+                  "id": "640527aa000000001803ec31",
+                  "name": "用户C",
+                  "type": "topic"
+                },
+                {
+                  "id": "605b662d0000000001009aff",
+                  "name": "用户D",
+                  "type": "topic"
+                },
+                {
+                  "id": "5eec2f18000000000101e0d2",
+                  "name": "用户E",
+                  "type": "topic"
+                },
+                {
+                  "name": "用户F",
+                  "type": "topic",
+                  "id": "597191bbe39faf1aeee25ff9"
+                },
+                {
+                  "type": "topic",
+                  "id": "5d178c44000000000f028907",
+                  "name": "用户G"
+                },
+                {
+                  "id": "64759866000000001c024064",
+                  "name": "用户H",
+                  "type": "topic"
+                },
+                {
+                  "type": "topic",
+                  "id": "613f7b9f000000000100b10e",
+                  "name": "用户I"
+                },
+                {
+                  "id": "612dbf0300000000010030a8",
+                  "name": "用户J",
+                  "type": "topic"
+                }
+              ],
+              "time": 1793689683000,
+              "type": "video",
+              "desc": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文文\n文\n文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文\n文文文文文文文文文\n文文文文文文文文文文文\n文文文文文\n文文文文文文文文文文文\n文文文文文文文\n文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文文文文文文文文文文文文文文文文文\n文文文文文文文文文\n文文文文文文文\n文文文文文文文文文文文文\n文文文文文文\n文文文文文文文文文\n文文文文文文文文文\n文文文文文文文文文文文文文文文文文文\n文文文文[话题]文文文文文文文[话题]文文文文文文文[话题]文文文文文文文[话题]文文文文文文文[话题]文文文文文[话题]文文文文文文[话题]文文文文文文[话题]文文文文文文文文[话题]文文文文文文文文[话题]文",
+              "user": {
+                "user_id": "60695d5d367765f4664ceb13",
+                "nickname": "用户K",
+                "avatar": "https://example.invalid/6e416f44cb89",
+                "xsec_token": "REDACTED-87354fe9904d"
+              },
+              "at_user_list": [],
+              "last_update_time": 1793709742000,
+              "ip_location": "湖北",
+              "share_info": {
+                "un_share": false
+              },
+              "note_id": "6ae9885300000000030161bc",
+              "title": "文文文文文文文文文文"
+            },
+            "ignore": false
+          }
+        ],
+        "current_time": 1793760732141
+      }
+    },
+    "captured_at": 1793760731775
+  }
+}

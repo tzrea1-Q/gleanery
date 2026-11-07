@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "platform": "xhs",
+    "kind": "search/notes",
+    "url_path": "/api/sns/web/v2/search/notes",
+    "captured_on": "2026-11-03",
+    "source": "handwritten",
+    "case": "empty",
+    "note": "手写，依据登录态下真站搜不空；形态照 last_page 去掉条目",
+    "verdict": null
+  },
+  "capture": {
+    "platform": "xhs",
+    "kind": "search/notes",
+    "url_path": "/api/sns/web/v2/search/notes",
+    "query": {},
+    "status": 200,
+    "headers": {},
+    "body": {
+      "code": 0,
+      "success": true,
+      "msg": "成功",
+      "data": {
+        "items": [],
+        "has_more": false
+      }
+    },
+    "captured_at": 1793760000000
+  }
+}

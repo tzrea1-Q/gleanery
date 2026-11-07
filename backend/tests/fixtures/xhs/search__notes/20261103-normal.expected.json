@@ -1,0 +1,250 @@
+{
+  "search": {
+    "contents": [
+      {
+        "platform": "xhs",
+        "platform_id": "69d6fc08000000001f007646",
+        "url": "https://www.xiaohongshu.com/explore/69d6fc08000000001f007646",
+        "kind": "image_text",
+        "title": "文文文文文文文文文文文文文",
+        "body": null,
+        "author": {
+          "platform": "xhs",
+          "platform_id": "1b45c545f0f64dd39df38623",
+          "nickname": "用户A",
+          "avatar_url": "https://example.invalid/66ae550210c6",
+          "ext": {}
+        },
+        "published_at": 1775664000000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 7593,
+          "favorites": 6957,
+          "comments": 391,
+          "shares": 1717,
+          "plays": null
+        },
+        "tags": [],
+        "completeness": "summary",
+        "ext": {
+          "counts_raw": {
+            "likes": "7593",
+            "favorites": "6957",
+            "comments": "391",
+            "shares": "1717"
+          },
+          "counts_approx": false,
+          "xsec_token": "REDACTED-ac36dd83bbbf",
+          "xsec_source": "pc_search",
+          "published_approx": true
+        }
+      },
+      {
+        "platform": "xhs",
+        "platform_id": "6a316843000000000f01ecb3",
+        "url": "https://www.xiaohongshu.com/explore/6a316843000000000f01ecb3",
+        "kind": "image_text",
+        "title": "文文文文文文文文文文文文文文文文文文文文文文文文文文文文",
+        "body": null,
+        "author": {
+          "platform": "xhs",
+          "platform_id": "725d817e227ffc6fa9fcb337",
+          "nickname": "用户B",
+          "avatar_url": "https://example.invalid/d41a4776e5d1",
+          "ext": {}
+        },
+        "published_at": 1781539200000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 462,
+          "favorites": 480,
+          "comments": 32,
+          "shares": 92,
+          "plays": null
+        },
+        "tags": [],
+        "completeness": "summary",
+        "ext": {
+          "counts_raw": {
+            "likes": "462",
+            "favorites": "480",
+            "comments": "32",
+            "shares": "92"
+          },
+          "counts_approx": false,
+          "xsec_token": "REDACTED-c6d2d9e705aa",
+          "xsec_source": "pc_search",
+          "published_approx": true
+        }
+      },
+      {
+        "platform": "xhs",
+        "platform_id": "6a902c00000000000400a8fb",
+        "url": "https://www.xiaohongshu.com/explore/6a902c00000000000400a8fb",
+        "kind": "image_text",
+        "title": "文文文文文文文文文文文文文",
+        "body": null,
+        "author": {
+          "platform": "xhs",
+          "platform_id": "1205ff6f99834eb80b17b7cd",
+          "nickname": "用户C",
+          "avatar_url": "https://example.invalid/cc783bdb40df",
+          "ext": {}
+        },
+        "published_at": 1788451200000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 1411,
+          "favorites": 1561,
+          "comments": 22,
+          "shares": 542,
+          "plays": null
+        },
+        "tags": [],
+        "completeness": "summary",
+        "ext": {
+          "counts_raw": {
+            "likes": "1411",
+            "favorites": "1561",
+            "comments": "22",
+            "shares": "542"
+          },
+          "counts_approx": false,
+          "xsec_token": "REDACTED-f7174efc4420",
+          "xsec_source": "pc_search",
+          "published_approx": true
+        }
+      },
+      {
+        "platform": "xhs",
+        "platform_id": "6a8ec90300000000070078e5",
+        "url": "https://www.xiaohongshu.com/explore/6a8ec90300000000070078e5",
+        "kind": "image_text",
+        "title": "文文文文文文文文文文文文文",
+        "body": null,
+        "author": {
+          "platform": "xhs",
+          "platform_id": "67f16236fccbb5f07ae36690",
+          "nickname": "用户D",
+          "avatar_url": "https://example.invalid/b353d3a03efc",
+          "ext": {}
+        },
+        "published_at": 1787673600000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 2,
+          "favorites": 7,
+          "comments": 7,
+          "shares": 2,
+          "plays": null
+        },
+        "tags": [],
+        "completeness": "summary",
+        "ext": {
+          "counts_raw": {
+            "likes": "2",
+            "favorites": "7",
+            "comments": "7",
+            "shares": "2"
+          },
+          "counts_approx": false,
+          "xsec_token": "REDACTED-848952c43fe9",
+          "xsec_source": "pc_search",
+          "published_approx": true
+        }
+      },
+      {
+        "platform": "xhs",
+        "platform_id": "6a61d2be000000000401cf8f",
+        "url": "https://www.xiaohongshu.com/explore/6a61d2be000000000401cf8f",
+        "kind": "image_text",
+        "title": "文文文文文文文文文文文文文文文",
+        "body": null,
+        "author": {
+          "platform": "xhs",
+          "platform_id": "41245df75975a6e34835a3d5",
+          "nickname": "用户E",
+          "avatar_url": "https://example.invalid/abc35a3af1e6",
+          "ext": {}
+        },
+        "published_at": 1784736000000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 303,
+          "favorites": 196,
+          "comments": 10,
+          "shares": 51,
+          "plays": null
+        },
+        "tags": [],
+        "completeness": "summary",
+        "ext": {
+          "counts_raw": {
+            "likes": "303",
+            "favorites": "196",
+            "comments": "10",
+            "shares": "51"
+          },
+          "counts_approx": false,
+          "xsec_token": "REDACTED-70cd07d41de4",
+          "xsec_source": "pc_search",
+          "published_approx": true
+        }
+      },
+      {
+        "platform": "xhs",
+        "platform_id": "69f6d145000000002301c559",
+        "url": "https://www.xiaohongshu.com/explore/69f6d145000000002301c559",
+        "kind": "image_text",
+        "title": "文文文文文文文文文文文文",
+        "body": null,
+        "author": {
+          "platform": "xhs",
+          "platform_id": "d5030562a604cdb4cac52d0d",
+          "nickname": "用户F",
+          "avatar_url": "https://example.invalid/bac64e45fe61",
+          "ext": {}
+        },
+        "published_at": 1777737600000,
+        "platform_updated_at": null,
+        "counts": {
+          "likes": 661,
+          "favorites": 384,
+          "comments": 86,
+          "shares": 1784,
+          "plays": null
+        },
+        "tags": [],
+        "completeness": "summary",
+        "ext": {
+          "counts_raw": {
+            "likes": "661",
+            "favorites": "384",
+            "comments": "86",
+            "shares": "1784"
+          },
+          "counts_approx": false,
+          "xsec_token": "REDACTED-c6fce1710005",
+          "xsec_source": "pc_search",
+          "published_approx": true
+        }
+      }
+    ],
+    "has_more": true,
+    "report": {
+      "items": 6,
+      "skipped_missing_core": 0,
+      "missing_fields": {},
+      "nonempty_response": true
+    }
+  },
+  "content": null,
+  "comments": null,
+  "subtitles": [],
+  "report": {
+    "items": 6,
+    "skipped_missing_core": 0,
+    "missing_fields": {},
+    "nonempty_response": true
+  }
+}
