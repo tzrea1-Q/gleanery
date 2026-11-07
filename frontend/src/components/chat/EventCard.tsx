@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { api } from "@/api/client";
 import { Notice } from "@/components/common/Notice";
@@ -61,9 +62,17 @@ export function EventCard({
       {event.type === "collection_paused" && (
         <p>
           {event.platform === "bili" ? "B 站" : "小红书"}任务
-          {event.reason === "risk"
-            ? "触发风控已暂停，到进度卡片里选择继续或停止"
-            : "登录失效，到左栏扫码"}
+          {event.reason === "risk" ? (
+            "触发风控已暂停，到进度卡片里选择继续或停止"
+          ) : (
+            <>
+              登录失效，到
+              <Link to="/accounts" className="mx-1 underline">
+                平台账号
+              </Link>
+              扫码
+            </>
+          )}
         </p>
       )}
       {event.type === "follow_up_failed" && <p>{event.message}</p>}

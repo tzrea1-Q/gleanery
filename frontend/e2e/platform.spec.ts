@@ -3,6 +3,7 @@ import { launch } from "./launch";
 
 test("平台登录与采集限速设置", async ({ page }) => {
   await launch(page);
+  await page.getByRole("link", { name: "平台账号" }).click();
   const platform = page.getByRole("region", { name: "B 站" });
   await expect(platform.getByRole("heading", { name: "B 站 · 正常" })).toBeVisible();
   await platform.getByRole("button", { name: "扫码登录" }).click();

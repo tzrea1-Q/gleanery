@@ -8,6 +8,7 @@ import {
   PanelRightOpen,
   Plus,
   Sun,
+  UserRound,
   Wheat,
 } from "lucide-react";
 import { Link, Outlet, useNavigate, useRouterState } from "@tanstack/react-router";
@@ -17,7 +18,7 @@ import { usePlans, useTasks } from "@/api/queries-collect";
 import { ConfirmHost } from "@/components/common/ConfirmHost";
 import { ChatgptNoticeDialog } from "@/components/model/ChatgptNoticeDialog";
 import { DisclaimerDialog } from "@/components/model/DisclaimerDialog";
-import { PlatformDots, PlatformPanel } from "@/components/platform/PlatformPanel";
+import { PlatformAttention } from "@/components/platform/PlatformAccounts";
 import { SettingsDialog } from "@/components/settings/SettingsDialog";
 import { Button } from "@/components/ui/button";
 import {
@@ -209,6 +210,15 @@ function AppSidebar() {
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton asChild isActive={path === "/accounts"} tooltip="平台账号">
+                <Link to="/accounts" aria-current={path === "/accounts" ? "page" : undefined}>
+                  <UserRound />
+                  <span>平台账号</span>
+                  <PlatformAttention />
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
           </SidebarMenu>
         </SidebarGroup>
         <SidebarGroup className="group-data-[collapsible=icon]:hidden">
@@ -243,10 +253,7 @@ function AppSidebar() {
           </nav>
         </SidebarGroup>
       </SidebarContent>
-      {/* 平台出错时内容会变长，限高后自己滚动，不把对话列表挤没 */}
-      <SidebarFooter className="max-h-[55%] overflow-y-auto p-3">
-        <PlatformPanel />
-        <PlatformDots />
+      <SidebarFooter className="p-3">
         <SidebarMenu>
           <SidebarMenuItem>
             <ModelEntry />
@@ -306,7 +313,9 @@ export function AppShell() {
     );
   // 列表页没打开内容时工作区是空的，把宽度还给列表。保持挂载，定位请求才不会中断。
   const listEmpty = (path === "/datasets" || path === "/reports") && !datasetId && !reportId;
-  const workspaceHidden = listEmpty || closed;
+  // 平台账号和工作区内容无关，这一页始终用满宽度。
+  const fullPage = listEmpty || path === "/accounts";
+  const workspaceHidden = fullPage || closed;
   const workspaceWidth = width ? `${width}px` : wide ? "max(50%,560px)" : "clamp(400px,33vw,470px)";
   return (
     <SidebarProvider
@@ -334,7 +343,7 @@ export function AppShell() {
         }`}
       >
         <div className="relative flex min-h-0 min-w-0 flex-col">
-          {closed && !listEmpty && (
+          {closed && !fullPage && (
             <Button
               autoFocus
               variant="ghost"

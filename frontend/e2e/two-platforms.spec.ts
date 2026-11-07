@@ -25,12 +25,6 @@ test("一个平台风控暂停，另一个平台照常完成", async ({ page }) 
   await expect(bili.getByText(/风控暂停/)).toBeVisible({ timeout: 30000 });
   await expect(bili.getByRole("button", { name: "已验证，继续（冷却后恢复）" })).toBeVisible();
   await expect(bili.getByRole("button", { name: "跳过剩余部分" })).toBeVisible();
-  await expect(
-    page
-      .getByRole("complementary")
-      .first()
-      .getByText(/冷却中/),
-  ).toBeVisible();
   await expect(xhs.getByRole("heading", { name: "小红书 · 已完成" })).toBeVisible({
     timeout: 30000,
   });
@@ -49,4 +43,6 @@ test("一个平台风控暂停，另一个平台照常完成", async ({ page }) 
   await expect(
     dataset.locator("tbody a[href*='xiaohongshu.com/explore/']").first(),
   ).toHaveAttribute("href", /xsec_token=/);
+  await page.getByRole("link", { name: "平台账号" }).click();
+  await expect(page.getByRole("region", { name: "B 站" }).getByText(/冷却中/)).toBeVisible();
 });

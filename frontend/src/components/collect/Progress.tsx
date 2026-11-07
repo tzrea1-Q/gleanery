@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { useTaskAction } from "@/api/queries-collect";
 import type { components } from "@/api/schema";
@@ -121,7 +122,15 @@ export function Progress({ tasks }: { tasks: Task[] }) {
             <p className="text-xs break-words text-muted-foreground">{t.progress.last_log}</p>
           )}
           {t.reason === "risk" && t.status === "paused" && <p>本平台队列在你选择前不会继续</p>}
-          {t.reason === "login_lost" && t.status === "paused" && <p>请去左栏扫码登录</p>}
+          {t.reason === "login_lost" && t.status === "paused" && (
+            <p>
+              请到
+              <Link to="/accounts" className="mx-1 underline">
+                平台账号
+              </Link>
+              扫码登录
+            </p>
+          )}
           {!finished(t) && (
             <div className="flex flex-wrap gap-2">
               {t.status === "paused" ? (

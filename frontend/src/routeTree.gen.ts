@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AccountsRouteImport } from './routes/accounts'
 import { Route as DatasetsRouteImport } from './routes/datasets'
 import { Route as ReportsRouteImport } from './routes/reports'
 import { Route as CConversationIdRouteImport } from './routes/c.$conversationId'
@@ -17,6 +18,11 @@ import { Route as CConversationIdRouteImport } from './routes/c.$conversationId'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccountsRoute = AccountsRouteImport.update({
+  id: '/accounts',
+  path: '/accounts',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DatasetsRoute = DatasetsRouteImport.update({
@@ -37,12 +43,14 @@ const CConversationIdRoute = CConversationIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/accounts': typeof AccountsRoute
   '/datasets': typeof DatasetsRoute
   '/reports': typeof ReportsRoute
   '/c/$conversationId': typeof CConversationIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/accounts': typeof AccountsRoute
   '/datasets': typeof DatasetsRoute
   '/reports': typeof ReportsRoute
   '/c/$conversationId': typeof CConversationIdRoute
@@ -50,20 +58,28 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/accounts': typeof AccountsRoute
   '/datasets': typeof DatasetsRoute
   '/reports': typeof ReportsRoute
   '/c/$conversationId': typeof CConversationIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/datasets' | '/reports' | '/c/$conversationId'
+  fullPaths: '/' | '/accounts' | '/datasets' | '/reports' | '/c/$conversationId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/datasets' | '/reports' | '/c/$conversationId'
-  id: '__root__' | '/' | '/datasets' | '/reports' | '/c/$conversationId'
+  to: '/' | '/accounts' | '/datasets' | '/reports' | '/c/$conversationId'
+  id:
+    | '__root__'
+    | '/'
+    | '/accounts'
+    | '/datasets'
+    | '/reports'
+    | '/c/$conversationId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccountsRoute: typeof AccountsRoute
   DatasetsRoute: typeof DatasetsRoute
   ReportsRoute: typeof ReportsRoute
   CConversationIdRoute: typeof CConversationIdRoute
@@ -76,6 +92,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/accounts': {
+      id: '/accounts'
+      path: '/accounts'
+      fullPath: '/accounts'
+      preLoaderRoute: typeof AccountsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/datasets': {
@@ -104,6 +127,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccountsRoute: AccountsRoute,
   DatasetsRoute: DatasetsRoute,
   ReportsRoute: ReportsRoute,
   CConversationIdRoute: CConversationIdRoute,
