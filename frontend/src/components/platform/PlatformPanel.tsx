@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { usePlatformAction, usePlatforms } from "@/api/queries-platform";
+import { PlatformTag, platformName } from "@/components/common/PlatformTag";
 import { Button } from "@/components/ui/button";
+import { formatDateTime } from "@/lib/format";
 
 const states = {
   normal: "正常",
@@ -29,6 +31,32 @@ function reasonText(reason: string) {
   return `原因：${reason}`;
 }
 
+const stateDots: Record<keyof typeof states, string> = {
+  normal: "bg-success",
+  cooldown: "bg-warning",
+  locked: "bg-destructive",
+  login_required: "bg-warning",
+  quota_exhausted: "bg-warning",
+  page_changed: "bg-warning",
+};
+
+/** 左栏收成图标栏时，只留每个平台的状态点。 */
+export function PlatformDots() {
+  const platforms = usePlatforms();
+  return (
+    <div className="hidden flex-col items-center gap-2 py-1 group-data-[collapsible=icon]:flex">
+      {platforms.data?.map((p) => (
+        <span
+          key={p.platform}
+          aria-hidden
+          title={`${platformName(p.platform)}：${states[p.state]}`}
+          className={`size-2 rounded-full ${stateDots[p.state]}`}
+        />
+      ))}
+    </div>
+  );
+}
+
 export function PlatformPanel() {
   const platforms = usePlatforms();
   const action = usePlatformAction();
@@ -38,26 +66,36 @@ export function PlatformPanel() {
     return () => clearInterval(timer);
   }, []);
   return (
-    <section aria-label="平台账号" className="space-y-2">
-      <h2>平台账号</h2>
-      {platforms.isError && <p role="alert">无法加载平台状态</p>}
+    <section aria-label="平台账号" className="space-y-1.5 group-data-[collapsible=icon]:hidden">
+      <h2 className="px-1 text-xs text-muted-foreground">平台账号</h2>
+      {platforms.isError && (
+        <p role="alert" className="text-xs text-destructive">
+          无法加载平台状态
+        </p>
+      )}
       {platforms.data?.map((p) => {
         const until =
           p.state === "cooldown" ? p.cooldown_until : p.state === "locked" ? p.locked_until : null;
         const minutes = until === null ? null : Math.max(0, Math.ceil((until - now) / 60000));
+        const name = platformName(p.platform);
         return (
           <section
             key={p.platform}
-            aria-label={p.platform === "bili" ? "B 站" : "小红书"}
-            className="space-y-1 rounded border p-2"
+            aria-label={name}
+            className="space-y-1.5 rounded-2xl bg-muted p-2.5 text-xs text-muted-foreground"
           >
-            <h3 className="font-medium">
-              {p.platform === "bili" ? "B 站" : "小红书"} · {states[p.state]}
+            <h3
+              aria-label={`${name} · ${states[p.state]}`}
+              className="flex items-center gap-1.5 text-foreground"
+            >
+              <PlatformTag platform={p.platform} />
+              <span aria-hidden className={`size-1.5 rounded-full ${stateDots[p.state]}`} />
+              <span className="min-w-0 truncate">{states[p.state]}</span>
+              <span title="今日额度" className="ml-auto text-muted-foreground tabular-nums">
+                {p.quota_used} / {p.daily_quota}
+              </span>
             </h3>
             <>
-              <p>
-                今日额度 {p.quota_used} / {p.daily_quota}
-              </p>
               {minutes !== null && (
                 <p>
                   剩余
@@ -66,10 +104,8 @@ export function PlatformPanel() {
               )}
               {p.reason && <p>{reasonText(p.reason)}</p>}
               {p.last_probe_at !== null && (
-                <p>
-                  最近探活：{p.last_probe_ok ? "成功" : "失败"} ·{" "}
-                  {new Date(p.last_probe_at).toLocaleString()}
-                  {p.last_probe_detail && ` · ${p.last_probe_detail}`}
+                <p className="truncate" title={p.last_probe_detail ?? undefined}>
+                  探活{p.last_probe_ok ? "成功" : "失败"} · {formatDateTime(p.last_probe_at)}
                 </p>
               )}
               {p.login.browser === "chromium" && <p>未找到本机 Chrome，正在用 Chromium</p>}
@@ -81,7 +117,7 @@ export function PlatformPanel() {
               )}
               <div className="flex flex-wrap gap-1">
                 <Button
-                  size="sm"
+                  size="xs"
                   variant="outline"
                   disabled={
                     action.isPending ||
@@ -93,7 +129,7 @@ export function PlatformPanel() {
                   扫码登录
                 </Button>
                 <Button
-                  size="sm"
+                  size="xs"
                   variant="outline"
                   disabled={action.isPending}
                   onClick={() => action.mutate({ platform: p.platform, action: "probe" })}
@@ -102,7 +138,7 @@ export function PlatformPanel() {
                 </Button>
                 {p.state === "locked" && (
                   <Button
-                    size="sm"
+                    size="xs"
                     variant="outline"
                     disabled={action.isPending}
                     onClick={() => action.mutate({ platform: p.platform, action: "unlock" })}
@@ -113,7 +149,7 @@ export function PlatformPanel() {
                 {p.state === "page_changed" && (
                   <>
                     <Button
-                      size="sm"
+                      size="xs"
                       variant="outline"
                       disabled={action.isPending}
                       onClick={() =>
@@ -126,7 +162,11 @@ export function PlatformPanel() {
                   </>
                 )}
               </div>
-              {action.isError && <p role="alert">{action.error.message}</p>}
+              {action.isError && (
+                <p role="alert" className="text-destructive">
+                  {action.error.message}
+                </p>
+              )}
             </>
           </section>
         );

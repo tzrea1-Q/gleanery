@@ -4,6 +4,11 @@ import { useQuery } from "@tanstack/react-query";
 import { api } from "@/api/client";
 import { ReplyingContext } from "@/lib/replying";
 import { useWorkspace } from "@/stores/workspace";
+import { ChatCard } from "@/components/common/ChatCard";
+import { FormRow } from "@/components/common/FormRow";
+import { Notice } from "@/components/common/Notice";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 type Args = { dataset_id?: number; content_ids?: number[] };
 type Result = { dataset_id?: number; name?: string; total?: number; error?: { message?: string } };
@@ -54,7 +59,7 @@ const ApprovalCard: ToolCallMessagePartComponent<Args, Result> = ({
   });
   if (approval?.approved === false)
     return <p>已拒绝{approval.reason ? `：${approval.reason}` : ""}</p>;
-  if (result?.error) return <p role="alert">{result.error.message}</p>;
+  if (result?.error) return <Notice>{result.error.message}</Notice>;
   if (!pending) return result ? <p>{removing ? "已移出" : "已删除"}</p> : null;
   if (replying) return <p role="status">Agent 正在处理…</p>;
   const respond = async (approved: boolean) => {
@@ -66,14 +71,11 @@ const ApprovalCard: ToolCallMessagePartComponent<Args, Result> = ({
     }
   };
   return (
-    <section
-      aria-label={removing ? "移出审批" : "删除审批"}
-      className="my-3 space-y-2 rounded border p-3"
-    >
-      {query.isError && <p role="alert">无法加载影响范围</p>}
+    <ChatCard aria-label={removing ? "移出审批" : "删除审批"}>
+      {query.isError && <Notice>无法加载影响范围</Notice>}
       {query.data && (
         <>
-          <h3>{query.data.dataset.name}</h3>
+          <h3 className="text-xl font-semibold tracking-tight">{query.data.dataset.name}</h3>
           {"removed" in query.data.impact && (
             <>
               <p>移出 {query.data.impact.removed} 条</p>
@@ -101,20 +103,19 @@ const ApprovalCard: ToolCallMessagePartComponent<Args, Result> = ({
           )}
         </>
       )}
-      <label>
-        拒绝理由（可选）
-        <input
-          className="block w-full rounded border p-1"
-          value={reason}
-          onChange={(e) => setReason(e.target.value)}
-        />
-      </label>
-      <button disabled={!query.data} onClick={() => void respond(true)}>
-        批准
-      </button>{" "}
-      <button onClick={() => void respond(false)}>拒绝</button>
-      {failed && <p role="alert">审批回应失败，请重试</p>}
-    </section>
+      <FormRow label="拒绝理由（可选）" stacked>
+        <Input value={reason} onChange={(e) => setReason(e.target.value)} />
+      </FormRow>
+      <div className="flex gap-2">
+        <Button variant="destructive" disabled={!query.data} onClick={() => void respond(true)}>
+          批准
+        </Button>
+        <Button variant="outline" onClick={() => void respond(false)}>
+          拒绝
+        </Button>
+      </div>
+      {failed && <Notice>审批回应失败，请重试</Notice>}
+    </ChatCard>
   );
 };
 export const RemoveApprovalCard = ApprovalCard;
@@ -132,10 +133,10 @@ export const DatasetSavedCard: ToolCallMessagePartComponent<Args, Result> = ({ r
       return data;
     },
   });
-  if (result?.error) return <p role="alert">{result.error.message}</p>;
+  if (result?.error) return <Notice className="my-3">{result.error.message}</Notice>;
   if (!result?.dataset_id) return null;
   return (
-    <section className="my-3 rounded border p-3">
+    <ChatCard className="flex items-center justify-between gap-3 space-y-0">
       <p>
         {dataset.data?.name ?? result.name}
         {dataset.data
@@ -144,7 +145,9 @@ export const DatasetSavedCard: ToolCallMessagePartComponent<Args, Result> = ({ r
             ? ` · ${result.total} 条`
             : ""}
       </p>
-      <button onClick={() => open(result.dataset_id!)}>在工作区查看</button>
-    </section>
+      <Button variant="outline" size="sm" onClick={() => open(result.dataset_id!)}>
+        在工作区查看
+      </Button>
+    </ChatCard>
   );
 };

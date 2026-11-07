@@ -2,6 +2,11 @@ import { useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { api } from "@/api/client";
 import type { components } from "@/api/schema";
+import { FormRow } from "@/components/common/FormRow";
+import { FormSelect } from "@/components/common/FormSelect";
+import { Notice } from "@/components/common/Notice";
+import { Button } from "@/components/ui/button";
+import { Item, ItemActions, ItemContent, ItemDescription, ItemTitle } from "@/components/ui/item";
 
 type Retention = components["schemas"]["DataSettingsUpdate"]["raw_retention_days"];
 
@@ -70,103 +75,149 @@ export function DataSettings() {
   });
   return (
     <div className="space-y-4">
-      <h2 className="font-semibold">数据</h2>
-      {settings.isPending && <p>正在加载数据设置…</p>}
-      {settings.isError && <p role="alert">无法加载数据设置</p>}
+      <h2 className="text-lg font-semibold tracking-tight">数据</h2>
+      {settings.isPending && <p className="text-muted-foreground">正在加载数据设置…</p>}
+      {settings.isError && <Notice>无法加载数据设置</Notice>}
       {settings.data && (
         <>
-          <label>
-            原始响应留存
-            <select
-              className="ml-2 rounded border p-2"
-              value={settings.data.raw_retention_days ?? "forever"}
+          <FormRow
+            label="原始响应留存"
+            description="改动后立即按新天数清理"
+            className="grid-cols-[7rem_minmax(0,16rem)]"
+          >
+            <FormSelect
+              value={String(settings.data.raw_retention_days ?? "forever")}
               disabled={update.isPending}
-              onChange={(e) =>
-                update.mutate(
-                  e.target.value === "forever" ? null : (Number(e.target.value) as Retention),
-                )
+              onValueChange={(value) =>
+                update.mutate(value === "forever" ? null : (Number(value) as Retention))
               }
-            >
-              <option value="7">7 天</option>
-              <option value="30">30 天</option>
-              <option value="90">90 天</option>
-              <option value="forever">永久</option>
-            </select>
-          </label>
-          <p>改动后立即按新天数清理</p>
-          <p>
-            原始响应 {settings.data.raw_count} 条，{size(settings.data.raw_bytes)}
-          </p>
-          <p>数据库总大小 {size(settings.data.db_bytes)}</p>
+              options={[
+                { value: "7", label: "7 天" },
+                { value: "30", label: "30 天" },
+                { value: "90", label: "90 天" },
+                { value: "forever", label: "永久" },
+              ]}
+            />
+          </FormRow>
+          <div className="grid gap-2 sm:grid-cols-2">
+            <p className="rounded-2xl bg-muted/60 px-4 py-3 dark:bg-muted/40">
+              原始响应 {settings.data.raw_count} 条，{size(settings.data.raw_bytes)}
+            </p>
+            <p className="rounded-2xl bg-muted/60 px-4 py-3 dark:bg-muted/40">
+              数据库总大小 {size(settings.data.db_bytes)}
+            </p>
+          </div>
         </>
       )}
-      <button
-        className="rounded border p-2"
-        onClick={() => {
-          setMessage("");
-          setConfirmRaw(true);
-        }}
-      >
-        清空全部原始响应
-      </button>
-      {confirmRaw && (
-        <div role="alertdialog" aria-label="确认清空原始响应">
-          <p>确定清空全部原始响应？删除后无法恢复。</p>
-          <button
-            className="rounded border p-2"
-            disabled={purge.isPending}
-            onClick={() => purge.mutate()}
+      <div className="space-y-2">
+        <Item className="rounded-2xl border-0 bg-muted/60 dark:bg-muted/40">
+          <ItemContent>
+            <ItemTitle>原始响应</ItemTitle>
+            <ItemDescription>只删采集时留存的接口响应，已采的内容不受影响</ItemDescription>
+          </ItemContent>
+          <ItemActions>
+            <Button
+              variant="outline"
+              size="sm"
+              className="text-destructive hover:text-destructive"
+              onClick={() => {
+                setMessage("");
+                setConfirmRaw(true);
+              }}
+            >
+              清空全部原始响应
+            </Button>
+          </ItemActions>
+        </Item>
+        {confirmRaw && (
+          <div
+            role="alertdialog"
+            aria-label="确认清空原始响应"
+            className="space-y-2 rounded-2xl bg-attention-muted p-4 text-attention"
           >
-            确认清空
-          </button>{" "}
-          <button className="rounded border p-2" onClick={() => setConfirmRaw(false)}>
-            取消
-          </button>
-        </div>
-      )}
-      <div>
-        <button
-          className="rounded border p-2"
-          onClick={() => {
-            setMessage("");
-            setConfirmAll(true);
-          }}
-        >
-          删除所有采集数据
-        </button>
-      </div>
-      {confirmAll && (
-        <div role="alertdialog" aria-label="确认删除所有采集数据">
-          {impact.isFetching && <p>正在计算删除影响…</p>}
-          {impact.isError && <p role="alert">无法加载删除影响，请关闭后重试</p>}
-          {impact.data && !impact.isFetching && !impact.isError && (
-            <>
-              <p>
-                数据集 {impact.data.datasets} 条、内容 {impact.data.contents} 条、评论{" "}
-                {impact.data.comments} 条、采集任务 {impact.data.tasks} 条、原始响应{" "}
-                {impact.data.raw_captures} 条
-              </p>
-              <p>对话和报告保留；模型配置和登录态保留；删除后无法恢复。</p>
-              {impact.data.active_task_ids.length > 0 && (
-                <p>有进行中的任务：{impact.data.active_task_ids.join("、")}</p>
-              )}
-              <button
-                className="rounded border p-2"
-                disabled={clear.isPending}
-                onClick={() => clear.mutate(impact.data.active_task_ids.length > 0)}
+            <p>确定清空全部原始响应？删除后无法恢复。</p>
+            <div className="flex justify-end gap-2">
+              <Button variant="outline" size="sm" onClick={() => setConfirmRaw(false)}>
+                取消
+              </Button>
+              <Button
+                variant="destructive"
+                size="sm"
+                disabled={purge.isPending}
+                onClick={() => purge.mutate()}
               >
-                {impact.data.active_task_ids.length ? "停止这些任务并删除" : "确认删除"}
-              </button>{" "}
-            </>
-          )}
-          <button className="rounded border p-2" onClick={() => setConfirmAll(false)}>
-            取消
-          </button>
-        </div>
+                确认清空
+              </Button>
+            </div>
+          </div>
+        )}
+        <Item className="rounded-2xl border-0 bg-muted/60 dark:bg-muted/40">
+          <ItemContent>
+            <ItemTitle>采集数据</ItemTitle>
+            <ItemDescription>数据集、内容、评论和采集任务</ItemDescription>
+          </ItemContent>
+          <ItemActions>
+            <Button
+              variant="outline"
+              size="sm"
+              className="text-destructive hover:text-destructive"
+              onClick={() => {
+                setMessage("");
+                setConfirmAll(true);
+              }}
+            >
+              删除所有采集数据
+            </Button>
+          </ItemActions>
+        </Item>
+        {confirmAll && (
+          <div
+            role="alertdialog"
+            aria-label="确认删除所有采集数据"
+            className="space-y-2 rounded-2xl bg-attention-muted p-4 text-attention"
+          >
+            {impact.isFetching && <p>正在计算删除影响…</p>}
+            {impact.isError && <p>无法加载删除影响，请关闭后重试</p>}
+            {impact.data && !impact.isFetching && !impact.isError && (
+              <>
+                <p>
+                  数据集 {impact.data.datasets} 条、内容 {impact.data.contents} 条、评论{" "}
+                  {impact.data.comments} 条、采集任务 {impact.data.tasks} 条、原始响应{" "}
+                  {impact.data.raw_captures} 条
+                </p>
+                <p>对话和报告保留；模型配置和登录态保留；删除后无法恢复。</p>
+                {impact.data.active_task_ids.length > 0 && (
+                  <p>有进行中的任务：{impact.data.active_task_ids.join("、")}</p>
+                )}
+              </>
+            )}
+            <div className="flex justify-end gap-2">
+              <Button variant="outline" size="sm" onClick={() => setConfirmAll(false)}>
+                取消
+              </Button>
+              {impact.data && !impact.isFetching && !impact.isError && (
+                <Button
+                  variant="destructive"
+                  size="sm"
+                  disabled={clear.isPending}
+                  onClick={() => clear.mutate(impact.data.active_task_ids.length > 0)}
+                >
+                  {impact.data.active_task_ids.length ? "停止这些任务并删除" : "确认删除"}
+                </Button>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+      {(update.isError || purge.isError || clear.isError) && <Notice>操作失败，请重试</Notice>}
+      {message && (
+        <p role="status" className="text-muted-foreground">
+          {message}
+        </p>
       )}
-      {(update.isError || purge.isError || clear.isError) && <p role="alert">操作失败，请重试</p>}
-      {message && <p role="status">{message}</p>}
-      <p>本地数据不额外加密，依靠系统磁盘加密（FileVault / BitLocker）。</p>
+      <p className="text-xs text-muted-foreground">
+        本地数据不额外加密，依靠系统磁盘加密（FileVault / BitLocker）。
+      </p>
     </div>
   );
 }

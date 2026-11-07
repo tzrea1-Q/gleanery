@@ -2,6 +2,12 @@ import { useEffect, useState } from "react";
 import { api } from "@/api/client";
 import type { ContentFilter, ContentSort } from "@/api/dataset-types";
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Download } from "lucide-react";
+import { CheckRow } from "@/components/common/CheckRow";
+import { FormRow } from "@/components/common/FormRow";
+import { FormSelect } from "@/components/common/FormSelect";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 export function ExportButton({
   datasetId,
@@ -65,9 +71,10 @@ export function ExportButton({
       }}
     >
       <DialogTrigger asChild>
-        <button type="button" className="rounded border p-1">
+        <Button type="button" variant="outline" size="sm">
+          <Download />
           导出
-        </button>
+        </Button>
       </DialogTrigger>
       <DialogContent>
         <DialogTitle>导出数据集</DialogTitle>
@@ -78,61 +85,55 @@ export function ExportButton({
               ? "正在获取条数…"
               : `按当前筛选导出 ${total} 条`}
         </p>
-        <label>
-          格式{" "}
-          <select value={format} onChange={(e) => setFormat(e.target.value)}>
-            <option value="xlsx">Excel</option>
-            <option value="csv">CSV</option>
-            <option value="md">Markdown</option>
-          </select>
-        </label>
+        <FormRow label="格式">
+          <FormSelect
+            value={format}
+            onValueChange={setFormat}
+            options={[
+              { value: "xlsx", label: "Excel" },
+              { value: "csv", label: "CSV" },
+              { value: "md", label: "Markdown" },
+            ]}
+          />
+        </FormRow>
         {format === "md" ? (
           <>
-            <label>
-              评论条数{" "}
-              <input
+            <FormRow label="评论条数">
+              <Input
                 type="number"
                 min={0}
                 max={200}
                 value={commentLimit}
                 onChange={(e) => setCommentLimit(Number(e.target.value))}
               />
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                checked={includeSubtitles}
-                onChange={(e) => setIncludeSubtitles(e.target.checked)}
-              />{" "}
-              包含字幕全文
-            </label>
+            </FormRow>
+            <CheckRow
+              label="包含字幕全文"
+              checked={includeSubtitles}
+              onCheckedChange={setIncludeSubtitles}
+            />
           </>
         ) : (
-          <label>
-            <input
-              type="checkbox"
-              checked={includeExt}
-              onChange={(e) => setIncludeExt(e.target.checked)}
-            />{" "}
-            包含扩展字段
-          </label>
+          <CheckRow label="包含扩展字段" checked={includeExt} onCheckedChange={setIncludeExt} />
         )}
-        <a
-          href={`/api/datasets/${datasetId}/export?${params}`}
-          download
-          onClick={(e) => {
-            if (
-              total === null ||
-              (format === "md" &&
-                (!Number.isInteger(commentLimit) || commentLimit < 0 || commentLimit > 200))
-            )
-              e.preventDefault();
-            else setOpen(false);
-          }}
-          aria-disabled={total === null}
-        >
-          确定下载
-        </a>
+        <Button asChild className="w-fit justify-self-end">
+          <a
+            href={`/api/datasets/${datasetId}/export?${params}`}
+            download
+            onClick={(e) => {
+              if (
+                total === null ||
+                (format === "md" &&
+                  (!Number.isInteger(commentLimit) || commentLimit < 0 || commentLimit > 200))
+              )
+                e.preventDefault();
+              else setOpen(false);
+            }}
+            aria-disabled={total === null}
+          >
+            确定下载
+          </a>
+        </Button>
       </DialogContent>
     </Dialog>
   );

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { api } from "@/api/client";
+import { Notice } from "@/components/common/Notice";
+import { Button } from "@/components/ui/button";
 import { useComposer } from "@/stores/composer";
 
 export type EventData = {
@@ -42,7 +44,10 @@ export function EventCard({
       (["incomplete", "no_model", "approval_pending"].includes(event.auto_run ?? "") ||
         (event.auto_run === "started" && last && !running)));
   return (
-    <section aria-label="采集事件" className="my-3 space-y-2 rounded border p-3">
+    <section
+      aria-label="采集事件"
+      className="my-3 space-y-2 rounded-2xl bg-muted px-4 py-2.5 text-muted-foreground"
+    >
       {event.type === "collection_finished" && (
         <p>
           采集结束：计划「{event.plan_title}」实得{" "}
@@ -63,19 +68,21 @@ export function EventCard({
       )}
       {event.type === "follow_up_failed" && <p>{event.message}</p>}
       {retryable && (
-        <button className="rounded border p-1" onClick={() => void retry()}>
+        <Button size="sm" onClick={() => void retry()}>
           {event.auto_run === "incomplete" ? "用已有数据继续整理" : "继续整理"}
-        </button>
+        </Button>
       )}
       {event.auto_run === "incomplete" && (
-        <button
-          className="ml-2 rounded border p-1"
+        <Button
+          variant="outline"
+          size="sm"
+          className="ml-2"
           onClick={() => useComposer.getState().prefill("补采")}
         >
           补采
-        </button>
+        </Button>
       )}
-      {error && <p role="alert">{error}</p>}
+      {error && <Notice>{error}</Notice>}
     </section>
   );
 }

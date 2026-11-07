@@ -31,8 +31,10 @@ test("一个平台风控暂停，另一个平台照常完成", async ({ page }) 
       .first()
       .getByText(/冷却中/),
   ).toBeVisible();
-  await expect(xhs.getByText("小红书 · 已完成")).toBeVisible({ timeout: 30000 });
-  await expect(xhs.getByText(/实得 \/ 计划：3 \/ 3/)).toBeVisible();
+  await expect(xhs.getByRole("heading", { name: "小红书 · 已完成" })).toBeVisible({
+    timeout: 30000,
+  });
+  await expect(xhs.getByLabel("实得 / 计划：3 / 3")).toBeVisible();
   await expect(xhs.getByText(/字幕/)).toHaveCount(0);
 
   await page.getByRole("link", { name: "所有数据集" }).click();
@@ -40,7 +42,8 @@ test("一个平台风控暂停，另一个平台照常完成", async ({ page }) 
   await expect(card.getByText(/小红书 3 条/)).toBeVisible();
   await card.getByRole("button", { name: "打开" }).click();
   const dataset = page.getByRole("region", { name: "数据集内容" });
-  await dataset.getByLabel("平台").selectOption("xhs");
+  await dataset.getByLabel("平台").click();
+  await page.getByRole("option", { name: "小红书" }).click();
   await expect(dataset.locator("tbody tr")).toHaveCount(3);
   // 打开小红书笔记要带 xsec_token，链接由后端拼好（open_url）。
   await expect(

@@ -21,8 +21,14 @@ function setup({
   approval = false,
   conflict = false,
   reloadFailure = false,
-}: { approval?: boolean; conflict?: boolean; reloadFailure?: boolean } = {}) {
-  let current = structuredClone(plan);
+  status = "draft",
+}: {
+  approval?: boolean;
+  conflict?: boolean;
+  reloadFailure?: boolean;
+  status?: string;
+} = {}) {
+  let current = { ...structuredClone(plan), status };
   let patch: { base_version: number; body: typeof plan.body } | undefined;
   let approvalRequest:
     | {
@@ -108,7 +114,14 @@ function setup({
   return { getPatch: () => patch, getApproval: () => approvalRequest };
 }
 afterEach(() =>
-  useWorkspace.setState({ tab: "plan", editing: false, dirty: false, notices: [], approvals: {} }),
+  useWorkspace.setState({
+    tab: "plan",
+    editing: false,
+    dirty: false,
+    notices: [],
+    approvals: {},
+    closed: false,
+  }),
 );
 test("编辑计划后保存版本与完整内容", async () => {
   const { getPatch } = setup();
@@ -176,4 +189,36 @@ test("冲突后读取失败时保留草稿并显示重试提示", async () => {
   await userEvent.click(within(workspace).getByRole("button", { name: "保存", exact: true }));
   expect(await within(workspace).findByText("无法载入最新计划，请重试保存")).toBeInTheDocument();
   expect(title).toHaveValue("尚未保存");
+});
+test("打开下拉选项时算正在编辑，工作区标签不被自动切走", async () => {
+  setup();
+  const workspace = await screen.findByRole("complementary", { name: "工作区" });
+  await userEvent.click(await within(workspace).findByRole("combobox", { name: "排序" }));
+  await screen.findByRole("option", { name: "热度" });
+  expect(useWorkspace.getState().editing).toBe(true);
+  useWorkspace.getState().auto("dataset");
+  expect(useWorkspace.getState().tab).toBe("plan");
+  expect(useWorkspace.getState().notices).toContain("dataset");
+});
+
+test("已确认的计划只读，下拉和勾选也不能改", async () => {
+  setup({ status: "confirmed" });
+  const workspace = await screen.findByRole("complementary", { name: "工作区" });
+  expect(await within(workspace).findByRole("combobox", { name: "排序" })).toBeDisabled();
+  expect(within(workspace).getByRole("checkbox", { name: "详情" })).toBeDisabled();
+  expect(within(workspace).getByRole("textbox", { name: "标题" })).toBeDisabled();
+  expect(within(workspace).queryByRole("button", { name: "保存" })).not.toBeInTheDocument();
+  expect(within(workspace).queryByRole("button", { name: "确认开始" })).not.toBeInTheDocument();
+});
+
+test("关闭后 Agent 推进阶段不会重新打开，用户点进工作区才打开", async () => {
+  setup();
+  const workspace = await screen.findByRole("complementary", { name: "工作区" });
+  await userEvent.click(within(workspace).getByRole("button", { name: "关闭工作区" }));
+  expect(useWorkspace.getState().closed).toBe(true);
+  useWorkspace.getState().auto("collect");
+  useWorkspace.getState().reportArrived(1);
+  expect(useWorkspace.getState().closed).toBe(true);
+  useWorkspace.getState().openReport(1);
+  expect(useWorkspace.getState().closed).toBe(false);
 });

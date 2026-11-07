@@ -1,4 +1,14 @@
 import { useAppState, useModelConfigs, useSetCurrentModel } from "@/api/queries";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useUiStore } from "@/stores/ui";
 
 export function ModelSelector() {
@@ -12,44 +22,45 @@ export function ModelSelector() {
       <label className="sr-only" htmlFor="model-selector">
         当前模型
       </label>
-      <select
-        id="model-selector"
-        className="max-w-48 rounded border p-1 text-sm"
+      <Select
         value={current ? `${current.config_id}:${current.model}` : ""}
-        onChange={(e) => {
-          if (e.target.value === "manage") {
+        onValueChange={(value) => {
+          if (value === "manage") {
             open("models");
             return;
           }
-          const option = e.target.selectedOptions[0];
-          if (option?.dataset.id && option.dataset.model)
-            set.mutate({ config_id: Number(option.dataset.id), model: option.dataset.model });
+          const split = value.indexOf(":");
+          set.mutate({ config_id: Number(value.slice(0, split)), model: value.slice(split + 1) });
         }}
       >
-        {!current && <option value="">选择模型</option>}
-        {configs.data
-          ?.filter((c) => c.status === "ok")
-          .map((c) => (
-            <optgroup key={c.id} label={c.name}>
-              {c.favorites
-                .filter((f) => f.tool_test === "ok")
-                .map((f) => (
-                  <option
-                    key={f.name}
-                    value={`${c.id}:${f.name}`}
-                    data-id={c.id}
-                    data-model={f.name}
-                  >
-                    {current?.config_id === c.id && current.model === f.name ? "✓ " : ""}
-                    {c.model_labels?.[f.name] ?? f.name}
-                  </option>
-                ))}
-            </optgroup>
-          ))}
-        <option value="manage">管理模型…</option>
-      </select>
+        <SelectTrigger
+          id="model-selector"
+          size="sm"
+          className="h-7 max-w-48 rounded-full border-0 bg-muted shadow-none dark:bg-muted"
+        >
+          <SelectValue placeholder="选择模型" />
+        </SelectTrigger>
+        <SelectContent>
+          {configs.data
+            ?.filter((c) => c.status === "ok")
+            .map((c) => (
+              <SelectGroup key={c.id}>
+                <SelectLabel>{c.name}</SelectLabel>
+                {c.favorites
+                  .filter((f) => f.tool_test === "ok")
+                  .map((f) => (
+                    <SelectItem key={f.name} value={`${c.id}:${f.name}`}>
+                      {c.model_labels?.[f.name] ?? f.name}
+                    </SelectItem>
+                  ))}
+              </SelectGroup>
+            ))}
+          <SelectSeparator />
+          <SelectItem value="manage">管理模型…</SelectItem>
+        </SelectContent>
+      </Select>
       {current?.kind === "chatgpt_plan" && (
-        <span className="text-sm">
+        <span className="text-xs text-muted-foreground">
           Using ChatGPT plan ·{" "}
           <a
             href="https://chatgpt.com/settings/usage"

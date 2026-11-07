@@ -1,4 +1,7 @@
 import type { ToolCallMessagePartComponent } from "@assistant-ui/react";
+import { ChatCard } from "@/components/common/ChatCard";
+import { Notice } from "@/components/common/Notice";
+import { Button } from "@/components/ui/button";
 
 type Args = { dataset_id?: number; format?: string };
 type Result = {
@@ -16,29 +19,31 @@ const FORMAT_TEXT: Record<string, string> = { xlsx: "Excel", csv: "CSV", md: "Ma
 export const ExportCard: ToolCallMessagePartComponent<Args, Result> = ({ args, result }) => {
   const format = FORMAT_TEXT[result?.format ?? args.format ?? ""] ?? "文件";
   if (!result)
-    return <p className="my-3 rounded border p-3 text-muted-foreground">正在准备 {format} 导出…</p>;
-  if (result.error)
     return (
-      <p role="alert" className="my-3 rounded border p-3">
-        导出失败：{result.error.message}
-      </p>
+      <ChatCard>
+        <p className="text-muted-foreground">正在准备 {format} 导出…</p>
+      </ChatCard>
     );
+  if (result.error) return <Notice className="my-3">导出失败：{result.error.message}</Notice>;
   return (
-    <section aria-label="数据集导出" className="my-3 space-y-2 rounded border p-3">
-      <h3 className="font-semibold">已导出 {format}</h3>
-      <p className="text-sm text-muted-foreground">
-        内容 {result.contents} 条，评论 {result.comments} 条，字幕 {result.subtitles} 条
-      </p>
+    <ChatCard aria-label="数据集导出">
+      <div>
+        <h3 className="text-xl font-semibold tracking-tight">已导出 {format}</h3>
+        <p className="text-muted-foreground">
+          内容 {result.contents} 条，评论 {result.comments} 条，字幕 {result.subtitles} 条
+        </p>
+      </div>
       {result.download_url && (
-        <a
-          href={result.download_url}
-          download={result.filename}
-          aria-label={`下载 ${result.filename ?? ""}`.trim()}
-          className="inline-block rounded border px-3 py-1 text-sm hover:bg-accent"
-        >
-          下载 {result.filename}
-        </a>
+        <Button asChild variant="outline" size="sm">
+          <a
+            href={result.download_url}
+            download={result.filename}
+            aria-label={`下载 ${result.filename ?? ""}`.trim()}
+          >
+            下载 {result.filename}
+          </a>
+        </Button>
       )}
-    </section>
+    </ChatCard>
   );
 };

@@ -1,12 +1,14 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { pickOption } from "@/test/select";
 import { http, HttpResponse } from "msw";
 import { registerReportEvents } from "@/lib/events-report";
 import { useComposer } from "@/stores/composer";
 import { useWorkspace } from "@/stores/workspace";
 import { server } from "@/test/server";
 import { ReportView } from "./ReportView";
+import { ConfirmHost } from "@/components/common/ConfirmHost";
 
 const original = {
   id: 1,
@@ -78,6 +80,7 @@ function setup() {
   render(
     <QueryClientProvider client={client}>
       <ReportView conversationId={1} />
+      <ConfirmHost />
     </QueryClientProvider>,
   );
   return client;
@@ -94,7 +97,7 @@ test("编辑、预览、保存并携带对话", async () => {
   await user.clear(screen.getByLabelText("Markdown 源码"));
   await user.type(screen.getByLabelText("Markdown 源码"), "修改正文");
   expect(useWorkspace.getState().dirty).toBe(true);
-  await user.click(screen.getByRole("button", { name: "预览" }));
+  await user.click(screen.getByRole("tab", { name: "预览" }));
   expect(screen.getByText("修改正文")).toBeInTheDocument();
   await user.click(screen.getByRole("button", { name: "保存" }));
   await waitFor(() => expect(header).toBe("1"));
@@ -137,9 +140,37 @@ test("编辑时 Agent 更新只提醒，历史恢复、切换和预填", async (
   await user.click(screen.getByRole("button", { name: "历史版本" }));
   await user.click(await screen.findByRole("button", { name: /第 1 版/ }));
   expect(await screen.findByText("历史正文")).toBeInTheDocument();
-  vi.spyOn(window, "confirm").mockReturnValue(true);
   await user.click(screen.getByRole("button", { name: "恢复此版本" }));
+  await user.click(await screen.findByRole("button", { name: "恢复" }));
   await waitFor(() => expect(current.version).toBe(3));
-  await user.selectOptions(screen.getByLabelText("报告"), "2");
+  await pickOption(user, "报告", "报告二");
   expect(await screen.findByRole("heading", { name: "报告二" })).toBeInTheDocument();
+});
+
+test("从更多菜单删除报告，取消后页面仍可操作", async () => {
+  let deleted = false;
+  setup();
+  server.use(
+    http.delete("*/api/reports/:id", () => {
+      deleted = true;
+      return new HttpResponse(null, { status: 204 });
+    }),
+  );
+  const user = userEvent.setup();
+  await screen.findByRole("heading", { name: "报告一" });
+  const open = async () => {
+    await user.click(screen.getByRole("button", { name: "更多操作" }));
+    await waitFor(() =>
+      expect(screen.getByRole("menuitem", { name: "删除报告" })).not.toHaveAttribute(
+        "aria-disabled",
+      ),
+    );
+    await user.click(screen.getByRole("menuitem", { name: "删除报告" }));
+    return screen.findByRole("alertdialog");
+  };
+  await user.click(within(await open()).getByRole("button", { name: "取消" }));
+  await waitFor(() => expect(screen.queryByRole("alertdialog")).not.toBeInTheDocument());
+  expect(document.body.style.pointerEvents).not.toBe("none");
+  await user.click(within(await open()).getByRole("button", { name: "删除" }));
+  await waitFor(() => expect(deleted).toBe(true));
 });

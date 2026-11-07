@@ -5,12 +5,13 @@ import {
   createRouter,
   RouterProvider,
 } from "@tanstack/react-router";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { http, HttpResponse } from "msw";
 import { server } from "@/test/server";
 import { useWorkspace } from "@/stores/workspace";
 import { ReportList } from "./ReportList";
+import { ConfirmHost } from "@/components/common/ConfirmHost";
 
 test("搜索、打开和确认删除报告", async () => {
   let deleted = false;
@@ -51,6 +52,7 @@ test("搜索、打开和确认删除报告", async () => {
       client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}
     >
       <RouterProvider router={router} />
+      <ConfirmHost />
     </QueryClientProvider>,
   );
   const user = userEvent.setup();
@@ -62,7 +64,9 @@ test("搜索、打开和确认删除报告", async () => {
   expect(await screen.findByText("没有找到报告")).toBeInTheDocument();
   await user.clear(screen.getByLabelText("搜索报告"));
   await screen.findByText("咖啡报告");
-  vi.spyOn(window, "confirm").mockReturnValue(true);
   await user.click(screen.getByRole("button", { name: "删除" }));
+  await user.click(
+    await within(await screen.findByRole("alertdialog")).findByRole("button", { name: "删除" }),
+  );
   await waitFor(() => expect(screen.queryByText("咖啡报告")).not.toBeInTheDocument());
 });

@@ -64,7 +64,7 @@ test("计划卡片展示草稿字段、错误和提示，并打开计划标签",
     },
   });
   const card = await screen.findByRole("region", { name: "计划摘要" }, { timeout: 5000 });
-  expect(within(card).getByText("咖啡计划 · 草稿")).toBeInTheDocument();
+  expect(within(card).getByRole("heading", { name: "咖啡计划 · 草稿" })).toBeInTheDocument();
   for (const text of [
     "关键词：咖啡",
     "content:1",
@@ -88,14 +88,14 @@ test("同一计划出现多次时只展开最后一张，并随事件刷新为�
     tool("propose_collection_plan", "output-available", { output: { plan_id: 1 } }),
     tool("get_collection_plan", "output-available", { output: { plan_id: 1 } }),
   ]);
-  expect(await screen.findAllByText("咖啡计划 · 草稿")).toHaveLength(1);
+  expect(await screen.findAllByRole("heading", { name: "咖啡计划 · 草稿" })).toHaveLength(1);
   expect(screen.getAllByRole("region", { name: "计划摘要" })).toHaveLength(1);
   expect(screen.getByText("计划「咖啡计划」已更新，最新版本见下方")).toBeInTheDocument();
   setPlan({ ...plan, status: "confirmed", version: 2, body: { ...plan.body, title: "最新计划" } });
   const events = new EventTarget();
   registerCollectEvents(events as EventSource, client);
   events.dispatchEvent(new Event("plan.updated"));
-  expect(await screen.findByText("最新计划 · 已确认")).toBeInTheDocument();
+  expect(await screen.findByRole("heading", { name: "最新计划 · 已确认" })).toBeInTheDocument();
   expect(screen.getByText("计划「最新计划」已更新，最新版本见下方")).toBeInTheDocument();
 });
 test("版本冲突的修改不出卡片，后面成功的那次照常展开", async () => {
@@ -129,7 +129,7 @@ test("待审批显示最新计划、平台和额度提示，并可填写拒绝�
     },
   });
   const card = await screen.findByRole("region", { name: "采集审批" });
-  expect(await within(card).findByText("咖啡计划 · 草稿")).toBeInTheDocument();
+  expect(await within(card).findByText("咖啡计划")).toBeInTheDocument();
   expect(within(card).getByText("B 站冷却中")).toBeInTheDocument();
   expect(within(card).getByText(/超出部分明天继续/)).toBeInTheDocument();
   expect(within(card).getByRole("button", { name: "批准" })).toBeEnabled();
@@ -149,7 +149,7 @@ test("批准后的运行任务显示进度", async () => {
   );
   const card = await screen.findByRole("region", { name: "采集进度" });
   expect(within(card).getByText(/执行中/)).toBeInTheDocument();
-  expect(within(card).getByText(/实得 \/ 计划：1 \/ 3/)).toBeInTheDocument();
+  expect(within(card).getByLabelText("实得 / 计划：1 / 3")).toBeInTheDocument();
 });
 test("全部完成显示预览并能打开工作区数据集", async () => {
   renderChat([tool("start_collection", "output-available", { output: { plan_id: 1 } })], {

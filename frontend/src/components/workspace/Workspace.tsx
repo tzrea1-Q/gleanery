@@ -1,351 +1,47 @@
 import { useEffect, useRef, useState } from "react";
+import { Check, TriangleAlert, X } from "lucide-react";
 import { api } from "@/api/client";
 import { useRouterState } from "@tanstack/react-router";
 import { useReports } from "@/api/queries-report";
-import { useDatasets, usePlans, useSavePlan, useTasks } from "@/api/queries-collect";
-import type { components } from "@/api/schema";
+import { usePlans, useTasks } from "@/api/queries-collect";
 import { Progress } from "@/components/collect/Progress";
 import { DatasetTable } from "@/components/dataset/DatasetTable";
 import { ReportView } from "@/components/report/ReportView";
+import { Notice } from "@/components/common/Notice";
+import { Button } from "@/components/ui/button";
+import { Empty, EmptyDescription, EmptyHeader, EmptyTitle } from "@/components/ui/empty";
+import { cn } from "@/lib/utils";
 import { useWorkspace } from "@/stores/workspace";
+import { PlanEditor } from "./PlanEditor";
 
-type Plan = components["schemas"]["PlanOut"];
-type Body = components["schemas"]["PlanBody"];
-const input = "block w-full rounded border bg-background p-1";
-function PlanEditor({ plan }: { plan: Plan }) {
-  const [body, setBody] = useState<Body>(plan.body);
-  const [version, setVersion] = useState(plan.version);
-  const [baseline, setBaseline] = useState(() => JSON.stringify(plan.body));
-  const editing = useWorkspace((s) => s.editing);
-  const [conflict, setConflict] = useState(false);
-  const [reloadFailed, setReloadFailed] = useState(false);
-  const datasets = useDatasets();
-  const save = useSavePlan(plan.id);
-  const setDirty = useWorkspace((s) => s.setDirty);
-  const setEditing = useWorkspace((s) => s.setEditing);
-  const approval = useWorkspace((s) => s.approvals[plan.id]);
-  const dirty = JSON.stringify(body) !== baseline;
-  if (plan.version > version && !dirty && !editing) {
-    setBody(plan.body);
-    setBaseline(JSON.stringify(plan.body));
-    setVersion(plan.version);
-  }
-  useEffect(() => () => setEditing(false), [setEditing]);
-  useEffect(() => {
-    setDirty(dirty);
-    return () => setDirty(false);
-  }, [dirty, setDirty]);
-  function section(index: number, patch: Partial<Body["sections"][number]>) {
-    setBody((b) => ({
-      ...b,
-      sections: b.sections.map((s, i) => (i === index ? { ...s, ...patch } : s)),
-    }));
-  }
+const stages = [
+  ["plan", "计划"],
+  ["collect", "采集"],
+  ["dataset", "数据集"],
+  ["report", "报告"],
+] as const;
+
+type StageTone = "idle" | "active" | "done" | "attention";
+const stageTones: Record<StageTone, string> = {
+  idle: "bg-muted text-muted-foreground",
+  active: "bg-brand-muted text-brand",
+  done: "bg-success-muted text-success",
+  attention: "bg-attention-muted text-attention",
+};
+
+function WorkspaceEmpty({ children }: { children?: React.ReactNode }) {
   return (
-    <form
-      className="space-y-3"
-      onFocus={() => setEditing(true)}
-      onBlur={(e) => {
-        if (!e.currentTarget.contains(e.relatedTarget)) setEditing(false);
-      }}
-      onSubmit={(e) => {
-        e.preventDefault();
-        setReloadFailed(false);
-        save.mutate(
-          { base_version: version, body },
-          {
-            onSuccess: (p) => {
-              setBody(p.body);
-              setBaseline(JSON.stringify(p.body));
-              setVersion(p.version);
-              setConflict(false);
-            },
-            onError: async (err) => {
-              if (err.message === "VERSION_CONFLICT") {
-                try {
-                  const { data } = await api.GET("/api/plans/{plan_id}", {
-                    params: { path: { plan_id: plan.id } },
-                  });
-                  if (!data) throw new Error("无法载入");
-                  setBody(data.body);
-                  setBaseline(JSON.stringify(data.body));
-                  setVersion(data.version);
-                  setConflict(true);
-                } catch {
-                  setReloadFailed(true);
-                }
-              }
-            },
-          },
-        );
-      }}
-    >
-      {conflict && <p role="alert">Agent 刚改过计划，已载入最新版本</p>}
-      {reloadFailed && <p role="alert">无法载入最新计划，请重试保存</p>}
-      {save.isError && save.error.message !== "VERSION_CONFLICT" && (
-        <p role="alert">保存失败，请重试</p>
-      )}
-      <fieldset disabled={plan.status !== "draft"} className="space-y-3">
-        <label>
-          标题
-          <input
-            className={input}
-            value={body.title}
-            onChange={(e) => setBody({ ...body, title: e.target.value })}
-          />
-        </label>
-        <label>
-          目标数据集
-          <select
-            className={input}
-            value={body.target_dataset_id ?? ""}
-            onChange={(e) =>
-              setBody({
-                ...body,
-                target_dataset_id: e.target.value ? Number(e.target.value) : null,
-              })
-            }
-          >
-            <option value="">新建数据集</option>
-            {datasets.data?.map((d) => (
-              <option value={d.id} key={d.id}>
-                {d.name}
-              </option>
-            ))}
-          </select>
-        </label>
-        {!body.target_dataset_id && (
-          <>
-            <label>
-              数据集名称
-              <input
-                className={input}
-                value={body.new_dataset_name ?? ""}
-                onChange={(e) => setBody({ ...body, new_dataset_name: e.target.value })}
-              />
-            </label>
-            <label>
-              数据集说明
-              <textarea
-                className={input}
-                value={body.new_dataset_description ?? ""}
-                onChange={(e) => setBody({ ...body, new_dataset_description: e.target.value })}
-              />
-            </label>
-          </>
-        )}
-        <label>
-          后续意图
-          <textarea
-            className={input}
-            value={body.follow_up ?? ""}
-            onChange={(e) => setBody({ ...body, follow_up: e.target.value })}
-          />
-        </label>
-        {body.sections.map((s, i) => (
-          <fieldset key={i} className="space-y-2 rounded border p-2">
-            <legend>{s.platform === "bili" ? "B 站" : "小红书"}</legend>
-            <label>
-              平台
-              <select
-                className={input}
-                value={s.platform}
-                onChange={(e) => section(i, { platform: e.target.value as typeof s.platform })}
-              >
-                <option value="bili">B 站</option>
-                <option value="xhs">小红书</option>
-              </select>
-            </label>
-            <button
-              type="button"
-              className="rounded border p-1"
-              disabled={body.sections.length === 1}
-              onClick={() =>
-                setBody({ ...body, sections: body.sections.filter((_, index) => index !== i) })
-              }
-            >
-              删除平台分段
-            </button>
-            <label>
-              关键词（每行一个）
-              <textarea
-                className={input}
-                value={(s.keywords ?? []).join("\n")}
-                onChange={(e) => section(i, { keywords: e.target.value.split("\n") })}
-              />
-            </label>
-            <label>
-              指定内容（每行一个）
-              <textarea
-                className={input}
-                value={(s.targets ?? []).join("\n")}
-                onChange={(e) => section(i, { targets: e.target.value.split("\n") })}
-              />
-            </label>
-            <label>
-              数量
-              <input
-                className={input}
-                type="number"
-                min="0"
-                value={s.quantity}
-                onChange={(e) => section(i, { quantity: Number(e.target.value) })}
-              />
-            </label>
-            <label>
-              排序
-              <select
-                className={input}
-                value={s.sort}
-                onChange={(e) => section(i, { sort: e.target.value as typeof s.sort })}
-              >
-                <option value="default">默认</option>
-                <option value="hot">热度</option>
-                <option value="new">最新</option>
-              </select>
-            </label>
-            <label>
-              近几天
-              <input
-                className={input}
-                type="number"
-                min="1"
-                value={s.time_range?.last_days ?? ""}
-                onChange={(e) =>
-                  section(i, {
-                    time_range: {
-                      ...s.time_range,
-                      last_days: e.target.value ? Number(e.target.value) : null,
-                    },
-                  })
-                }
-              />
-            </label>
-            {(["start", "end"] as const).map((k) => (
-              <label key={k}>
-                {k === "start" ? "开始日期" : "结束日期"}
-                <input
-                  className={input}
-                  type="date"
-                  value={s.time_range?.[k] ?? ""}
-                  onChange={(e) =>
-                    section(i, { time_range: { ...s.time_range, [k]: e.target.value || null } })
-                  }
-                />
-              </label>
-            ))}
-            <label>
-              <input
-                type="checkbox"
-                checked={s.depth.detail}
-                onChange={(e) => section(i, { depth: { ...s.depth, detail: e.target.checked } })}
-              />{" "}
-              详情
-            </label>
-            <label>
-              评论数
-              <input
-                className={input}
-                type="number"
-                min="0"
-                value={s.depth.comments}
-                onChange={(e) =>
-                  section(i, { depth: { ...s.depth, comments: Number(e.target.value) } })
-                }
-              />
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                checked={s.depth.sub_comments}
-                onChange={(e) =>
-                  section(i, { depth: { ...s.depth, sub_comments: e.target.checked } })
-                }
-              />{" "}
-              二级评论
-            </label>
-            <label>
-              每条二级评论数
-              <input
-                className={input}
-                type="number"
-                min="0"
-                value={s.depth.sub_comments_per_root}
-                onChange={(e) =>
-                  section(i, {
-                    depth: { ...s.depth, sub_comments_per_root: Number(e.target.value) },
-                  })
-                }
-              />
-            </label>
-            {s.platform === "bili" && (
-              <label>
-                <input
-                  type="checkbox"
-                  checked={s.depth.subtitles}
-                  onChange={(e) =>
-                    section(i, { depth: { ...s.depth, subtitles: e.target.checked } })
-                  }
-                />{" "}
-                字幕
-              </label>
-            )}
-          </fieldset>
-        ))}
-        <button
-          type="button"
-          className="rounded border p-2"
-          onClick={() =>
-            setBody({
-              ...body,
-              sections: [
-                ...body.sections,
-                {
-                  platform: "bili",
-                  keywords: [],
-                  targets: [],
-                  quantity: 0,
-                  sort: "default",
-                  time_range: null,
-                  depth: {
-                    detail: true,
-                    comments: 0,
-                    sub_comments: false,
-                    sub_comments_per_root: 0,
-                    subtitles: false,
-                  },
-                },
-              ],
-            })
-          }
-        >
-          添加平台分段
-        </button>
-        <button className="rounded border p-2" disabled={save.isPending || !dirty}>
-          保存
-        </button>
-      </fieldset>
-      {plan.status === "draft" && (
-        <>
-          <button
-            type="button"
-            className="rounded border p-2 disabled:cursor-not-allowed disabled:opacity-50"
-            disabled={!approval || dirty}
-            onClick={() => void approval?.(true)}
-          >
-            确认开始
-          </button>
-          {!approval && (
-            <p className="text-sm text-muted-foreground">
-              先在对话里说"开始"，Agent 发起审批后才能在这里确认
-            </p>
-          )}
-          {dirty && approval && <p>请先保存计划</p>}
-        </>
-      )}
-    </form>
+    <Empty className="flex-1">
+      <EmptyHeader>
+        <EmptyTitle>工作区</EmptyTitle>
+        <EmptyDescription>
+          {children ?? "Agent 产出的计划、进度、数据集和报告会出现在这里"}
+        </EmptyDescription>
+      </EmptyHeader>
+    </Empty>
   );
 }
+
 function WorkspaceContent({ id }: { id: number }) {
   const plans = usePlans(id);
   const reports = useReports({ conversation_id: id, limit: 1 });
@@ -355,8 +51,6 @@ function WorkspaceContent({ id }: { id: number }) {
   const notices = useWorkspace((s) => s.notices);
   const selectedDatasetId = useWorkspace((s) => s.datasetId);
   const selectedReportId = useWorkspace((s) => s.reportId);
-  const wide = useWorkspace((s) => s.wide);
-  const setWide = useWorkspace((s) => s.setWide);
   const select = useWorkspace((s) => s.select);
   const auto = useWorkspace((s) => s.auto);
   const previous = useRef({ plan: 0, confirmed: false, complete: false });
@@ -373,9 +67,9 @@ function WorkspaceContent({ id }: { id: number }) {
     previous.current = { plan: plan.id, confirmed: plan.status === "confirmed", complete };
   }, [plan, complete, auto]);
   if (id && plans.isPending && !selectedDatasetId && !selectedReportId)
-    return <p>正在加载工作区…</p>;
+    return <p className="p-4 text-muted-foreground">正在加载工作区…</p>;
   if ((plans.isError || tasks.isError) && !selectedDatasetId && !selectedReportId)
-    return <p role="alert">无法加载工作区</p>;
+    return <Notice className="m-4 w-auto">无法加载工作区</Notice>;
   if (
     !plan &&
     !selectedDatasetId &&
@@ -383,52 +77,97 @@ function WorkspaceContent({ id }: { id: number }) {
     !reports.data?.items.length &&
     tab !== "report"
   )
-    return (
-      <p className="mt-5 text-sm text-muted-foreground">
-        Agent 产出的计划、进度、数据集和报告会出现在这里
-      </p>
-    );
+    return <WorkspaceEmpty />;
   const datasetId =
     selectedDatasetId ?? currentTasks[0]?.dataset_id ?? plan?.body.target_dataset_id;
+  const collected = currentTasks.reduce((sum, t) => sum + t.progress.processed, 0);
+  const planned = currentTasks.reduce((sum, t) => sum + t.progress.planned, 0);
+  const paused = currentTasks.some((t) => t.status === "paused" || t.status === "failed");
+  const reportCount = reports.data?.items.length ?? 0;
+  const stageStates: Record<(typeof stages)[number][0], { tone: StageTone; text: string }> = {
+    plan: !plan
+      ? { tone: "idle", text: "未开始" }
+      : plan.status === "draft"
+        ? { tone: "active", text: "待确认" }
+        : { tone: "done", text: "已确认" },
+    collect: !currentTasks.length
+      ? { tone: "idle", text: "未开始" }
+      : paused
+        ? { tone: "attention", text: "已暂停" }
+        : complete
+          ? { tone: "done", text: `${collected} / ${planned}` }
+          : { tone: "active", text: `${collected} / ${planned}` },
+    dataset: datasetId
+      ? { tone: complete ? "done" : "active", text: collected ? `${collected} 条` : "已打开" }
+      : { tone: "idle", text: "暂无" },
+    report: reportCount
+      ? { tone: "done", text: `${reportCount} 份` }
+      : { tone: "idle", text: "未生成" },
+  };
   return (
     <>
-      <nav aria-label="工作区阶段" className="my-4 flex flex-wrap gap-2 text-sm">
-        <span>需求 ›</span>
-        {(
-          [
-            ["plan", "计划"],
-            ["collect", "采集"],
-            ["dataset", "数据集"],
-            ["report", "报告"],
-          ] as const
-        ).map(([key, label]) => (
-          <button
-            key={key}
-            aria-current={tab === key ? "page" : undefined}
-            className="aria-[current=page]:font-bold"
-            onClick={() => select(key)}
-          >
-            {label}
-            {notices.includes(key) && " •"} ›
-          </button>
-        ))}
-      </nav>
-      <div className="min-h-0 flex-1 overflow-auto">
-        {tab === "plan" && plan && <PlanEditor key={plan.id} plan={plan} />}{" "}
-        {tab === "collect" &&
-          (tasks.data?.length ? <Progress tasks={tasks.data} /> : <p>暂无采集任务</p>)}{" "}
-        {tab === "dataset" && (
-          <>
-            <button onClick={() => setWide(!wide)}>{wide ? "收窄" : "加宽"}</button>
-            {datasetId ? <DatasetTable key={datasetId} id={datasetId} /> : <p>暂无数据集</p>}
-          </>
-        )}{" "}
-        {tab === "report" && <ReportView conversationId={id} />}
+      <header className="shrink-0 p-3 pr-12">
+        <nav aria-label="工作区阶段" className="grid min-w-0 grid-cols-4 gap-1.5">
+          {stages.map(([key, label]) => {
+            const stage = stageStates[key];
+            const Icon =
+              stage.tone === "done" ? Check : stage.tone === "attention" ? TriangleAlert : null;
+            return (
+              <Button
+                key={key}
+                variant={null}
+                size={null}
+                aria-current={tab === key ? "page" : undefined}
+                className={cn(
+                  "block h-auto min-w-0 rounded-xl px-2.5 py-1.5 text-left font-normal whitespace-normal aria-[current=page]:ring-2 aria-[current=page]:ring-foreground",
+                  stageTones[stage.tone],
+                )}
+                onClick={() => select(key)}
+              >
+                <span className="flex items-center gap-1 text-xs font-semibold">
+                  {Icon && <Icon aria-hidden className="size-3 shrink-0" />}
+                  <span className="truncate">{label}</span>
+                  {notices.includes(key) && (
+                    <>
+                      <span
+                        aria-hidden
+                        className="ml-auto size-1.5 shrink-0 rounded-full bg-brand"
+                      />
+                      <span className="sr-only">有更新</span>
+                    </>
+                  )}
+                </span>
+                <span className="block truncate text-[11px] leading-4 opacity-80">
+                  {stage.text}
+                </span>
+              </Button>
+            );
+          })}
+        </nav>
+      </header>
+      <div className="min-h-0 flex-1 overflow-auto px-4">
+        {/* 底部留白放在内层：Chromium 算吸底位置时会扣掉滚动容器的 padding，操作栏下面会漏出内容。 */}
+        <div className="flex min-h-full flex-col pb-4">
+          {tab === "plan" && plan && <PlanEditor key={plan.id} plan={plan} />}
+          {tab === "collect" &&
+            (tasks.data?.length ? (
+              <Progress tasks={tasks.data} />
+            ) : (
+              <p className="text-muted-foreground">暂无采集任务</p>
+            ))}
+          {tab === "dataset" &&
+            (datasetId ? (
+              <DatasetTable key={datasetId} id={datasetId} />
+            ) : (
+              <p className="text-muted-foreground">暂无数据集</p>
+            ))}
+          {tab === "report" && <ReportView conversationId={id} />}
+        </div>
       </div>
     </>
   );
 }
-export function Workspace() {
+export function Workspace({ className }: { className?: string }) {
   const path = useRouterState({ select: (s) => s.location.pathname });
   const id = Number(/^\/c\/(\d+)$/.exec(path)?.[1]);
   const previousConversation = useRef(id);
@@ -471,18 +210,34 @@ export function Workspace() {
       });
   }, [pending, selected]);
   return (
-    <aside aria-label="工作区" className="flex min-h-0 min-w-0 flex-col border-l bg-muted/20 p-5">
-      <h2 className="font-semibold">工作区</h2>
-      {focusError && <p role="alert">{focusError}</p>}
-      {!id && !selected && !selectedReport && (
-        <p className="mt-4 text-sm">需求 › 计划 › 采集 › 数据集 › 报告</p>
+    <aside
+      aria-label="工作区"
+      className={cn(
+        "relative flex min-h-0 min-w-0 flex-col overflow-hidden rounded-3xl bg-card",
+        className,
       )}
+    >
+      <h2 className="sr-only">工作区</h2>
+      <Button
+        variant="ghost"
+        size="icon-sm"
+        aria-label="关闭工作区"
+        className="absolute top-5 right-2 z-10"
+        onClick={() => {
+          // 列表页的工作区由所选内容决定，清空就收起；留下 closed 会让之后的对话也打不开工作区。
+          if (path === "/datasets" || path === "/reports") {
+            useWorkspace.getState().openDataset(null);
+            useWorkspace.getState().openReport(null);
+          } else useWorkspace.getState().setClosed(true);
+        }}
+      >
+        <X />
+      </Button>
+      {focusError && <Notice className="m-3 mr-12 mb-0 w-auto">{focusError}</Notice>}
       {id || selected || selectedReport ? (
         <WorkspaceContent key={id || "datasets"} id={id || 0} />
       ) : (
-        <p className="mt-5 text-sm text-muted-foreground">
-          Agent 产出的计划、进度、数据集和报告会出现在这里
-        </p>
+        <WorkspaceEmpty>需求 › 计划 › 采集 › 数据集 › 报告</WorkspaceEmpty>
       )}
     </aside>
   );

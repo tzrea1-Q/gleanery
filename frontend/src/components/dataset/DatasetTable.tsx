@@ -1,10 +1,42 @@
 import { Fragment, useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
+import { ChevronLeft, ChevronRight, ListFilter, Search } from "lucide-react";
 import { api } from "@/api/client";
 import type { ContentFilter, ContentSort } from "@/api/dataset-types";
 import { useComments, useContent, useDatasetContents } from "@/api/queries-dataset";
 import { useWorkspace } from "@/stores/workspace";
+import { FormRow } from "@/components/common/FormRow";
+import { FormSelect } from "@/components/common/FormSelect";
+import { Notice } from "@/components/common/Notice";
+import { PlatformTag } from "@/components/common/PlatformTag";
+import { StatusBadge } from "@/components/common/StatusBadge";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Empty, EmptyDescription, EmptyHeader, EmptyTitle } from "@/components/ui/empty";
+import { Input } from "@/components/ui/input";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Skeleton } from "@/components/ui/skeleton";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { formatDate, formatDateTime } from "@/lib/format";
+import { cn } from "@/lib/utils";
+import { askConfirm } from "@/stores/confirm";
 import { ExportButton } from "./ExportButton";
+
+const sortOptions = [
+  { value: "added_desc", label: "最近加入" },
+  { value: "published_desc", label: "发布时间倒序" },
+  { value: "published_asc", label: "发布时间正序" },
+  { value: "likes_desc", label: "点赞" },
+  { value: "plays_desc", label: "播放" },
+  { value: "comments_desc", label: "评论" },
+];
 
 export function DatasetTable({ id, preview = false }: { id: number; preview?: boolean }) {
   const [filter, setFilter] = useState<ContentFilter>({});
@@ -123,12 +155,13 @@ export function DatasetTable({ id, preview = false }: { id: number; preview?: bo
       const body = { content_ids: selected };
       const impact = await api.POST("/api/datasets/{dataset_id}/remove-impact", { params, body });
       if (!impact.response.ok || !impact.data) throw new Error();
-      if (
-        !window.confirm(
-          `移出 ${impact.data.removed} 条内容，回收 ${impact.data.recycled_contents} 条内容和 ${impact.data.recycled_comments} 条评论。确认移出？`,
-        )
-      )
-        return;
+      const confirmed = await askConfirm({
+        title: "移出数据集",
+        description: `移出 ${impact.data.removed} 条内容，回收 ${impact.data.recycled_contents} 条内容和 ${impact.data.recycled_comments} 条评论。`,
+        confirmLabel: "确认移出",
+        destructive: true,
+      });
+      if (!confirmed) return;
       const result = await api.POST("/api/datasets/{dataset_id}/remove", { params, body });
       if (!result.response.ok) throw new Error();
       setSelected([]);
@@ -137,162 +170,216 @@ export function DatasetTable({ id, preview = false }: { id: number; preview?: bo
       setMessage("移出失败，请重试");
     }
   }
+  const moreFilters = [
+    filter.published_from,
+    filter.published_to,
+    filter.min_likes,
+    filter.has_subtitles,
+  ].filter((value) => value != null).length;
+  // 作者和发布时间放在标题下面，表格才放得下；对话里的预览再减到三列。
+  const columns: [string, boolean][] = preview
+    ? [
+        ["内容", false],
+        ["点赞", true],
+        ["评论", true],
+      ]
+    : [
+        ["内容", false],
+        ["播放", true],
+        ["点赞", true],
+        ["评论", true],
+        ["本地评论", true],
+        ["字幕", true],
+        ["完整度", false],
+      ];
   return (
-    <section aria-label={preview ? "数据集预览" : "数据集内容"} className="space-y-2 overflow-auto">
+    <section aria-label={preview ? "数据集预览" : "数据集内容"} className="space-y-3">
       {!preview && (
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm [&_input]:ml-1 [&_input]:rounded [&_input]:border [&_input]:px-1 [&_select]:ml-1 [&_select]:rounded [&_select]:border [&_button]:rounded [&_button]:border [&_button]:px-2">
-          <label>
-            关键词
-            <input
+        <div className="flex flex-wrap items-center gap-2">
+          <div className="relative min-w-40 flex-1">
+            <Search
+              aria-hidden
+              className="absolute top-1/2 left-2.5 size-4 -translate-y-1/2 text-muted-foreground"
+            />
+            <Input
+              aria-label="关键词"
+              placeholder="搜索关键词"
+              className="h-8 rounded-full border-0 bg-muted pl-8 shadow-none dark:bg-muted"
               value={filter.keyword ?? ""}
               onChange={(e) => updateFilter({ keyword: e.target.value || undefined })}
             />
-          </label>
-          <label>
-            平台
-            <select
-              value={filter.platform ?? ""}
-              onChange={(e) =>
-                updateFilter({
-                  platform: (e.target.value || undefined) as ContentFilter["platform"],
-                })
-              }
-            >
-              <option value="">全部</option>
-              <option value="bili">B 站</option>
-              <option value="xhs">小红书</option>
-            </select>
-          </label>
-          <label>
-            完整度
-            <select
-              value={filter.completeness ?? ""}
-              onChange={(e) =>
-                updateFilter({
-                  completeness: (e.target.value || undefined) as ContentFilter["completeness"],
-                })
-              }
-            >
-              <option value="">全部</option>
-              <option value="summary">仅摘要</option>
-              <option value="detail">详情</option>
-            </select>
-          </label>
-          <label>
-            发布时间起
-            <input
-              type="date"
-              value={filter.published_from ?? ""}
-              onChange={(e) => updateFilter({ published_from: e.target.value || undefined })}
-            />
-          </label>
-          <label>
-            发布时间止
-            <input
-              type="date"
-              value={filter.published_to ?? ""}
-              onChange={(e) => updateFilter({ published_to: e.target.value || undefined })}
-            />
-          </label>
-          <label>
-            点赞下限
-            <input
-              type="number"
-              min="0"
-              value={filter.min_likes ?? ""}
-              onChange={(e) =>
-                updateFilter({ min_likes: e.target.value ? Number(e.target.value) : undefined })
-              }
-            />
-          </label>
-          <label>
-            字幕
-            <select
-              value={filter.has_subtitles == null ? "" : String(filter.has_subtitles)}
-              onChange={(e) =>
-                updateFilter({
-                  has_subtitles: e.target.value ? e.target.value === "true" : undefined,
-                })
-              }
-            >
-              <option value="">全部</option>
-              <option value="true">有字幕</option>
-              <option value="false">无字幕</option>
-            </select>
-          </label>
-          <label>
-            排序
-            <select
-              value={sort}
-              onChange={(e) => {
-                setSort(e.target.value as ContentSort);
-                setOffset(0);
-              }}
-            >
-              {[
-                ["added_desc", "最近加入"],
-                ["published_desc", "发布时间倒序"],
-                ["published_asc", "发布时间正序"],
-                ["likes_desc", "点赞"],
-                ["plays_desc", "播放"],
-                ["comments_desc", "评论"],
-              ].map(([v, n]) => (
-                <option key={v} value={v}>
-                  {n}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label>
-            按 ID 定位
-            <input
+          </div>
+          <FormSelect
+            aria-label="平台"
+            size="sm"
+            className="w-auto rounded-full border-0 bg-muted shadow-none dark:bg-muted"
+            value={filter.platform ?? ""}
+            onValueChange={(value) =>
+              updateFilter({ platform: (value || undefined) as ContentFilter["platform"] })
+            }
+            options={[
+              { value: "", label: "全部平台" },
+              { value: "bili", label: "B 站" },
+              { value: "xhs", label: "小红书" },
+            ]}
+          />
+          <FormSelect
+            aria-label="完整度"
+            size="sm"
+            className="w-auto rounded-full border-0 bg-muted shadow-none dark:bg-muted"
+            value={filter.completeness ?? ""}
+            onValueChange={(value) =>
+              updateFilter({
+                completeness: (value || undefined) as ContentFilter["completeness"],
+              })
+            }
+            options={[
+              { value: "", label: "全部完整度" },
+              { value: "summary", label: "仅摘要" },
+              { value: "detail", label: "详情" },
+            ]}
+          />
+          <FormSelect
+            aria-label="排序"
+            size="sm"
+            className="w-auto rounded-full border-0 bg-muted shadow-none dark:bg-muted"
+            value={sort}
+            onValueChange={(value) => {
+              setSort(value as ContentSort);
+              setOffset(0);
+            }}
+            options={sortOptions}
+          />
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button variant="outline" size="sm">
+                <ListFilter />
+                更多筛选
+                {moreFilters > 0 && <span className="text-primary">{moreFilters}</span>}
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent align="end" className="w-80 space-y-3">
+              <FormRow label="发布时间起">
+                <Input
+                  type="date"
+                  value={filter.published_from ?? ""}
+                  onChange={(e) => updateFilter({ published_from: e.target.value || undefined })}
+                />
+              </FormRow>
+              <FormRow label="发布时间止">
+                <Input
+                  type="date"
+                  value={filter.published_to ?? ""}
+                  onChange={(e) => updateFilter({ published_to: e.target.value || undefined })}
+                />
+              </FormRow>
+              <FormRow label="点赞下限">
+                <Input
+                  type="number"
+                  min="0"
+                  value={filter.min_likes ?? ""}
+                  onChange={(e) =>
+                    updateFilter({
+                      min_likes: e.target.value ? Number(e.target.value) : undefined,
+                    })
+                  }
+                />
+              </FormRow>
+              <FormRow label="字幕">
+                <FormSelect
+                  value={filter.has_subtitles == null ? "" : String(filter.has_subtitles)}
+                  onValueChange={(value) =>
+                    updateFilter({ has_subtitles: value ? value === "true" : undefined })
+                  }
+                  options={[
+                    { value: "", label: "全部" },
+                    { value: "true", label: "有字幕" },
+                    { value: "false", label: "无字幕" },
+                  ]}
+                />
+              </FormRow>
+            </PopoverContent>
+          </Popover>
+          <div className="flex items-center gap-1">
+            <Input
+              aria-label="按 ID 定位"
+              placeholder="按 ID 定位"
+              className="h-8 w-28 rounded-full border-0 bg-muted shadow-none dark:bg-muted"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => {
                 if (e.key === "Enter") void locateInput();
               }}
             />
-          </label>
-          <button onClick={() => void locateInput()}>定位</button>
+            <Button variant="outline" size="sm" onClick={() => void locateInput()}>
+              定位
+            </Button>
+          </div>
           <ExportButton datasetId={id} filter={filter} sort={sort} />
-          {selected.length > 0 && <button onClick={() => void remove()}>移出数据集</button>}
         </div>
       )}
-      {message && <p role="alert">{message}</p>}
-      {page.isError && (
-        <p role="alert">
-          {page.error.message === "DATASET_NOT_FOUND" ? "数据集已删除" : "无法加载数据集内容"}
-        </p>
+      {selected.length > 0 && (
+        <div className="flex items-center justify-between gap-2 rounded-xl bg-brand-muted px-3 py-1.5">
+          <span>已选 {selected.length} 条</span>
+          <Button variant="destructive" size="sm" onClick={() => void remove()}>
+            移出数据集
+          </Button>
+        </div>
       )}
-      {page.isPending && <p>正在加载数据集…</p>}
-      {page.data && (
+      {message && <Notice>{message}</Notice>}
+      {page.isError && (
+        <Notice>
+          {page.error.message === "DATASET_NOT_FOUND" ? "数据集已删除" : "无法加载数据集内容"}
+        </Notice>
+      )}
+      {page.isPending && (
+        <div role="status" aria-label="正在加载数据集…" className="space-y-2">
+          <Skeleton className="h-8 w-full" />
+          <Skeleton className="h-8 w-full" />
+          <Skeleton className="h-8 w-full" />
+        </div>
+      )}
+      {page.data && page.data.items.length === 0 && (
+        <Empty>
+          <EmptyHeader>
+            <EmptyTitle>没有内容</EmptyTitle>
+            <EmptyDescription>
+              {page.data.total ? "没有符合当前筛选的内容" : "这个数据集还是空的"}
+            </EmptyDescription>
+          </EmptyHeader>
+        </Empty>
+      )}
+      {page.data && page.data.items.length > 0 && (
         <>
-          <table className="w-full text-left text-sm [&_td]:px-1 [&_th]:px-1">
-            <thead>
-              <tr>
-                {!preview && <th>选择</th>}
-                {[
-                  "标题",
-                  "作者",
-                  "发布时间",
-                  "播放",
-                  "点赞",
-                  "评论",
-                  "本地评论",
-                  "字幕",
-                  "完整度",
-                ].map((x) => (
-                  <th key={x} className="whitespace-nowrap">
-                    {x}
-                  </th>
+          <Table className="text-[13px]">
+            <TableHeader className="[&_tr]:border-0">
+              <TableRow className="hover:bg-transparent">
+                {!preview && (
+                  <TableHead className="w-7 rounded-l-xl bg-muted px-1.5">
+                    <span className="sr-only">选择</span>
+                  </TableHead>
+                )}
+                {columns.map(([name, numeric]) => (
+                  <TableHead
+                    key={name}
+                    className={cn(
+                      "h-8 bg-muted px-2 text-xs font-medium text-muted-foreground first:rounded-l-xl last:rounded-r-xl",
+                      numeric && "text-right",
+                    )}
+                  >
+                    {name}
+                  </TableHead>
                 ))}
-              </tr>
-            </thead>
-            <tbody>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
               {page.data.items.map((row) => (
                 <Fragment key={row.id}>
-                  <tr
-                    className={`${row.completeness === "summary" ? "border-t text-muted-foreground" : "border-t"} ${highlight?.content === row.id ? "bg-yellow-100" : ""}`}
+                  <TableRow
+                    className={cn(
+                      !preview && "cursor-pointer",
+                      highlight?.content === row.id && "bg-warning-muted",
+                    )}
                     data-focus-id={`c-${row.id}`}
                     data-highlighted={highlight?.content === row.id ? "true" : undefined}
                     onClick={() => {
@@ -303,53 +390,82 @@ export function DatasetTable({ id, preview = false }: { id: number; preview?: bo
                     }}
                   >
                     {!preview && (
-                      <td>
-                        <input
+                      <TableCell className="px-1.5" onClick={(e) => e.stopPropagation()}>
+                        <Checkbox
                           aria-label={`选择内容 ${row.id}`}
-                          type="checkbox"
                           checked={selected.includes(row.id)}
-                          onClick={(e) => e.stopPropagation()}
-                          onChange={(e) =>
+                          onCheckedChange={(checked) =>
                             setSelected(
-                              e.target.checked
+                              checked === true
                                 ? [...selected, row.id]
                                 : selected.filter((x) => x !== row.id),
                             )
                           }
                         />
-                      </td>
+                      </TableCell>
                     )}
-                    <td>
-                      {!preview && (
-                        <button aria-label={`展开内容 ${row.id}`}>
-                          {expanded === row.id ? "−" : "+"}
-                        </button>
-                      )}{" "}
-                      <a
-                        href={row.open_url}
-                        target="_blank"
-                        rel="noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {row.title || "无标题"}
-                      </a>
-                    </td>
-                    <td>{row.author_nickname ?? "—"}</td>
-                    <td>{row.published_at ? new Date(row.published_at).toLocaleString() : "—"}</td>
-                    <Count value={row.plays} />
+                    <TableCell className="min-w-44 px-2 py-2.5 whitespace-normal">
+                      <div className="flex items-start gap-1.5">
+                        {!preview && (
+                          <Button
+                            variant="ghost"
+                            size="icon-xs"
+                            className="mt-0.5 shrink-0"
+                            aria-label={`展开内容 ${row.id}`}
+                            aria-expanded={expanded === row.id}
+                          >
+                            <ChevronRight
+                              className={cn(
+                                "transition-transform",
+                                expanded === row.id && "rotate-90",
+                              )}
+                            />
+                          </Button>
+                        )}
+                        <div className="min-w-0">
+                          <a
+                            href={row.open_url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="line-clamp-2 font-medium text-foreground hover:underline"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            {row.title || "无标题"}
+                          </a>
+                          <p
+                            className="mt-0.5 flex items-center gap-1.5 text-xs text-muted-foreground"
+                            title={row.published_at ? formatDateTime(row.published_at) : undefined}
+                          >
+                            <PlatformTag
+                              platform={row.platform}
+                              className="text-[10px] leading-4"
+                            />
+                            <span className="min-w-0 truncate">
+                              {row.author_nickname ?? "—"}
+                              {row.published_at ? ` · ${formatDate(row.published_at)}` : ""}
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                    </TableCell>
+                    {!preview && <Count value={row.plays} />}
                     <Count value={row.likes} />
                     <Count value={row.comments} />
-                    <Count value={row.local_comments} />
-                    <Count value={row.platform === "bili" ? row.subtitles : null} />
-                    <td className="whitespace-nowrap">
-                      {row.completeness === "detail" ? "详情" : "仅摘要"}
-                    </td>
-                  </tr>
+                    {!preview && <Count value={row.local_comments} />}
+                    {!preview && <Count value={row.platform === "bili" ? row.subtitles : null} />}
+                    {!preview && (
+                      <TableCell className="px-2">
+                        <StatusBadge tone={row.completeness === "detail" ? "success" : "neutral"}>
+                          {row.completeness === "detail" ? "详情" : "仅摘要"}
+                        </StatusBadge>
+                      </TableCell>
+                    )}
+                  </TableRow>
                   {expanded === row.id && (
-                    <tr>
-                      <td colSpan={10}>
-                        <div className="space-y-2 border-l-2 bg-muted/30 p-3">
-                          {detail.isError && <p role="alert">无法加载内容</p>}
+                    <TableRow className="hover:bg-transparent">
+                      <TableCell colSpan={10} className="p-0 whitespace-normal">
+                        <div className="space-y-2 border-l-2 border-primary/40 bg-muted/40 p-3">
+                          {detail.isError && <Notice>无法加载内容</Notice>}
                           {detail.data && (
                             <>
                               <p aria-label="正文" className="whitespace-pre-wrap">
@@ -375,7 +491,7 @@ export function DatasetTable({ id, preview = false }: { id: number; preview?: bo
                               ))}
                             </>
                           )}
-                          {comments.isError && <p role="alert">无法加载评论</p>}
+                          {comments.isError && <Notice>无法加载评论</Notice>}
                           {comments.data && (
                             <>
                               <h4 className="font-semibold">
@@ -393,53 +509,66 @@ export function DatasetTable({ id, preview = false }: { id: number; preview?: bo
                                 </div>
                               ))}
                               {comments.data.total > 20 && (
-                                <div>
-                                  <button
+                                <div className="flex flex-wrap items-center gap-2">
+                                  <Button
+                                    variant="outline"
+                                    size="xs"
                                     disabled={!commentOffset}
                                     onClick={() =>
                                       setCommentOffset(Math.max(0, commentOffset - 20))
                                     }
                                   >
                                     上一页评论
-                                  </button>{" "}
-                                  <span>
+                                  </Button>
+                                  <span className="text-muted-foreground">
                                     第 {commentOffset + 1}–
                                     {Math.min(commentOffset + 20, comments.data.total)} 条，共{" "}
                                     {comments.data.total} 条一级评论
-                                  </span>{" "}
-                                  <button
+                                  </span>
+                                  <Button
+                                    variant="outline"
+                                    size="xs"
                                     disabled={commentOffset + 20 >= comments.data.total}
                                     onClick={() => setCommentOffset(commentOffset + 20)}
                                   >
                                     下一页评论
-                                  </button>
+                                  </Button>
                                 </div>
                               )}
                             </>
                           )}
                         </div>
-                      </td>
-                    </tr>
+                      </TableCell>
+                    </TableRow>
                   )}
                 </Fragment>
               ))}
-            </tbody>
-          </table>
+            </TableBody>
+          </Table>
           {!preview && (
-            <div>
-              <button disabled={!offset} onClick={() => setOffset(Math.max(0, offset - limit))}>
-                上一页
-              </button>{" "}
-              <span>
+            <div className="flex items-center justify-end gap-2">
+              <span className="text-muted-foreground tabular-nums">
                 {page.data.filtered_total ? offset + 1 : 0}–
                 {Math.min(offset + limit, page.data.filtered_total)} / {page.data.filtered_total}
-              </span>{" "}
-              <button
+              </span>
+              <Button
+                variant="outline"
+                size="sm"
+                disabled={!offset}
+                onClick={() => setOffset(Math.max(0, offset - limit))}
+              >
+                <ChevronLeft />
+                上一页
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
                 disabled={offset + limit >= page.data.filtered_total}
                 onClick={() => setOffset(offset + limit)}
               >
                 下一页
-              </button>
+                <ChevronRight />
+              </Button>
             </div>
           )}
         </>
@@ -456,7 +585,7 @@ function Comment({
 }) {
   return (
     <div
-      className={`rounded p-1 ${highlight === item.id ? "bg-yellow-100" : ""}`}
+      className={cn("rounded p-1", highlight === item.id && "bg-warning-muted")}
       data-focus-id={`m-${item.id}`}
       data-highlighted={highlight === item.id ? "true" : undefined}
     >
@@ -473,12 +602,12 @@ const compact = new Intl.NumberFormat("zh-CN", { notation: "compact", maximumFra
 
 function Count({ value }: { value: number | null | undefined }) {
   return (
-    <td
-      className="whitespace-nowrap tabular-nums"
+    <TableCell
+      className="px-2 text-right tabular-nums"
       title={value == null ? undefined : String(value)}
     >
       {value == null ? "—" : compact.format(value)}
-    </td>
+    </TableCell>
   );
 }
 

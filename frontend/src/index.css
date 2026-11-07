@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-shimmer";
+@import "tw-animate-css";
 
 @custom-variant data-open (&:where([data-state="open"], [data-open]:not([data-open="false"])));
 
@@ -26,46 +27,86 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --radius: 0.875rem;
+  --background: oklch(0.965 0.004 286.3);
+  --foreground: oklch(0.202 0.008 285.7);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.202 0.008 285.7);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --popover-foreground: oklch(0.202 0.008 285.7);
+  --primary: oklch(0.202 0.008 285.7);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.956 0.005 286.3);
+  --secondary-foreground: oklch(0.202 0.008 285.7);
+  --muted: oklch(0.956 0.005 286.3);
+  --muted-foreground: oklch(0.51 0.016 285.8);
+  --accent: oklch(0.956 0.005 286.3);
+  --accent-foreground: oklch(0.202 0.008 285.7);
+  --destructive: oklch(0.552 0.186 23.2);
+  --border: oklch(0.927 0.008 286.2);
+  --input: oklch(0.927 0.008 286.2);
+  --ring: oklch(0.509 0.237 281.5);
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.202 0.008 285.7);
+  --sidebar-primary: oklch(0.202 0.008 285.7);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.941 0.031 293.8);
+  --sidebar-accent-foreground: oklch(0.202 0.008 285.7);
+  --sidebar-border: oklch(0.927 0.008 286.2);
+  --sidebar-ring: oklch(0.509 0.237 281.5);
+  --brand: oklch(0.509 0.237 281.5);
+  --brand-muted: oklch(0.941 0.031 293.8);
+  --lime: oklch(0.891 0.161 122.7);
+  --success: oklch(0.431 0.103 128.2);
+  --success-muted: oklch(0.945 0.064 120.9);
+  --warning: oklch(0.508 0.108 73.3);
+  --warning-muted: oklch(0.961 0.038 86.9);
+  --attention: oklch(0.539 0.16 36.5);
+  --attention-muted: oklch(0.95 0.023 41.4);
+  --platform-xhs: oklch(0.579 0.224 21.2);
+  --platform-bili: oklch(0.541 0.11 231.5);
+  --platform-foreground: oklch(1 0 0);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --background: oklch(0.165 0.006 285.7);
+  --foreground: oklch(0.968 0.003 286.4);
+  --card: oklch(0.211 0.008 285.7);
+  --card-foreground: oklch(0.968 0.003 286.4);
+  --popover: oklch(0.242 0.011 285.5);
+  --popover-foreground: oklch(0.968 0.003 286.4);
+  --primary: oklch(0.968 0.003 286.4);
+  --primary-foreground: oklch(0.202 0.008 285.7);
+  --secondary: oklch(0.259 0.011 285.6);
+  --secondary-foreground: oklch(0.968 0.003 286.4);
+  --muted: oklch(0.259 0.011 285.6);
+  --muted-foreground: oklch(0.709 0.016 286);
+  --accent: oklch(0.259 0.011 285.6);
+  --accent-foreground: oklch(0.968 0.003 286.4);
+  --destructive: oklch(0.722 0.145 18.2);
+  --border: oklch(0.292 0.014 285.5);
+  --input: oklch(0.292 0.014 285.5);
+  --ring: oklch(0.732 0.149 290.1);
+  --sidebar: oklch(0.211 0.008 285.7);
+  --sidebar-foreground: oklch(0.968 0.003 286.4);
+  --sidebar-primary: oklch(0.968 0.003 286.4);
+  --sidebar-primary-foreground: oklch(0.202 0.008 285.7);
+  --sidebar-accent: oklch(0.288 0.061 288.7);
+  --sidebar-accent-foreground: oklch(0.968 0.003 286.4);
+  --sidebar-border: oklch(0.292 0.014 285.5);
+  --sidebar-ring: oklch(0.732 0.149 290.1);
+  --brand: oklch(0.732 0.149 290.1);
+  --brand-muted: oklch(0.288 0.061 288.7);
+  --lime: oklch(0.842 0.159 123.9);
+  --success: oklch(0.894 0.121 121.6);
+  --success-muted: oklch(0.297 0.041 127.9);
+  --warning: oklch(0.798 0.121 79.7);
+  --warning-muted: oklch(0.283 0.042 85.7);
+  --attention: oklch(0.772 0.118 39);
+  --attention-muted: oklch(0.278 0.042 38.5);
+  --platform-xhs: oklch(0.692 0.2 16.3);
+  --platform-bili: oklch(0.732 0.121 223.9);
+  --platform-foreground: oklch(0.202 0.008 285.7);
 }
 
 @theme inline {
@@ -73,6 +114,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -91,6 +134,27 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-success: var(--success);
+  --color-success-muted: var(--success-muted);
+  --color-warning: var(--warning);
+  --color-warning-muted: var(--warning-muted);
+  --color-brand: var(--brand);
+  --color-brand-muted: var(--brand-muted);
+  --color-lime: var(--lime);
+  --color-attention: var(--attention);
+  --color-attention-muted: var(--attention-muted);
+  --color-platform-xhs: var(--platform-xhs);
+  --color-platform-bili: var(--platform-bili);
+  --color-platform-foreground: var(--platform-foreground);
+  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
 }
 
 @layer base {
@@ -99,5 +163,8 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
   }
 }

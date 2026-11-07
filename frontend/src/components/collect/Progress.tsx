@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import { useTaskAction } from "@/api/queries-collect";
 import type { components } from "@/api/schema";
+import { PlatformTag, platformName } from "@/components/common/PlatformTag";
+import { StatusBadge, type StatusTone } from "@/components/common/StatusBadge";
+import { Notice } from "@/components/common/Notice";
+import { Button } from "@/components/ui/button";
+import { Progress as ProgressBar } from "@/components/ui/progress";
+import { cn } from "@/lib/utils";
 type Task = components["schemas"]["TaskOut"];
 export const finished = (task: Task) => ["completed", "stopped", "failed"].includes(task.status);
 export function duration(seconds: number) {
@@ -34,6 +40,23 @@ const waits = {
   warmup: "登录后预热",
   blocked_by_risk_pause: "等待处理风控暂停的任务",
 };
+const statusTones: Record<keyof typeof statuses, StatusTone> = {
+  queued: "neutral",
+  running: "info",
+  paused: "danger",
+  completed: "success",
+  stopped: "neutral",
+  failed: "danger",
+};
+function statusText(t: Task) {
+  const name = t.reason === "app_restart" && t.status === "paused" ? "已中断" : statuses[t.status];
+  const detail =
+    (t.status === "paused" || t.status === "failed") && t.reason && t.reason in reasons
+      ? `（${reasons[t.reason as keyof typeof reasons]}）`
+      : "";
+  return name + detail;
+}
+
 export function Progress({ tasks }: { tasks: Task[] }) {
   const action = useTaskAction();
   const [now, setNow] = useState(() => Date.now());
@@ -46,65 +69,90 @@ export function Progress({ tasks }: { tasks: Task[] }) {
       {tasks.map((t) => (
         <section
           key={t.id}
-          aria-label={`${t.platform === "bili" ? "B 站" : "小红书"}采集任务`}
-          className="space-y-1 rounded border p-3"
+          aria-label={`${platformName(t.platform)}采集任务`}
+          className="space-y-2 rounded-xl bg-card p-4 shadow-[inset_0_0_0_1px_var(--border)]"
         >
-          <h4 className="font-medium">
-            {t.platform === "bili" ? "B 站" : "小红书"} ·{" "}
-            {t.reason === "app_restart" && t.status === "paused" ? "已中断" : statuses[t.status]}
-            {(t.status === "paused" || t.status === "failed") &&
-              t.reason &&
-              t.reason in reasons &&
-              `（${reasons[t.reason as keyof typeof reasons]}）`}
+          <h4
+            aria-label={`${platformName(t.platform)} · ${statusText(t)}`}
+            className="flex items-center gap-2"
+          >
+            <PlatformTag platform={t.platform} />
+            <StatusBadge tone={statusTones[t.status]}>{statusText(t)}</StatusBadge>
           </h4>
+          <div className="flex items-baseline gap-2">
+            <p
+              aria-label={`实得 / 计划：${t.progress.processed} / ${t.progress.planned}`}
+              className="text-3xl font-semibold tracking-tight tabular-nums"
+            >
+              {t.progress.processed}
+              <span className="text-lg font-normal text-muted-foreground">
+                {" "}
+                / {t.progress.planned}
+              </span>
+            </p>
+            <p className="ml-auto text-muted-foreground">
+              评论 {t.progress.comments}
+              {t.platform === "bili" && ` · 字幕 ${t.progress.subtitles}`}
+            </p>
+          </div>
+          <ProgressBar
+            aria-label="采集进度"
+            value={t.progress.planned ? (t.progress.processed / t.progress.planned) * 100 : 0}
+            className={cn(
+              "h-1.5",
+              t.platform === "bili"
+                ? "[&>[data-slot=progress-indicator]]:bg-platform-bili"
+                : "[&>[data-slot=progress-indicator]]:bg-platform-xhs",
+            )}
+          />
           {t.wait_reason && (
             <p>
               {waits[t.wait_reason]}
               {t.wait_until ? `，${duration(Math.max(0, (t.wait_until - now) / 1000))}后开始` : ""}
             </p>
           )}
-          <p>
-            实得 / 计划：{t.progress.processed} / {t.progress.planned} · 评论 {t.progress.comments}
-            {t.platform === "bili" && ` · 字幕 ${t.progress.subtitles}`}
-          </p>
           {!finished(t) && (
             <p>
               预计剩余时间：
               {t.progress.eta_seconds == null ? "未知" : duration(t.progress.eta_seconds)}
             </p>
           )}
-          {t.progress.last_log && <p className="break-words">{t.progress.last_log}</p>}
+          {t.progress.last_log && (
+            <p className="text-xs break-words text-muted-foreground">{t.progress.last_log}</p>
+          )}
           {t.reason === "risk" && t.status === "paused" && <p>本平台队列在你选择前不会继续</p>}
           {t.reason === "login_lost" && t.status === "paused" && <p>请去左栏扫码登录</p>}
           {!finished(t) && (
             <div className="flex flex-wrap gap-2">
               {t.status === "paused" ? (
-                <button
-                  className="rounded border p-1"
+                <Button
+                  size="sm"
                   disabled={action.isPending}
                   onClick={() => action.mutate({ id: t.id, action: "resume" })}
                 >
                   {t.reason === "risk" ? "已验证，继续（冷却后恢复）" : "继续"}
-                </button>
+                </Button>
               ) : (
-                <button
-                  className="rounded border p-1"
+                <Button
+                  variant="outline"
+                  size="sm"
                   disabled={action.isPending}
                   onClick={() => action.mutate({ id: t.id, action: "pause" })}
                 >
                   暂停
-                </button>
+                </Button>
               )}
-              <button
-                className="rounded border p-1"
+              <Button
+                variant="outline"
+                size="sm"
                 disabled={action.isPending}
                 onClick={() => action.mutate({ id: t.id, action: "stop" })}
               >
                 {t.reason === "risk" && t.status === "paused" ? "跳过剩余部分" : "停止"}
-              </button>
+              </Button>
             </div>
           )}
-          {action.isError && <p role="alert">操作失败，请重试</p>}
+          {action.isError && <Notice>操作失败，请重试</Notice>}
         </section>
       ))}
     </div>

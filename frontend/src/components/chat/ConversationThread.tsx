@@ -1,3 +1,4 @@
+import { Notice } from "@/components/common/Notice";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useComposer } from "@/stores/composer";
 import { AssistantRuntimeProvider, useAui, useAuiState } from "@assistant-ui/react";
@@ -174,11 +175,7 @@ export function ConversationThread({ id }: { id: string }) {
   const replying = !localRunning && conversation.data?.running === "chat";
   if (conversation.isPending || appState.isPending) return <p className="p-6">正在加载对话…</p>;
   if (conversation.isError || appState.isError)
-    return (
-      <p role="alert" className="p-6">
-        无法加载对话，请重试
-      </p>
-    );
+    return <Notice className="m-6 w-auto">无法加载对话，请重试</Notice>;
   return (
     <Chat
       key={`${id}-${revision}`}

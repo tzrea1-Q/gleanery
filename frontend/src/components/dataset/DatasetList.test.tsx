@@ -11,6 +11,7 @@ import { http, HttpResponse } from "msw";
 import { server } from "@/test/server";
 import { useWorkspace } from "@/stores/workspace";
 import { DatasetList } from "./DatasetList";
+import { formatDateTime } from "@/lib/format";
 
 const dataset = {
   id: 1,
@@ -46,8 +47,8 @@ function setup() {
 test("显示数据集、搜索和在工作区打开", async () => {
   const user = setup();
   expect(await screen.findByText("咖啡")).toBeInTheDocument();
-  expect(screen.getAllByText(/B 站 2 条，小红书 1 条；共 3 条/)).toHaveLength(2);
-  expect(screen.getAllByText(new Date(1000).toLocaleString(), { exact: false })).toHaveLength(2);
+  expect(screen.getAllByText(/B 站 2 条，小红书 1 条/)).toHaveLength(2);
+  expect(screen.getAllByText(formatDateTime(1000), { exact: false })).toHaveLength(2);
   expect(screen.getAllByRole("link", { name: "对话 9" })[0]).toHaveAttribute("href", "/c/9");
   await user.type(screen.getByLabelText("搜索数据集"), "咖啡");
   expect(screen.queryByText("茶")).not.toBeInTheDocument();

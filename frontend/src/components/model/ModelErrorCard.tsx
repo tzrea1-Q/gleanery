@@ -1,4 +1,5 @@
 import { useAppState, useModelConfigs, useSetCurrentModel } from "@/api/queries";
+import { Button } from "@/components/ui/button";
 import { useUiStore } from "@/stores/ui";
 
 export function ModelErrorCard({ error, reload }: { error: unknown; reload: () => void }) {
@@ -48,39 +49,33 @@ export function ModelErrorCard({ error, reload }: { error: unknown; reload: () =
     "MODEL_AUTH_FAILED",
   ].includes(code);
   return (
-    <div role="alert" className="mt-2 space-y-2 rounded border border-destructive p-3">
-      <p>{code === "NO_MODEL" ? "先选一个模型" : parsed.message || raw}</p>
+    <div role="alert" className="mt-2 space-y-3 rounded-2xl bg-attention-muted p-4 text-attention">
+      <p className="font-medium">{code === "NO_MODEL" ? "先选一个模型" : parsed.message || raw}</p>
       {parsed.hint && <p>{parsed.hint}</p>}
       <div className="flex flex-wrap gap-2">
         {["MODEL_AUTH_FAILED", "MODEL_UNSUPPORTED", "NO_MODEL"].includes(code) && (
-          <button className="rounded border p-2" onClick={() => open("models")}>
+          <Button variant="outline" size="sm" onClick={() => open("models")}>
             去设置
-          </button>
+          </Button>
         )}
         {changeModel && (
-          <button className="rounded border p-2" onClick={() => open("models")}>
+          <Button variant="outline" size="sm" onClick={() => open("models")}>
             换个模型
-          </button>
+          </Button>
         )}
         {code === "MODEL_RECONNECT_REQUIRED" && (
-          <a
-            className="rounded border p-2"
-            href="/api/chatgpt/connect"
-            target="_blank"
-            rel="noopener"
-          >
-            重新连接
-          </a>
+          <Button asChild variant="outline" size="sm">
+            <a href="/api/chatgpt/connect" target="_blank" rel="noopener">
+              重新连接
+            </a>
+          </Button>
         )}
         {code === "MODEL_QUOTA_EXCEEDED" && (
-          <a
-            className="rounded border p-2"
-            href="https://chatgpt.com/settings/usage"
-            target="_blank"
-            rel="noopener"
-          >
-            Manage usage
-          </a>
+          <Button asChild variant="outline" size="sm">
+            <a href="https://chatgpt.com/settings/usage" target="_blank" rel="noopener">
+              Manage usage
+            </a>
+          </Button>
         )}
         {![
           "MODEL_AUTH_FAILED",
@@ -89,21 +84,21 @@ export function ModelErrorCard({ error, reload }: { error: unknown; reload: () =
           "MODEL_QUOTA_EXCEEDED",
           "NO_MODEL",
         ].includes(code) && (
-          <button
-            className="rounded border p-2"
+          <Button
+            size="sm"
             onClick={reload}
             disabled={
               code === "MODEL_RECONNECT_REQUIRED" && state.data?.current_model?.status !== "ok"
             }
           >
             重试
-          </button>
+          </Button>
         )}
         {(code === "MODEL_RATE_LIMITED" || code === "MODEL_QUOTA_EXCEEDED") &&
           state.data &&
           other && (
-            <button
-              className="rounded border p-2"
+            <Button
+              size="sm"
               disabled={set.isPending}
               onClick={() =>
                 set.mutate({ config_id: other.id, model: other.model }, { onSuccess: reload })
@@ -111,7 +106,7 @@ export function ModelErrorCard({ error, reload }: { error: unknown; reload: () =
             >
               换成 {other.config}
               {code === "MODEL_RATE_LIMITED" && `·${other.model}`} 并重试
-            </button>
+            </Button>
           )}
       </div>
       {set.isError && <p>切换模型失败，请重试</p>}

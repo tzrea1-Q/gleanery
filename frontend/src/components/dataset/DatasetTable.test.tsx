@@ -6,6 +6,7 @@ import { content } from "@/components/collect/test-data";
 import { useWorkspace } from "@/stores/workspace";
 import { server } from "@/test/server";
 import { DatasetTable } from "./DatasetTable";
+import { ConfirmHost } from "@/components/common/ConfirmHost";
 
 test("清除阻挡定位的筛选并高亮评论，移出前显示影响", async () => {
   Element.prototype.scrollIntoView = vi.fn();
@@ -46,11 +47,11 @@ test("清除阻挡定位的筛选并高亮评论，移出前显示影响", async
       });
     }),
   );
-  const confirm = vi.spyOn(window, "confirm").mockReturnValue(true);
   const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
   render(
     <QueryClientProvider client={client}>
       <DatasetTable id={2} />
+      <ConfirmHost />
     </QueryClientProvider>,
   );
   await screen.findByText(content.title!);
@@ -64,9 +65,10 @@ test("清除阻挡定位的筛选并高亮评论，移出前显示影响", async
   expect(screen.getByText("<b>正文</b>")).toBeInTheDocument();
   await user.click(screen.getByRole("checkbox", { name: `选择内容 ${content.id}` }));
   await user.click(screen.getByRole("button", { name: "移出数据集" }));
+  const dialog = await screen.findByRole("alertdialog");
+  expect(dialog).toHaveTextContent("回收 1 条内容和 2 条评论");
+  await user.click(within(dialog).getByRole("button", { name: "确认移出" }));
   await waitFor(() => expect(removed).toBe(true));
-  expect(confirm).toHaveBeenCalledWith(expect.stringContaining("回收 1 条内容和 2 条评论"));
-  confirm.mockRestore();
   useWorkspace.setState({ pendingFocus: null, datasetId: null });
 });
 
@@ -90,7 +92,7 @@ test("小红书行的字幕列显示 —", async () => {
     </QueryClientProvider>,
   );
   const subtitles = (title: string) =>
-    within(screen.getByRole("row", { name: new RegExp(title) })).getAllByRole("cell")[8];
+    within(screen.getByRole("row", { name: new RegExp(title) })).getAllByRole("cell")[6];
   await screen.findByText("小红书笔记");
   expect(subtitles("小红书笔记")).toHaveTextContent("—");
   expect(subtitles(content.title!)).toHaveTextContent("2");

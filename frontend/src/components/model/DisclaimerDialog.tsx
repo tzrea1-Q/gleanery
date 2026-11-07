@@ -1,5 +1,6 @@
 import { useAcknowledgeDisclaimer, useAppState } from "@/api/queries";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Notice } from "@/components/common/Notice";
 import { Button } from "@/components/ui/button";
 
 export function DisclaimerDialog() {
@@ -23,7 +24,7 @@ export function DisclaimerDialog() {
         <Button disabled={ack.isPending} onClick={() => ack.mutate()}>
           我知道了
         </Button>
-        {ack.isError && <p role="alert">保存失败，请重试</p>}
+        {ack.isError && <Notice>保存失败，请重试</Notice>}
       </DialogContent>
     </Dialog>
   );

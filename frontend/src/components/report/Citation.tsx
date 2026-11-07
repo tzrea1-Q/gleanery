@@ -3,7 +3,9 @@ import type { components } from "@/api/schema";
 import { api } from "@/api/client";
 import { citationLabel, type CitationRef } from "@/lib/citations";
 import { useWorkspace } from "@/stores/workspace";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { StatusBadge } from "@/components/common/StatusBadge";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 
 type CitationOut = components["schemas"]["CitationOut"];
 
@@ -63,18 +65,21 @@ export function Citation({
           失效引用
         </span>
       ) : (
-        <sup>
-          <button
-            type="button"
-            // Markdown 样式里 sup 的行高为 0，不给按钮自己的行高会塌成 0 高、点不到。
-            className="px-0.5 text-xs leading-normal text-primary underline"
-            onClick={() => (entries.length > 1 ? setView("list") : void open(entries[0].citation!))}
-          >
-            原文{entries.length > 1 && ` ×${entries.length}`}
-          </button>
-        </sup>
+        <Button
+          type="button"
+          variant={null}
+          size={null}
+          className="mx-0.5 h-[1.15rem] rounded-full bg-brand-muted px-1.5 align-[0.12em] text-[11px] leading-none font-medium text-brand hover:opacity-80"
+          onClick={() => (entries.length > 1 ? setView("list") : void open(entries[0].citation!))}
+        >
+          原文{entries.length > 1 && ` ×${entries.length}`}
+        </Button>
       )}
-      {error && <span role="alert">{error}</span>}
+      {error && (
+        <span role="alert" className="text-xs text-attention">
+          {error}
+        </span>
+      )}
       <Dialog
         open={view !== null}
         onOpenChange={(open) => {
@@ -83,18 +88,22 @@ export function Citation({
       >
         <DialogContent>
           <DialogTitle>{view === "list" ? "引用列表" : "引用快照"}</DialogTitle>
+          <DialogDescription>
+            {view === "list" ? "选一条跳到原始内容。" : "这条内容现在无法在数据集里定位。"}
+          </DialogDescription>
           {view === "list" ? (
-            <ul>
+            <ul className="space-y-1">
               {entries.map(({ ref, citation }) => (
                 <li key={citationLabel(ref)}>
                   {citation ? (
-                    <button
+                    <Button
                       type="button"
-                      className="text-left underline"
+                      variant="ghost"
+                      className="h-auto w-full justify-start rounded-xl py-2 text-left font-normal whitespace-normal"
                       onClick={() => void open(citation)}
                     >
-                      {details(citation)}
-                    </button>
+                      <span>{details(citation)}</span>
+                    </Button>
                   ) : (
                     <span title={`找不到 ${citationLabel(ref)}`} className="text-muted-foreground">
                       失效引用（{citationLabel(ref)}）
@@ -105,14 +114,22 @@ export function Citation({
             </ul>
           ) : (
             view && (
-              <div>
-                <p>{details(view)}</p>
-                {view.deleted && <p>已从内容库删除</p>}
-                {/^https?:\/\//i.test(view.url) && (
-                  <a href={view.url} target="_blank" rel="noreferrer" className="underline">
-                    打开原文
-                  </a>
-                )}
+              <div className="space-y-3">
+                <p className="rounded-xl bg-muted p-3">{details(view)}</p>
+                <div className="flex items-center justify-between gap-2">
+                  {view.deleted ? (
+                    <StatusBadge tone="danger">已从内容库删除</StatusBadge>
+                  ) : (
+                    <span />
+                  )}
+                  {/^https?:\/\//i.test(view.url) && (
+                    <Button asChild variant="outline" size="sm">
+                      <a href={view.url} target="_blank" rel="noreferrer">
+                        打开原文
+                      </a>
+                    </Button>
+                  )}
+                </div>
               </div>
             )
           )}

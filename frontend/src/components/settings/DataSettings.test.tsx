@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { render, screen, within } from "@testing-library/react";
+import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { pickOption } from "@/test/select";
 import { http, HttpResponse } from "msw";
 import { expect, test } from "vitest";
 import { server } from "@/test/server";
@@ -49,8 +50,8 @@ test("数据设置、原始响应清空和停止任务后删除采集数据", as
   const user = userEvent.setup();
   expect(await screen.findByText(/原始响应 2 条，2.00 KB/)).toBeInTheDocument();
   expect(screen.getByText(/数据库总大小 1.00 MB/)).toBeInTheDocument();
-  await user.selectOptions(screen.getByLabelText("原始响应留存"), "forever");
-  expect(await screen.findByRole("option", { name: "永久", selected: true })).toBeInTheDocument();
+  await pickOption(user, "原始响应留存", "永久");
+  await waitFor(() => expect(screen.getByLabelText("原始响应留存")).toHaveTextContent("永久"));
   await user.click(screen.getByRole("button", { name: "清空全部原始响应" }));
   await user.click(
     within(screen.getByRole("alertdialog")).getByRole("button", { name: "确认清空" }),

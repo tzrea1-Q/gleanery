@@ -49,10 +49,11 @@ test("选择器只列可用模型并切换", async () => {
     }),
   );
   mount(<ModelSelector />);
+  await userEvent.click(await screen.findByLabelText("当前模型"));
   await screen.findByRole("option", { name: "可用" });
   expect(screen.queryByRole("option", { name: "失败" })).not.toBeInTheDocument();
   expect(screen.queryByRole("option", { name: "离线模型" })).not.toBeInTheDocument();
-  await userEvent.selectOptions(screen.getByLabelText("当前模型"), "2:可用");
+  await userEvent.click(screen.getByRole("option", { name: "可用" }));
   await waitFor(() => expect(body).toEqual({ config_id: 2, model: "可用" }));
 });
 test("首次启动及使用声明", async () => {
@@ -271,7 +272,7 @@ test.each([
       "https://chatgpt.com/settings/usage",
     );
   else {
-    await screen.findByRole("option", { name: "管理模型…" });
+    await screen.findByLabelText("当前模型");
     await waitFor(() => expect(screen.queryByText("Using ChatGPT plan")).not.toBeInTheDocument());
   }
 });

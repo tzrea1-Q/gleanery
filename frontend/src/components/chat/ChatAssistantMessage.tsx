@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import {
   ActionBarPrimitive,
   MessagePrimitive,
@@ -94,10 +95,16 @@ export function ChatAssistantMessage() {
       {status?.type === "incomplete" && status.reason === "error" && hasText && (
         <p className="text-sm text-muted-foreground">未完成</p>
       )}
-      <ActionBarPrimitive.Root hideWhenRunning>
-        <ActionBarPrimitive.Copy className="rounded border p-1">复制</ActionBarPrimitive.Copy>
-        <ActionBarPrimitive.Reload className="rounded border p-1">
-          重新生成
+      <ActionBarPrimitive.Root hideWhenRunning className="mt-1 flex gap-1">
+        <ActionBarPrimitive.Copy asChild>
+          <Button variant="ghost" size="xs" className="text-muted-foreground">
+            复制
+          </Button>
+        </ActionBarPrimitive.Copy>
+        <ActionBarPrimitive.Reload asChild>
+          <Button variant="ghost" size="xs" className="text-muted-foreground">
+            重新生成
+          </Button>
         </ActionBarPrimitive.Reload>
       </ActionBarPrimitive.Root>
       {status?.type === "incomplete" && status.reason === "error" && (

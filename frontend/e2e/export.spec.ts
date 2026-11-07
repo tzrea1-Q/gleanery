@@ -35,7 +35,8 @@ test("采集后从工作区下载三种导出", async ({ page }) => {
     await dataset.getByRole("button", { name: "导出", exact: true }).click();
     const dialog = page.getByRole("dialog", { name: "导出数据集" });
     await expect(dialog.getByText(/按当前筛选导出 \d+ 条/)).toBeVisible();
-    await dialog.getByLabel("格式").selectOption({ label });
+    await dialog.getByLabel("格式").click();
+    await page.getByRole("option", { name: label }).click();
     const [download] = await Promise.all([
       page.waitForEvent("download"),
       dialog.getByText("确定下载").click(),

@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import { useAuiState, type ToolCallMessagePartComponent } from "@assistant-ui/react";
 import type { components } from "@/api/schema";
+import { ChatCard } from "@/components/common/ChatCard";
+import { Notice } from "@/components/common/Notice";
+import { Button } from "@/components/ui/button";
 import { useWorkspace } from "@/stores/workspace";
 
 type Args = { report_id?: number };
@@ -48,11 +51,11 @@ export const ReportCard: ToolCallMessagePartComponent<Args, Result> = ({
   }, [write, id, latest, result?.error, arrived]);
   if (result?.error)
     return (
-      <p role="alert">
+      <Notice className="my-3">
         {result.error.code === "VERSION_CONFLICT"
           ? "报告刚被修改过，Agent 会取最新版再改"
           : result.error.message || "报告操作失败"}
-      </p>
+      </Notice>
     );
   if (!write)
     return (
@@ -69,20 +72,21 @@ export const ReportCard: ToolCallMessagePartComponent<Args, Result> = ({
       </p>
     );
   return (
-    <section aria-label="报告" className="my-3 space-y-2 rounded border p-3">
-      <h3 className="font-semibold">{result?.title}</h3>
-      {result?.basis ? (
-        <p>
-          基于 {result.basis.contents} 条内容、{result.basis.comments} 条评论 ·{" "}
-          {result.basis.dataset_name}
+    <ChatCard aria-label="报告">
+      <div>
+        <h3 className="text-xl font-semibold tracking-tight">{result?.title}</h3>
+        <p className="text-muted-foreground">
+          {result?.basis
+            ? `基于 ${result.basis.contents} 条内容、${result.basis.comments} 条评论 · ${result.basis.dataset_name}`
+            : "未关联数据集"}
         </p>
-      ) : (
-        <p>未关联数据集</p>
-      )}
-      {toolName === "update_report" && <p>已更新为第 {result?.version} 版</p>}
-      <button className="rounded border p-1" onClick={() => open(id)}>
+        {toolName === "update_report" && (
+          <p className="text-muted-foreground">已更新为第 {result?.version} 版</p>
+        )}
+      </div>
+      <Button size="sm" onClick={() => open(id)}>
         在工作区打开
-      </button>
-    </section>
+      </Button>
+    </ChatCard>
   );
 };

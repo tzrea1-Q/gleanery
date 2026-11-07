@@ -55,7 +55,7 @@ test("平台状态、登录结果和操作随服务端刷新", async () => {
   const user = userEvent.setup();
   await user.click(within(bili).getByRole("button", { name: "解锁" }));
   await user.click(await within(bili).findByRole("button", { name: "仍然继续" }));
-  expect(await within(bili).findByText(/B 站 · 正常/)).toBeInTheDocument();
+  expect(await within(bili).findByRole("heading", { name: "B 站 · 正常" })).toBeInTheDocument();
   // 小红书在 M4 接入，和 B 站一样显示状态与操作。
   const xhs = screen.getByRole("region", { name: "小红书" });
   expect(within(xhs).queryByText(/暂未接入/)).not.toBeInTheDocument();
@@ -78,5 +78,5 @@ test.each([
       <PlatformPanel />
     </QueryClientProvider>,
   );
-  expect(await screen.findByText(`B 站 · ${label}`)).toBeInTheDocument();
+  expect(await screen.findByRole("heading", { name: `B 站 · ${label}` })).toBeInTheDocument();
 });

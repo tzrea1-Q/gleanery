@@ -19,6 +19,18 @@ globalThis.Request = class extends NativeRequest {
 configure({ asyncUtilTimeout: 5000 });
 server.listen();
 window.scrollTo = () => {};
+// jsdom 没有这些 API，Sidebar 的窗口判断和 Radix 的 Select 都要用到。
+window.matchMedia = (query) =>
+  ({
+    matches: false,
+    media: query,
+    addEventListener() {},
+    removeEventListener() {},
+  }) as unknown as MediaQueryList;
+Element.prototype.hasPointerCapture = () => false;
+Element.prototype.setPointerCapture = () => {};
+Element.prototype.releasePointerCapture = () => {};
+Element.prototype.scrollIntoView = () => {};
 afterEach(() => {
   cleanup();
   server.resetHandlers();
