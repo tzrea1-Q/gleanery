@@ -31,6 +31,7 @@ just check
 - `just pre-commit` 只跑快的部分，提交时由 git hook 调用。
 - `just ci` 再加上端到端测试。
 - 改了 REST 契约要跑 `just gen-api`。
+- 改界面按 [docs/frontend.md](docs/frontend.md) 做，包括它的完成标准。
 - 自动化测试不接真模型，也不碰真站点。
 - 文档、注释、界面文案和提交信息用中文，标识符用英文。
 - 依赖版本已锁定，不要顺手升级或新增。确实需要时在 PR 里说明理由。
