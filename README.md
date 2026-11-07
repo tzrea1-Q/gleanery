@@ -62,10 +62,6 @@ cd backend && uv run gleanery
 - [术语表](GLOSSARY.md)。
 - [贡献指南](CONTRIBUTING.md)。
 
-## 关于 MediaCrawler
-
-本项目参考 [MediaCrawler](https://github.com/NanmiCoder/MediaCrawler) 的技术思路。MediaCrawler 采用《非商业学习使用许可证 1.1》，本项目**净室重写**，不复制其源码。
-
 ## 协议
 
 [Apache-2.0](LICENSE)。第三方声明见 [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES)。名称 Gleanery 不随协议授权。
