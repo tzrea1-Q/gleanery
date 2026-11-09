@@ -2,7 +2,8 @@
 
 给在本仓库里写代码的 Agent（含 Codex）看的约定。
 
-- **先读**：`docs/architecture.md`（架构）、`docs/adr/`（设计决策）、`GLOSSARY.md`（术语）。
+- **先读**：`docs/architecture.md`（架构）、`docs/adr/`（设计决策）、`GLOSSARY.md`（术语）。进行中的开发契约在 `docs/dev/`。
+- **公开仓库**：真账号的操作记录、真站风控细节、外部项目的源码笔记不写进仓库，维护者把这类记录放在主检出下被忽略的 `.private/`，不存在就跳过。提交钩子和 `just check` 会扫描本机路径、个人邮箱、密钥和 Cookie 值；确认是误报才在该行加 `leak-scan: allow`。
 - **命名**：包名、命令、数据目录都是 `gleanery`，不是 `gleaner`。
 - **净室**：不复制 MediaCrawler 的源码，也不参照着改写。
 - **语言**：文档、注释、界面文案、提交信息用中文；标识符用英文。注释只写代码表达不了的原因和约束。

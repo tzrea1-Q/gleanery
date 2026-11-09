@@ -21,7 +21,11 @@ gen-api:
     cd frontend && pnpm gen:api
 
 # 完整检查：ruff、pyright、pytest，前端 tsc、eslint、vitest
-check: check-backend check-frontend
+check: leak-scan check-backend check-frontend
+
+# 扫全部跟踪文件里的本机路径、个人邮箱、密钥和 Cookie 值
+leak-scan:
+    python3 .githooks/leak-scan.py --all
 
 check-backend:
     cd backend && uv run ruff check . && uv run ruff format --check . && uv run pyright && uv run pytest -q
